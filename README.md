@@ -57,6 +57,8 @@ for q in response.queue_urls {
 
 #### Code generation
 
+[botocore](https://github.com/boto/botocore) has JSON definitions of AWS services.  Use those with the `botocore_parser` tool:
+
 ```bash
 ./botocore_parser path/to/some.json ClientClassName > some_module.rs
 ```
