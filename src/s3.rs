@@ -12,17 +12,16 @@ use std::str::FromStr;
 include!(concat!(env!("CARGO_MANIFEST_DIR"), "/codegen/s3.rs"));
 
 pub struct S3Helper<'a> {
-	client: s3_client<'a>
+	client: S3Client<'a>
 }
 
 impl<'a> S3Helper<'a> {
 	pub fn new(credentials:&'a AWSCredentials, region:&'a str) -> S3Helper<'a> {
-		S3Helper { client: s3_client::new(credentials, region) }
+		S3Helper { client: S3Client::new(credentials, region) }
 	}
 
     pub fn list_buckets(&self) -> Result<ListBucketsOutput, AWSError> {
-        // self.client.list_buckets()
-        panic!("At the disco")
+        self.client.list_buckets()
     }
     //
 	// pub fn list_queues(&self) -> Result<ListQueuesResult, AWSError> {

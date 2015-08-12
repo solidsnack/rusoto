@@ -150,10 +150,11 @@ impl SignedRequest {
 		// determine the final URI to use based on http method
 		let mut final_uri = format!("https://{}{}", hostname, canonical_uri);
 		if self.method == "GET" {
+			// TODO: if query string is empty don't append question mark:
 			final_uri = final_uri + &format!("?{}", canonical_query_string);
 		}
 
-		//println!("{}\n{}\n{}", self.method, final_uri, payload);
+		println!("{}\n{}\n{}", self.method, final_uri, payload);
 
 	    // execute the damn request already
 	    let client = Client::new();
@@ -269,6 +270,14 @@ fn build_hostname(service: &str, region: &str) -> String {
 	//iam has only 1 endpoint, other services have region-based endpoints
 	match service {
 		"iam" => format!("{}.amazonaws.com", service),
+		"s3" => {
+			// TODO: unmagick string this:
+			if region == "us-east-1" {
+				format!("{}.amazonaws.com", service)
+			} else {
+				format!("s3-{}.amazonaws.com", service)
+			}
+		}
 		_ => format!("{}.{}.amazonaws.com", service, region)
 	}
 }

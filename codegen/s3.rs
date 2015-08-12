@@ -5559,11 +5559,11 @@ impl CopyObjectResultWriter {
 		ETagWriter::write_params(params, &(prefix.to_string() + "ETag"), &obj.e_tag);
 	}
 }
-pub type Message = String;
+pub type S3Message = String;
 /// Parse Message from XML
 struct MessageParser;
 impl MessageParser {
-	fn parse_xml<'a>(tag_name: &str, stack: &mut XmlStack) -> Result<Message, XmlParseError> {
+	fn parse_xml<'a>(tag_name: &str, stack: &mut XmlStack) -> Result<S3Message, XmlParseError> {
 		try!(start_element(tag_name, stack));
 		let obj = try!(characters(stack));
 		try!(end_element(tag_name, stack));
@@ -5573,7 +5573,7 @@ impl MessageParser {
 /// Write Message contents to a SignedRequest
 struct MessageWriter;
 impl MessageWriter {
-	fn write_params(params: &mut Params, name: &str, obj: &Message) {
+	fn write_params(params: &mut Params, name: &str, obj: &S3Message) {
 		params.put(name, obj);
 	}
 }
@@ -7453,7 +7453,7 @@ impl CopySourceSSECustomerKeyMD5Writer {
 pub struct Error {
 	pub version_id: ObjectVersionId,
 	pub code: Code,
-	pub message: Message,
+	pub message: S3Message,
 	pub key: ObjectKey,
 }
 
@@ -11510,14 +11510,14 @@ impl MaxPartsWriter {
 		params.put(name, &obj.to_string());
 	}
 }
-pub struct s3_client<'a> {
+pub struct S3Client<'a> {
 	creds: &'a AWSCredentials,
 	region: &'a str
 }
 
-impl<'a> s3_client<'a> {
-	pub fn new(creds: &'a AWSCredentials, region: &'a str) -> s3_client<'a> {
-		s3_client { creds: creds, region: region }
+impl<'a> S3Client<'a> {
+	pub fn new(creds: &'a AWSCredentials, region: &'a str) -> S3Client<'a> {
+		S3Client { creds: creds, region: region }
 	}
 	/// Returns metadata about all of the versions of objects in a bucket.
 	pub fn list_object_versions(&self, input: &ListObjectVersionsRequest) -> Result<ListObjectVersionsOutput, AWSError> {
@@ -11788,6 +11788,28 @@ impl<'a> s3_client<'a> {
 			_ => { Err(AWSError::new("error")) }
 		}
 	}
+
+	// Gets all buckets for this region
+	pub fn list_buckets(&self) -> Result<ListBucketsOutput, AWSError> {
+		let mut request = SignedRequest::new("GET", "s3", &self.region, "/");
+		// let mut params = Params::new();
+		// params.put("Action", "GetBucket");
+		// GetBucketAclRequestWriter::write_params(&mut params, "", &input);
+		// request.set_params(params);
+		let result = request.sign_and_execute(&self.creds);
+		let status = result.status.to_u16();
+		let mut reader = EventReader::new(result);
+		let mut stack = reader.events().peekable();
+		stack.next();
+		stack.next();
+		match status {
+			200 => {
+				Ok(try!(ListBucketsOutputParser::parse_xml("GetBucketOutput", &mut stack)))
+			}
+			_ => { Err(AWSError::new("error")) }
+		}
+	}
+
 	/// Gets the access control policy for the bucket.
 	pub fn get_bucket_acl(&self, input: &GetBucketAclRequest) -> Result<GetBucketAclOutput, AWSError> {
 		let mut request = SignedRequest::new("GET", "s3", &self.region, "/{Bucket}?acl");

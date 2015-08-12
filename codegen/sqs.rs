@@ -182,7 +182,7 @@ pub struct SetQueueAttributesRequest {
 	///   * `MaximumMessageSize` \- The limit of how many bytes a message can contain before Amazon SQS rejects it. An integer from 1024 bytes (1 KiB) up to 262144 bytes (256 KiB). The default for this attribute is 262144 (256 KiB).
 	///   * `MessageRetentionPeriod` \- The number of seconds Amazon SQS retains a message. Integer representing seconds, from 60 (1 minute) to 1209600 (14 days). The default for this attribute is 345600 (4 days).
 	///   * `Policy` \- The queue's policy. A valid AWS policy. For more information about policy structure, see [Overview of AWS IAM Policies](http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html) in the _Amazon IAM User Guide_.
-	///   * `ReceiveMessageWaitTimeSeconds` \- The time for which a ReceiveMessage call will wait for a message to arrive. An integer from 0 to 20 (seconds). The default for this attribute is 0. 
+	///   * `ReceiveMessageWaitTimeSeconds` \- The time for which a ReceiveMessage call will wait for a message to arrive. An integer from 0 to 20 (seconds). The default for this attribute is 0.
 	///   * `VisibilityTimeout` \- The visibility timeout for the queue. An integer from 0 to 43200 (12 hours). The default for this attribute is 30. For more information about visibility timeout, see Visibility Timeout in the _Amazon SQS Developer Guide_.
 	///   * `RedrivePolicy` \- The parameters for dead letter queue functionality of the source queue. For more information about RedrivePolicy and dead letter queues, see Using Amazon SQS Dead Letter Queues in the _Amazon SQS Developer Guide_.
 	pub attributes: AttributeMap,
@@ -315,7 +315,7 @@ pub struct CreateQueueRequest {
 	///   * `MaximumMessageSize` \- The limit of how many bytes a message can contain before Amazon SQS rejects it. An integer from 1024 bytes (1 KiB) up to 262144 bytes (256 KiB). The default for this attribute is 262144 (256 KiB).
 	///   * `MessageRetentionPeriod` \- The number of seconds Amazon SQS retains a message. Integer representing seconds, from 60 (1 minute) to 1209600 (14 days). The default for this attribute is 345600 (4 days).
 	///   * `Policy` \- The queue's policy. A valid AWS policy. For more information about policy structure, see [Overview of AWS IAM Policies](http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html) in the _Amazon IAM User Guide_.
-	///   * `ReceiveMessageWaitTimeSeconds` \- The time for which a ReceiveMessage call will wait for a message to arrive. An integer from 0 to 20 (seconds). The default for this attribute is 0. 
+	///   * `ReceiveMessageWaitTimeSeconds` \- The time for which a ReceiveMessage call will wait for a message to arrive. An integer from 0 to 20 (seconds). The default for this attribute is 0.
 	///   * `VisibilityTimeout` \- The visibility timeout for the queue. An integer from 0 to 43200 (12 hours). The default for this attribute is 30. For more information about visibility timeout, see [Visibility Timeout](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html) in the _Amazon SQS Developer Guide_.
 	pub attributes: Option<AttributeMap>,
 	/// The name for the queue to be created.
@@ -1208,7 +1208,7 @@ impl ChangeMessageVisibilityBatchResultEntryListWriter {
 #[derive(Debug, Default)]
 pub struct BatchResultErrorEntry {
 	/// A message explaining why the action failed on this entry.
-	pub message: Option<String>,
+	pub failure_message: Option<String>,
 	/// Whether the error happened due to the sender's fault.
 	pub sender_fault: Boolean,
 	/// An error code representing why the action failed on this entry.
@@ -1226,7 +1226,7 @@ impl BatchResultErrorEntryParser {
 		loop {
 			let current_name = try!(peek_at_name(stack));
 			if current_name == "Message" {
-				obj.message = Some(try!(StringParser::parse_xml("Message", stack)));
+				obj.failure_message = Some(try!(StringParser::parse_xml("Message", stack)));
 				continue;
 			}
 			if current_name == "SenderFault" {
@@ -1253,7 +1253,7 @@ impl BatchResultErrorEntryWriter {
 	fn write_params(params: &mut Params, name: &str, obj: &BatchResultErrorEntry) {
 		let mut prefix = name.to_string();
 		if prefix != "" { prefix.push_str("."); }
-		if let Some(ref obj) = obj.message {
+		if let Some(ref obj) = obj.failure_message {
 			StringWriter::write_params(params, &(prefix.to_string() + "Message"), obj);
 		}
 		BooleanWriter::write_params(params, &(prefix.to_string() + "SenderFault"), &obj.sender_fault);
@@ -2622,7 +2622,7 @@ pub struct SQSClient<'a> {
 	region: &'a str
 }
 
-impl<'a> SQSClient<'a> { 
+impl<'a> SQSClient<'a> {
 	pub fn new(creds: &'a AWSCredentials, region: &'a str) -> SQSClient<'a> {
 		SQSClient { creds: creds, region: region }
 	}
@@ -2660,7 +2660,7 @@ impl<'a> SQSClient<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(try!(CreateQueueResultParser::parse_xml("CreateQueueResult", &mut stack)))
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -2703,7 +2703,7 @@ impl<'a> SQSClient<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(try!(GetQueueAttributesResultParser::parse_xml("GetQueueAttributesResult", &mut stack)))
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -2729,7 +2729,7 @@ impl<'a> SQSClient<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(())
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -2756,7 +2756,7 @@ impl<'a> SQSClient<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(try!(GetQueueUrlResultParser::parse_xml("GetQueueUrlResult", &mut stack)))
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -2786,7 +2786,7 @@ impl<'a> SQSClient<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(try!(DeleteMessageBatchResultParser::parse_xml("DeleteMessageBatchResult", &mut stack)))
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -2827,7 +2827,7 @@ impl<'a> SQSClient<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(try!(SendMessageBatchResultParser::parse_xml("SendMessageBatchResult", &mut stack)))
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -2851,7 +2851,7 @@ impl<'a> SQSClient<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(try!(ListDeadLetterSourceQueuesResultParser::parse_xml("ListDeadLetterSourceQueuesResult", &mut stack)))
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -2899,7 +2899,7 @@ impl<'a> SQSClient<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(())
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -2936,7 +2936,7 @@ impl<'a> SQSClient<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(())
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -2968,7 +2968,7 @@ impl<'a> SQSClient<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(try!(ChangeMessageVisibilityBatchResultParser::parse_xml("ChangeMessageVisibilityBatchResult", &mut stack)))
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -2998,7 +2998,7 @@ impl<'a> SQSClient<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(try!(SendMessageResultParser::parse_xml("SendMessageResult", &mut stack)))
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -3032,7 +3032,7 @@ impl<'a> SQSClient<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(())
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -3059,7 +3059,7 @@ impl<'a> SQSClient<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(())
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -3078,12 +3078,12 @@ impl<'a> SQSClient<'a> {
 	/// small, you might not receive any messages in a particular `ReceiveMessage`
 	/// response; in which case you should repeat the request.
 	/// For each message returned, the response includes the following:
-	///   * Message body 
-	///   * MD5 digest of the message body. For information about MD5, go to <http://www.faqs.org/rfcs/rfc1321.html>. 
-	///   * Message ID you received when you sent the message to the queue. 
-	///   * Receipt handle. 
-	///   * Message attributes. 
-	///   * MD5 digest of the message attributes. 
+	///   * Message body
+	///   * MD5 digest of the message body. For information about MD5, go to <http://www.faqs.org/rfcs/rfc1321.html>.
+	///   * Message ID you received when you sent the message to the queue.
+	///   * Receipt handle.
+	///   * Message attributes.
+	///   * MD5 digest of the message attributes.
 	/// The receipt handle is the identifier you must provide when deleting the
 	/// message. For more information, see [Queue and Message Identifiers](http://docs
 	/// .aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ImportantIdenti
@@ -3110,7 +3110,7 @@ impl<'a> SQSClient<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(try!(ReceiveMessageResultParser::parse_xml("ReceiveMessageResult", &mut stack)))
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -3147,7 +3147,7 @@ impl<'a> SQSClient<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(())
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -3170,7 +3170,7 @@ impl<'a> SQSClient<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(try!(ListQueuesResultParser::parse_xml("ListQueuesResult", &mut stack)))
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -3191,7 +3191,7 @@ impl<'a> SQSClient<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(())
 			}
 			_ => { Err(AWSError::new("error")) }
