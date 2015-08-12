@@ -48,17 +48,17 @@ pub fn characters(stack: &mut XmlStack ) -> Result<String, XmlParseError> {
 	} else {
 		Err(XmlParseError::new("Expected characters"))
 	}
-	
+
 }
 
 /// get the name of the current element in the stack.  throw a parse error if it's not a StartElement
 pub fn peek_at_name(stack: &mut XmlStack) -> Result<String, XmlParseError> {
 	let current = stack.peek();
 	if let Some(&XmlEvent::StartElement{ref name, ..}) = current {
-		Ok(name.local_name.to_string())	
-	} else {		    
+		Ok(name.local_name.to_string())
+	} else {
 		Ok("".to_string())
-	}	
+	}
 }
 
 /// consume a StartElement with a specific name or throw an XmlParseError
@@ -75,13 +75,13 @@ pub fn start_element(element_name: &str, stack: &mut XmlStack)  -> Result<HashMa
 			Ok(attr_map)
 		}
 	}else {
-    
-    //  	println!("{:#?}", next);		
+
+     	println!("{:#?}", next);
 		Err(XmlParseError::new(&format!("Expected StartElement {}", element_name)))
 	}
-}	
-		
-/// consume an EndElement with a specific name or throw an XmlParseError		
+}
+
+/// consume an EndElement with a specific name or throw an XmlParseError
 pub fn end_element(element_name: &str, stack: &mut XmlStack)  -> Result<(), XmlParseError> {
 	let next = stack.next();
 	if let Some(XmlEvent::EndElement { name, .. }) = next {
@@ -93,5 +93,4 @@ pub fn end_element(element_name: &str, stack: &mut XmlStack)  -> Result<(), XmlP
 	}else {
 		Err(XmlParseError::new(&format!("Expected EndElement {} got {:?}", element_name, next)))
 	}
-}	
-			
+}

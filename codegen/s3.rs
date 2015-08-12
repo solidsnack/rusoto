@@ -88,7 +88,7 @@ impl PutBucketNotificationRequestWriter {
 		BucketNameWriter::write_params(params, &(prefix.to_string() + "Bucket"), &obj.bucket);
 	}
 }
-pub type Errors = Vec<Error>;
+pub type Errors = Vec<S3Error>;
 /// Parse Errors from XML
 struct ErrorsParser;
 impl ErrorsParser {
@@ -5135,13 +5135,18 @@ pub struct ListBucketsOutput {
 }
 
 /// Parse ListBucketsOutput from XML
-struct ListBucketsOutputParser;
+// changed to pub:
+pub struct ListBucketsOutputParser;
 impl ListBucketsOutputParser {
 	fn parse_xml<'a>(tag_name: &str, stack: &mut XmlStack) -> Result<ListBucketsOutput, XmlParseError> {
+		println!("Hey ListBucketsOutputParser.");
 		try!(start_element(tag_name, stack));
+		println!("After finding start element.");
 		let mut obj = ListBucketsOutput::default();
+		println!("After assigning obj");
 		loop {
 			let current_name = try!(peek_at_name(stack));
+			println!("Current name is {}", current_name);
 			if current_name == "Owner" {
 				obj.owner = try!(OwnerParser::parse_xml("Owner", stack));
 				continue;
@@ -7450,7 +7455,7 @@ impl CopySourceSSECustomerKeyMD5Writer {
 	}
 }
 #[derive(Debug, Default)]
-pub struct Error {
+pub struct S3Error {
 	pub version_id: ObjectVersionId,
 	pub code: Code,
 	pub message: S3Message,
@@ -7460,9 +7465,9 @@ pub struct Error {
 /// Parse Error from XML
 struct ErrorParser;
 impl ErrorParser {
-	fn parse_xml<'a>(tag_name: &str, stack: &mut XmlStack) -> Result<Error, XmlParseError> {
+	fn parse_xml<'a>(tag_name: &str, stack: &mut XmlStack) -> Result<S3Error, XmlParseError> {
 		try!(start_element(tag_name, stack));
-		let mut obj = Error::default();
+		let mut obj = S3Error::default();
 		loop {
 			let current_name = try!(peek_at_name(stack));
 			if current_name == "VersionId" {
@@ -7490,7 +7495,7 @@ impl ErrorParser {
 /// Write Error contents to a SignedRequest
 struct ErrorWriter;
 impl ErrorWriter {
-	fn write_params(params: &mut Params, name: &str, obj: &Error) {
+	fn write_params(params: &mut Params, name: &str, obj: &S3Error) {
 		let mut prefix = name.to_string();
 		if prefix != "" { prefix.push_str("."); }
 		ObjectVersionIdWriter::write_params(params, &(prefix.to_string() + "VersionId"), &obj.version_id);
@@ -11804,7 +11809,7 @@ impl<'a> S3Client<'a> {
 		stack.next();
 		match status {
 			200 => {
-				Ok(try!(ListBucketsOutputParser::parse_xml("GetBucketOutput", &mut stack)))
+				Ok(try!(ListBucketsOutputParser::parse_xml("ListAllMyBucketsResult", &mut stack)))
 			}
 			_ => { Err(AWSError::new("error")) }
 		}

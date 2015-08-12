@@ -16,6 +16,7 @@ use std::str;
 use time::Tm;
 use time::now_utc;
 use url::percent_encoding::{percent_encode_to, FORM_URLENCODED_ENCODE_SET};
+use std::io::Read;
 
 /// A data structure for all the elements of an HTTP request that are involved in
 /// the Amazon Signature Version 4 signing process
@@ -158,7 +159,14 @@ impl SignedRequest {
 
 	    // execute the damn request already
 	    let client = Client::new();
-	    let result = client.request(hyper_method, &final_uri).headers(hyper_headers).body(&payload).send().unwrap();
+		// Added mut for below debugging:
+	    let mut result = client.request(hyper_method, &final_uri).headers(hyper_headers).body(&payload).send().unwrap();
+
+		// Dump request to output:
+		let mut body = String::new();
+		result.read_to_string(&mut body).unwrap();
+		println!("Result in signature: {}", body);
+
 	    result
 	}
 }
