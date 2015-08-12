@@ -7,7 +7,9 @@ extern crate rustc_serialize;
 use rusoto::credentials::*;
 use rusoto::error::*;
 use rusoto::sqs::*;
+use rusoto::s3::*;
 use time::*;
+
 
 fn main() {
 	let mut provider = DefaultAWSCredentialsProviderChain::new();
@@ -16,10 +18,25 @@ fn main() {
 	println!("Creds in main: {}, {}, {}.", creds.get_aws_secret_key(), creds.get_aws_secret_key(),
 		creds.get_token());
 
+	match get_buckets_test(&creds) {
+		Ok(_) => { println!("Everything worked."); },
+		Err(err) => { println!("Got error: {:#?}", err); }
+	}
+
 	match sqs_roundtrip_tests(&creds) {
 		Ok(_) => { println!("Everything worked."); },
 		Err(err) => { println!("Got error: {:#?}", err); }
 	}
+}
+
+fn get_buckets_test(creds: &AWSCredentials) -> Result<(), AWSError> {
+	let s3 = S3Helper::new(&creds, "us-east-1");
+
+	let response = try!(s3.list_buckets());
+
+	println!("Done calling s3.");
+	panic!("boop");
+	// Ok(());
 }
 
 fn sqs_roundtrip_tests(creds: &AWSCredentials) -> Result<(), AWSError> {

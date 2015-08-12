@@ -9292,7 +9292,7 @@ pub struct Grantee {
 	/// Email address of the grantee.
 	pub email_address: Option<EmailAddress>,
 	/// Type of grantee
-	pub type: Type,
+	pub s3_type: Type,
 	/// Screen name of the grantee.
 	pub display_name: Option<DisplayName>,
 	/// The canonical user ID of the grantee.
@@ -9314,7 +9314,7 @@ impl GranteeParser {
 				continue;
 			}
 			if current_name == "xsi:type" {
-				obj.type = try!(TypeParser::parse_xml("xsi:type", stack));
+				obj.s3_type = try!(TypeParser::parse_xml("xsi:type", stack));
 				continue;
 			}
 			if current_name == "DisplayName" {
@@ -9344,7 +9344,7 @@ impl GranteeWriter {
 		if let Some(ref obj) = obj.email_address {
 			EmailAddressWriter::write_params(params, &(prefix.to_string() + "EmailAddress"), obj);
 		}
-		TypeWriter::write_params(params, &(prefix.to_string() + "xsi:type"), &obj.type);
+		TypeWriter::write_params(params, &(prefix.to_string() + "xsi:type"), &obj.s3_type);
 		if let Some(ref obj) = obj.display_name {
 			DisplayNameWriter::write_params(params, &(prefix.to_string() + "DisplayName"), obj);
 		}
@@ -11515,7 +11515,7 @@ pub struct s3_client<'a> {
 	region: &'a str
 }
 
-impl<'a> s3_client<'a> { 
+impl<'a> s3_client<'a> {
 	pub fn new(creds: &'a AWSCredentials, region: &'a str) -> s3_client<'a> {
 		s3_client { creds: creds, region: region }
 	}
@@ -11533,7 +11533,7 @@ impl<'a> s3_client<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(try!(ListObjectVersionsOutputParser::parse_xml("ListObjectVersionsOutput", &mut stack)))
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -11554,7 +11554,7 @@ impl<'a> s3_client<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(())
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -11576,7 +11576,7 @@ impl<'a> s3_client<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(try!(ListObjectsOutputParser::parse_xml("ListObjectsOutput", &mut stack)))
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -11596,7 +11596,7 @@ impl<'a> s3_client<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(())
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -11616,7 +11616,7 @@ impl<'a> s3_client<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(())
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -11638,7 +11638,7 @@ impl<'a> s3_client<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(())
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -11659,7 +11659,7 @@ impl<'a> s3_client<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(())
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -11680,7 +11680,7 @@ impl<'a> s3_client<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(try!(UploadPartOutputParser::parse_xml("UploadPartOutput", &mut stack)))
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -11700,7 +11700,7 @@ impl<'a> s3_client<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(try!(PutObjectOutputParser::parse_xml("PutObjectOutput", &mut stack)))
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -11720,7 +11720,7 @@ impl<'a> s3_client<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(())
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -11741,7 +11741,7 @@ impl<'a> s3_client<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(())
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -11761,7 +11761,7 @@ impl<'a> s3_client<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(try!(GetBucketCorsOutputParser::parse_xml("GetBucketCorsOutput", &mut stack)))
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -11782,7 +11782,7 @@ impl<'a> s3_client<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(())
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -11802,7 +11802,7 @@ impl<'a> s3_client<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(try!(GetBucketAclOutputParser::parse_xml("GetBucketAclOutput", &mut stack)))
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -11823,7 +11823,7 @@ impl<'a> s3_client<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(try!(GetBucketLoggingOutputParser::parse_xml("GetBucketLoggingOutput", &mut stack)))
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -11844,7 +11844,7 @@ impl<'a> s3_client<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(())
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -11864,7 +11864,7 @@ impl<'a> s3_client<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(())
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -11884,7 +11884,7 @@ impl<'a> s3_client<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(())
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -11904,7 +11904,7 @@ impl<'a> s3_client<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(())
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -11924,7 +11924,7 @@ impl<'a> s3_client<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(try!(NotificationConfigurationParser::parse_xml("NotificationConfiguration", &mut stack)))
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -11945,7 +11945,7 @@ impl<'a> s3_client<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(try!(DeleteObjectsOutputParser::parse_xml("DeleteObjectsOutput", &mut stack)))
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -11964,7 +11964,7 @@ impl<'a> s3_client<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(())
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -11984,7 +11984,7 @@ impl<'a> s3_client<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(try!(CopyObjectOutputParser::parse_xml("CopyObjectOutput", &mut stack)))
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -12009,7 +12009,7 @@ impl<'a> s3_client<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(())
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -12029,7 +12029,7 @@ impl<'a> s3_client<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(())
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -12051,7 +12051,7 @@ impl<'a> s3_client<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(try!(HeadObjectOutputParser::parse_xml("HeadObjectOutput", &mut stack)))
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -12071,7 +12071,7 @@ impl<'a> s3_client<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(())
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -12091,7 +12091,7 @@ impl<'a> s3_client<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(try!(GetObjectTorrentOutputParser::parse_xml("GetObjectTorrentOutput", &mut stack)))
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -12111,7 +12111,7 @@ impl<'a> s3_client<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(try!(GetBucketLifecycleOutputParser::parse_xml("GetBucketLifecycleOutput", &mut stack)))
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -12131,7 +12131,7 @@ impl<'a> s3_client<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(try!(CreateBucketOutputParser::parse_xml("CreateBucketOutput", &mut stack)))
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -12151,7 +12151,7 @@ impl<'a> s3_client<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(try!(CompleteMultipartUploadOutputParser::parse_xml("CompleteMultipartUploadOutput", &mut stack)))
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -12171,7 +12171,7 @@ impl<'a> s3_client<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(try!(GetBucketWebsiteOutputParser::parse_xml("GetBucketWebsiteOutput", &mut stack)))
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -12192,7 +12192,7 @@ impl<'a> s3_client<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(try!(CreateMultipartUploadOutputParser::parse_xml("CreateMultipartUploadOutput", &mut stack)))
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -12214,7 +12214,7 @@ impl<'a> s3_client<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(())
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -12234,7 +12234,7 @@ impl<'a> s3_client<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(try!(GetObjectOutputParser::parse_xml("GetObjectOutput", &mut stack)))
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -12254,7 +12254,7 @@ impl<'a> s3_client<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(try!(GetBucketPolicyOutputParser::parse_xml("GetBucketPolicyOutput", &mut stack)))
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -12274,7 +12274,7 @@ impl<'a> s3_client<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(try!(GetBucketVersioningOutputParser::parse_xml("GetBucketVersioningOutput", &mut stack)))
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -12294,7 +12294,7 @@ impl<'a> s3_client<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(try!(ListMultipartUploadsOutputParser::parse_xml("ListMultipartUploadsOutput", &mut stack)))
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -12314,7 +12314,7 @@ impl<'a> s3_client<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(try!(GetBucketRequestPaymentOutputParser::parse_xml("GetBucketRequestPaymentOutput", &mut stack)))
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -12334,7 +12334,7 @@ impl<'a> s3_client<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(())
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -12354,7 +12354,7 @@ impl<'a> s3_client<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(try!(GetBucketTaggingOutputParser::parse_xml("GetBucketTaggingOutput", &mut stack)))
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -12377,7 +12377,7 @@ impl<'a> s3_client<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(try!(AbortMultipartUploadOutputParser::parse_xml("AbortMultipartUploadOutput", &mut stack)))
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -12398,7 +12398,7 @@ impl<'a> s3_client<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(try!(PutObjectAclOutputParser::parse_xml("PutObjectAclOutput", &mut stack)))
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -12418,7 +12418,7 @@ impl<'a> s3_client<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(try!(GetBucketLocationOutputParser::parse_xml("GetBucketLocationOutput", &mut stack)))
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -12438,7 +12438,7 @@ impl<'a> s3_client<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(())
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -12458,7 +12458,7 @@ impl<'a> s3_client<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(())
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -12478,7 +12478,7 @@ impl<'a> s3_client<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(try!(NotificationConfigurationDeprecatedParser::parse_xml("NotificationConfigurationDeprecated", &mut stack)))
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -12498,7 +12498,7 @@ impl<'a> s3_client<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(try!(ListPartsOutputParser::parse_xml("ListPartsOutput", &mut stack)))
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -12518,7 +12518,7 @@ impl<'a> s3_client<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(try!(GetObjectAclOutputParser::parse_xml("GetObjectAclOutput", &mut stack)))
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -12538,7 +12538,7 @@ impl<'a> s3_client<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(try!(UploadPartCopyOutputParser::parse_xml("UploadPartCopyOutput", &mut stack)))
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -12560,7 +12560,7 @@ impl<'a> s3_client<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(try!(DeleteObjectOutputParser::parse_xml("DeleteObjectOutput", &mut stack)))
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -12580,7 +12580,7 @@ impl<'a> s3_client<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(try!(RestoreObjectOutputParser::parse_xml("RestoreObjectOutput", &mut stack)))
 			}
 			_ => { Err(AWSError::new("error")) }
@@ -12599,7 +12599,7 @@ impl<'a> s3_client<'a> {
 		stack.next();
 		stack.next();
 		match status {
-			200 => { 
+			200 => {
 				Ok(try!(GetBucketReplicationOutputParser::parse_xml("GetBucketReplicationOutput", &mut stack)))
 			}
 			_ => { Err(AWSError::new("error")) }
