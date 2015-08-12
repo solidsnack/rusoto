@@ -17,6 +17,8 @@ impl XmlParseError {
 }
 
 /// syntactic sugar for the XML event stack we pass around
+// We should change this to accept anything that implements the Read trait instead
+// of hardcoding to hyper "Response" type.  Makes testing easier.
 pub type XmlStack<'a> = Peekable<Events<'a, Response>>;
 
 impl From<ParseIntError> for XmlParseError{
