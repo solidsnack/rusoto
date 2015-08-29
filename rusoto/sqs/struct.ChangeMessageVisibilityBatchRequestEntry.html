@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `ChangeMessageVisibilityBatchRequestEntry` struct in crate `rusoto`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, ChangeMessageVisibilityBatchRequestEntry">
+
+    <title>rusoto::sqs::ChangeMessageVisibilityBatchRequestEntry - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <section class="sidebar">
+        
+        <p class='location'><a href='../index.html'>rusoto</a>::<wbr><a href='index.html'>sqs</a></p><script>window.sidebarCurrent = {name: 'ChangeMessageVisibilityBatchRequestEntry', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </section>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press 'S' to search, '?' for more options..."
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>rusoto</a>::<wbr><a href='index.html'>sqs</a>::<wbr><a class='struct' href=''>ChangeMessageVisibilityBatchRequestEntry</a></span><span class='out-of-band'><span id='render-detail'>
+            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                [<span class='inner'>&#x2212;</span>]
+            </a>
+        </span><a id='src-58053' class='srclink' href='../../src/rusoto///Users/adimarco/code/rust-aws/codegen/sqs.rs.html#2302-2311' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct ChangeMessageVisibilityBatchRequestEntry {
+    pub receipt_handle: <a class='struct' href='http://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>,
+    pub visibility_timeout: <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../../rusoto/sqs/type.Integer.html' title='rusoto::sqs::Integer'>Integer</a>&gt;,
+    pub id: <a class='struct' href='http://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>,
+}</pre><div class='docblock'><p>Encloses a receipt handle and an entry id for each message in
+ChangeMessageVisibilityBatch.
+All of the following parameters are list parameters that must be prefixed with
+<code>ChangeMessageVisibilityBatchRequestEntry.n</code>, where <code>n</code> is an integer value
+starting with 1. For example, a parameter list for this action might look like
+this:
+<code>&amp;ChangeMessageVisibilityBatchRequestEntry.1.Id=change_visibility_msg_2</code>
+<code>&amp;ChangeMessageVisibilityBatchRequestEntry.1.ReceiptHandle=Your_Receipt_Handle</code>
+<code>&amp;ChangeMessageVisibilityBatchRequestEntry.1.VisibilityTimeout=45</code></p>
+</div><h2 class='fields'>Fields</h2>
+<table><tr class='stab '>
+                                  <td id='structfield.receipt_handle'><code>receipt_handle</code></td><td><div class='docblock'><p>A receipt handle.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.visibility_timeout'><code>visibility_timeout</code></td><td><div class='docblock'><p>The new value (in seconds) for the message&#39;s visibility timeout.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.id'><code>id</code></td><td><div class='docblock'><p>An identifier for this particular receipt handle. This is used to communicate
+the result. Note that the <code>Id</code>s of a batch request need to be unique within
+the request.</p>
+</div></td></tr></table><h2 id='implementations'>Trait Implementations</h2><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><code>impl <a class='trait' href='http://doc.rust-lang.org/nightly/core/default/trait.Default.html' title='core::default::Default'>Default</a> for <a class='struct' href='../../rusoto/sqs/struct.ChangeMessageVisibilityBatchRequestEntry.html' title='rusoto::sqs::ChangeMessageVisibilityBatchRequestEntry'>ChangeMessageVisibilityBatchRequestEntry</a></code></h3><div class='impl-items'><h4 id='method.default' class='method'><code>fn <a href='http://doc.rust-lang.org/nightly/core/default/trait.Default.html#method.default' class='fnname'>default</a>() -&gt; <a class='struct' href='../../rusoto/sqs/struct.ChangeMessageVisibilityBatchRequestEntry.html' title='rusoto::sqs::ChangeMessageVisibilityBatchRequestEntry'>ChangeMessageVisibilityBatchRequestEntry</a></code></h4>
+</div><h3 class='impl'><code>impl <a class='trait' href='http://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../../rusoto/sqs/struct.ChangeMessageVisibilityBatchRequestEntry.html' title='rusoto::sqs::ChangeMessageVisibilityBatchRequestEntry'>ChangeMessageVisibilityBatchRequestEntry</a></code></h3><div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='http://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#method.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='http://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='http://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <div id="help" class="hidden">
+        <div class="shortcuts">
+            <h1>Keyboard shortcuts</h1>
+            <dl>
+                <dt>?</dt>
+                <dd>Show this help dialog</dd>
+                <dt>S</dt>
+                <dd>Focus the search field</dd>
+                <dt>&larrb;</dt>
+                <dd>Move up in search results</dd>
+                <dt>&rarrb;</dt>
+                <dd>Move down in search results</dd>
+                <dt>&#9166;</dt>
+                <dd>Go to active search result</dd>
+            </dl>
+        </div>
+        <div class="infos">
+            <h1>Search tricks</h1>
+            <p>
+                Prefix searches with a type followed by a colon (e.g.
+                <code>fn:</code>) to restrict the search to a given type.
+            </p>
+            <p>
+                Accepted types are: <code>fn</code>, <code>mod</code>,
+                <code>struct</code>, <code>enum</code>,
+                <code>trait</code>, <code>typedef</code> (or
+                <code>tdef</code>).
+            </p>
+            <p>
+                Search functions by type signature (e.g.
+                <code>vec -> usize</code>)
+            </p>
+        </div>
+    </div>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "rusoto";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script async src="../../search-index.js"></script>
+</body>
+</html>

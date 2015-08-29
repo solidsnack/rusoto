@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["AWSCredentials",""],["DefaultAWSCredentialsProviderChain",""],["EnvironmentCredentialsProvider",""],["IAMRoleCredentialsProvider",""],["ProfileCredentialsProvider",""]],"trait":[["AWSCredentialsProvider",""]]});

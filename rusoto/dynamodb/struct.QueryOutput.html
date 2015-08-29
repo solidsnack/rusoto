@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `QueryOutput` struct in crate `rusoto`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, QueryOutput">
+
+    <title>rusoto::dynamodb::QueryOutput - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <section class="sidebar">
+        
+        <p class='location'><a href='../index.html'>rusoto</a>::<wbr><a href='index.html'>dynamodb</a></p><script>window.sidebarCurrent = {name: 'QueryOutput', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </section>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press 'S' to search, '?' for more options..."
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>rusoto</a>::<wbr><a href='index.html'>dynamodb</a>::<wbr><a class='struct' href=''>QueryOutput</a></span><span class='out-of-band'><span id='render-detail'>
+            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                [<span class='inner'>&#x2212;</span>]
+            </a>
+        </span><a id='src-21833' class='srclink' href='../../src/rusoto///Users/adimarco/code/rust-aws/codegen/dynamodb.rs.html#3320-3349' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct QueryOutput {
+    pub count: <a class='type' href='../../rusoto/dynamodb/type.Integer.html' title='rusoto::dynamodb::Integer'>Integer</a>,
+    pub items: <a class='type' href='../../rusoto/dynamodb/type.ItemList.html' title='rusoto::dynamodb::ItemList'>ItemList</a>,
+    pub last_evaluated_key: <a class='type' href='../../rusoto/dynamodb/type.Key.html' title='rusoto::dynamodb::Key'>Key</a>,
+    pub scanned_count: <a class='type' href='../../rusoto/dynamodb/type.Integer.html' title='rusoto::dynamodb::Integer'>Integer</a>,
+    pub consumed_capacity: <a class='struct' href='../../rusoto/dynamodb/struct.ConsumedCapacity.html' title='rusoto::dynamodb::ConsumedCapacity'>ConsumedCapacity</a>,
+}</pre><div class='docblock'><p>Represents the output of a <em>Query</em> operation.</p>
+</div><h2 class='fields'>Fields</h2>
+<table><tr class='stab '>
+                                  <td id='structfield.count'><code>count</code></td><td><div class='docblock'><p>The number of items in the response.
+If you used a <em>QueryFilter</em> in the request, then <em>Count</em> is the number of
+items returned after the filter was applied, and <em>ScannedCount</em> is the number
+of matching items before&gt; the filter was applied.
+If you did not use a filter in the request, then <em>Count</em> and <em>ScannedCount</em>
+are the same.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.items'><code>items</code></td><td><div class='docblock'><p>An array of item attributes that match the query criteria. Each element in
+this array consists of an attribute name and the value for that attribute.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.last_evaluated_key'><code>last_evaluated_key</code></td><td><div class='docblock'><p>The primary key of the item where the operation stopped, inclusive of the
+previous result set. Use this value to start a new operation, excluding this
+value in the new request.
+If <em>LastEvaluatedKey</em> is empty, then the &quot;last page&quot; of results has been
+processed and there is no more data to be retrieved.
+If <em>LastEvaluatedKey</em> is not empty, it does not necessarily mean that there is
+more data in the result set. The only way to know when you have reached the
+end of the result set is when <em>LastEvaluatedKey</em> is empty.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.scanned_count'><code>scanned_count</code></td><td><div class='docblock'><p>The number of items evaluated, before any <em>QueryFilter</em> is applied. A high
+<em>ScannedCount</em> value with few, or no, <em>Count</em> results indicates an inefficient
+<em>Query</em> operation. For more information, see <a href="http://d%0Aocs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Coun%0At">Count and ScannedCount</a> in the <em>Amazon DynamoDB Developer Guide</em>.
+If you did not use a filter in the request, then <em>ScannedCount</em> is the same as
+<em>Count</em>.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.consumed_capacity'><code>consumed_capacity</code></td><td></td></tr></table><h2 id='implementations'>Trait Implementations</h2><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><code>impl <a class='trait' href='http://doc.rust-lang.org/nightly/core/default/trait.Default.html' title='core::default::Default'>Default</a> for <a class='struct' href='../../rusoto/dynamodb/struct.QueryOutput.html' title='rusoto::dynamodb::QueryOutput'>QueryOutput</a></code></h3><div class='impl-items'><h4 id='method.default' class='method'><code>fn <a href='http://doc.rust-lang.org/nightly/core/default/trait.Default.html#method.default' class='fnname'>default</a>() -&gt; <a class='struct' href='../../rusoto/dynamodb/struct.QueryOutput.html' title='rusoto::dynamodb::QueryOutput'>QueryOutput</a></code></h4>
+</div><h3 class='impl'><code>impl <a class='trait' href='http://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../../rusoto/dynamodb/struct.QueryOutput.html' title='rusoto::dynamodb::QueryOutput'>QueryOutput</a></code></h3><div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='http://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#method.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='http://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='http://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <div id="help" class="hidden">
+        <div class="shortcuts">
+            <h1>Keyboard shortcuts</h1>
+            <dl>
+                <dt>?</dt>
+                <dd>Show this help dialog</dd>
+                <dt>S</dt>
+                <dd>Focus the search field</dd>
+                <dt>&larrb;</dt>
+                <dd>Move up in search results</dd>
+                <dt>&rarrb;</dt>
+                <dd>Move down in search results</dd>
+                <dt>&#9166;</dt>
+                <dd>Go to active search result</dd>
+            </dl>
+        </div>
+        <div class="infos">
+            <h1>Search tricks</h1>
+            <p>
+                Prefix searches with a type followed by a colon (e.g.
+                <code>fn:</code>) to restrict the search to a given type.
+            </p>
+            <p>
+                Accepted types are: <code>fn</code>, <code>mod</code>,
+                <code>struct</code>, <code>enum</code>,
+                <code>trait</code>, <code>typedef</code> (or
+                <code>tdef</code>).
+            </p>
+            <p>
+                Search functions by type signature (e.g.
+                <code>vec -> usize</code>)
+            </p>
+        </div>
+    </div>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "rusoto";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script async src="../../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["string_to_sign",""]],"struct":[["SignedRequest","A data structure for all the elements of an HTTP request that are involved in the Amazon Signature Version 4 signing process"]]});

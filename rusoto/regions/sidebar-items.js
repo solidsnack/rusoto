@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Region",""]],"fn":[["region_in_aws_format",""]]});
