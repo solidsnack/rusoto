@@ -34,7 +34,7 @@
             <div class="search-container">
                 <input class="search-input" name="search"
                        autocomplete="off"
-                       placeholder="Click or press 'S' to search, '?' for more options..."
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
                        type="search">
             </div>
         </form>
@@ -287,21 +287,15 @@
 <span id="245">245</span>
 <span id="246">246</span>
 <span id="247">247</span>
-<span id="248">248</span>
-<span id="249">249</span>
-<span id="250">250</span>
-<span id="251">251</span>
 </pre><pre class='rust '>
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>iter</span>::<span class='ident'>Peekable</span>;
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>num</span>::<span class='ident'>ParseIntError</span>;
 <span class='kw'>use</span> <span class='ident'>hyper</span>::<span class='ident'>client</span>::<span class='ident'>response</span>::<span class='op'>*</span>;
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>collections</span>::<span class='ident'>HashMap</span>;
-
 <span class='kw'>use</span> <span class='ident'>xml</span>::<span class='ident'>reader</span>::<span class='op'>*</span>;
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>io</span>::<span class='ident'>BufReader</span>;
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>fs</span>::<span class='ident'>File</span>;
 <span class='kw'>use</span> <span class='ident'>xml</span>::<span class='ident'>reader</span>::<span class='ident'>events</span>::<span class='op'>*</span>;
-
 
 <span class='doccomment'>/// generic Error for XML parsing</span>
 <span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Debug</span>)]</span>
@@ -329,7 +323,6 @@
 	<span class='ident'>xml_stack</span>: <span class='ident'>Peekable</span><span class='op'>&lt;</span><span class='ident'>Events</span><span class='op'>&lt;</span><span class='lifetime'>&#39;b</span>, <span class='ident'>Response</span><span class='op'>&gt;&gt;</span> <span class='comment'>// refactor to use XmlStack type?</span>
 }
 
-<span class='comment'>// I cannot explain how these lifetimes work to a child, therefore I need to understand them better:</span>
 <span class='kw'>impl</span> <span class='op'>&lt;</span><span class='lifetime'>&#39;b</span><span class='op'>&gt;</span><span class='ident'>XmlResponseFromAws</span><span class='op'>&lt;</span><span class='lifetime'>&#39;b</span><span class='op'>&gt;</span> {
 	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>new</span><span class='op'>&lt;</span><span class='lifetime'>&#39;c</span><span class='op'>&gt;</span>(<span class='ident'>stack</span>: <span class='ident'>Peekable</span><span class='op'>&lt;</span><span class='ident'>Events</span><span class='op'>&lt;</span><span class='lifetime'>&#39;b</span>, <span class='ident'>Response</span><span class='op'>&gt;&gt;</span>) <span class='op'>-&gt;</span> <span class='ident'>XmlResponseFromAws</span> {
 		<span class='ident'>XmlResponseFromAws</span> {
@@ -338,7 +331,6 @@
 	}
 }
 
-<span class='comment'>// Need peek and next implemented.</span>
 <span class='kw'>impl</span> <span class='op'>&lt;</span><span class='lifetime'>&#39;b</span><span class='op'>&gt;</span><span class='ident'>Peek</span> <span class='kw'>for</span> <span class='ident'>XmlResponseFromAws</span><span class='op'>&lt;</span><span class='lifetime'>&#39;b</span><span class='op'>&gt;</span> {
 	<span class='kw'>fn</span> <span class='ident'>peek</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='kw-2'>&amp;</span><span class='ident'>XmlEvent</span><span class='op'>&gt;</span> {
 		<span class='kw'>return</span> <span class='self'>self</span>.<span class='ident'>xml_stack</span>.<span class='ident'>peek</span>();
@@ -492,7 +484,7 @@
 	    <span class='ident'>reader</span>.<span class='ident'>next</span>();
 
 	    <span class='kw'>match</span> <span class='ident'>start_element</span>(<span class='string'>&quot;ListQueuesResult&quot;</span>, <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>reader</span>) {
-	        <span class='prelude-val'>Ok</span>(_) <span class='op'>=&gt;</span> <span class='macro'>println</span><span class='macro'>!</span>(<span class='string'>&quot;Got start&quot;</span>),
+	        <span class='prelude-val'>Ok</span>(_) <span class='op'>=&gt;</span> (),
 	        <span class='prelude-val'>Err</span>(_) <span class='op'>=&gt;</span> <span class='macro'>panic</span><span class='macro'>!</span>(<span class='string'>&quot;Couldn&#39;t find start element&quot;</span>)
 	    }
 	}
@@ -512,8 +504,8 @@
 	    <span class='ident'>reader</span>.<span class='ident'>next</span>(); <span class='comment'>// reader now at ListQueuesResult</span>
 
 	    <span class='comment'>// now we&#39;re set up to use string:</span>
-	    <span class='kw'>let</span> <span class='ident'>my_chars</span> <span class='op'>=</span> <span class='ident'>string_field</span>(<span class='string'>&quot;QueueUrl&quot;</span>, <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>reader</span>);
-	    <span class='macro'>println</span><span class='macro'>!</span>(<span class='string'>&quot;Got {} for string&quot;</span>, <span class='ident'>my_chars</span>.<span class='ident'>unwrap</span>());
+	    <span class='kw'>let</span> <span class='ident'>my_chars</span> <span class='op'>=</span> <span class='ident'>string_field</span>(<span class='string'>&quot;QueueUrl&quot;</span>, <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>reader</span>).<span class='ident'>unwrap</span>();
+		<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>my_chars</span>, <span class='string'>&quot;https://sqs.us-east-1.amazonaws.com/347452556413/testqueue&quot;</span>)
 	}
 
 	<span class='attribute'>#[<span class='ident'>test</span>]</span>
@@ -537,7 +529,7 @@
 	    <span class='ident'>reader</span>.<span class='ident'>next</span>();
 
 	    <span class='kw'>match</span> <span class='ident'>end_element</span>(<span class='string'>&quot;ListQueuesResult&quot;</span>, <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>reader</span>) {
-	        <span class='prelude-val'>Ok</span>(_) <span class='op'>=&gt;</span> <span class='macro'>println</span><span class='macro'>!</span>(<span class='string'>&quot;Got end&quot;</span>),
+	        <span class='prelude-val'>Ok</span>(_) <span class='op'>=&gt;</span> (),
 	        <span class='prelude-val'>Err</span>(_) <span class='op'>=&gt;</span> <span class='macro'>panic</span><span class='macro'>!</span>(<span class='string'>&quot;Couldn&#39;t find end element&quot;</span>)
 	    }
 	}
@@ -550,37 +542,44 @@
     <section class="footer"></section>
 
     <div id="help" class="hidden">
-        <div class="shortcuts">
-            <h1>Keyboard shortcuts</h1>
-            <dl>
-                <dt>?</dt>
-                <dd>Show this help dialog</dd>
-                <dt>S</dt>
-                <dd>Focus the search field</dd>
-                <dt>&larrb;</dt>
-                <dd>Move up in search results</dd>
-                <dt>&rarrb;</dt>
-                <dd>Move down in search results</dd>
-                <dt>&#9166;</dt>
-                <dd>Go to active search result</dd>
-            </dl>
-        </div>
-        <div class="infos">
-            <h1>Search tricks</h1>
-            <p>
-                Prefix searches with a type followed by a colon (e.g.
-                <code>fn:</code>) to restrict the search to a given type.
-            </p>
-            <p>
-                Accepted types are: <code>fn</code>, <code>mod</code>,
-                <code>struct</code>, <code>enum</code>,
-                <code>trait</code>, <code>typedef</code> (or
-                <code>tdef</code>).
-            </p>
-            <p>
-                Search functions by type signature (e.g.
-                <code>vec -> usize</code>)
-            </p>
+        <div>
+            <div class="shortcuts">
+                <h1>Keyboard Shortcuts</h1>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h1>Search Tricks</h1>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>typedef</code> (or
+                    <code>tdef</code>).
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code>)
+                </p>
+            </div>
         </div>
     </div>
 

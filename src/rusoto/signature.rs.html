@@ -34,7 +34,7 @@
             <div class="search-container">
                 <input class="search-input" name="search"
                        autocomplete="off"
-                       placeholder="Click or press 'S' to search, '?' for more options..."
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
                        type="search">
             </div>
         </form>
@@ -358,13 +358,128 @@
 <span id="316">316</span>
 <span id="317">317</span>
 <span id="318">318</span>
+<span id="319">319</span>
+<span id="320">320</span>
+<span id="321">321</span>
+<span id="322">322</span>
+<span id="323">323</span>
+<span id="324">324</span>
+<span id="325">325</span>
+<span id="326">326</span>
+<span id="327">327</span>
+<span id="328">328</span>
+<span id="329">329</span>
+<span id="330">330</span>
+<span id="331">331</span>
+<span id="332">332</span>
+<span id="333">333</span>
+<span id="334">334</span>
+<span id="335">335</span>
+<span id="336">336</span>
+<span id="337">337</span>
+<span id="338">338</span>
+<span id="339">339</span>
+<span id="340">340</span>
+<span id="341">341</span>
+<span id="342">342</span>
+<span id="343">343</span>
+<span id="344">344</span>
+<span id="345">345</span>
+<span id="346">346</span>
+<span id="347">347</span>
+<span id="348">348</span>
+<span id="349">349</span>
+<span id="350">350</span>
+<span id="351">351</span>
+<span id="352">352</span>
+<span id="353">353</span>
+<span id="354">354</span>
+<span id="355">355</span>
+<span id="356">356</span>
+<span id="357">357</span>
+<span id="358">358</span>
+<span id="359">359</span>
+<span id="360">360</span>
+<span id="361">361</span>
+<span id="362">362</span>
+<span id="363">363</span>
+<span id="364">364</span>
+<span id="365">365</span>
+<span id="366">366</span>
+<span id="367">367</span>
+<span id="368">368</span>
+<span id="369">369</span>
+<span id="370">370</span>
+<span id="371">371</span>
+<span id="372">372</span>
+<span id="373">373</span>
+<span id="374">374</span>
+<span id="375">375</span>
+<span id="376">376</span>
+<span id="377">377</span>
+<span id="378">378</span>
+<span id="379">379</span>
+<span id="380">380</span>
+<span id="381">381</span>
+<span id="382">382</span>
+<span id="383">383</span>
+<span id="384">384</span>
+<span id="385">385</span>
+<span id="386">386</span>
+<span id="387">387</span>
+<span id="388">388</span>
+<span id="389">389</span>
+<span id="390">390</span>
+<span id="391">391</span>
+<span id="392">392</span>
+<span id="393">393</span>
+<span id="394">394</span>
+<span id="395">395</span>
+<span id="396">396</span>
+<span id="397">397</span>
+<span id="398">398</span>
+<span id="399">399</span>
+<span id="400">400</span>
+<span id="401">401</span>
+<span id="402">402</span>
+<span id="403">403</span>
+<span id="404">404</span>
+<span id="405">405</span>
+<span id="406">406</span>
+<span id="407">407</span>
+<span id="408">408</span>
+<span id="409">409</span>
+<span id="410">410</span>
+<span id="411">411</span>
+<span id="412">412</span>
+<span id="413">413</span>
+<span id="414">414</span>
+<span id="415">415</span>
+<span id="416">416</span>
+<span id="417">417</span>
+<span id="418">418</span>
+<span id="419">419</span>
+<span id="420">420</span>
+<span id="421">421</span>
+<span id="422">422</span>
+<span id="423">423</span>
+<span id="424">424</span>
+<span id="425">425</span>
+<span id="426">426</span>
+<span id="427">427</span>
+<span id="428">428</span>
+<span id="429">429</span>
+<span id="430">430</span>
+<span id="431">431</span>
+<span id="432">432</span>
+<span id="433">433</span>
+<span id="434">434</span>
+<span id="435">435</span>
 </pre><pre class='rust '>
 <span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>regex</span>;
 <span class='kw'>use</span> <span class='ident'>credentials</span>::<span class='ident'>AWSCredentials</span>;
-<span class='kw'>use</span> <span class='ident'>hyper</span>::<span class='ident'>Client</span>;
 <span class='kw'>use</span> <span class='ident'>hyper</span>::<span class='ident'>client</span>::<span class='ident'>Response</span>;
-<span class='kw'>use</span> <span class='ident'>hyper</span>::<span class='ident'>header</span>::<span class='ident'>Headers</span>;
-<span class='kw'>use</span> <span class='ident'>hyper</span>::<span class='ident'>method</span>::<span class='ident'>Method</span>;
+<span class='kw'>use</span> <span class='ident'>hyper</span>::<span class='ident'>status</span>::<span class='ident'>StatusCode</span>;
 <span class='kw'>use</span> <span class='ident'>openssl</span>::<span class='ident'>crypto</span>::<span class='ident'>hash</span>::<span class='ident'>Type</span>::<span class='ident'>SHA256</span>;
 <span class='kw'>use</span> <span class='ident'>openssl</span>::<span class='ident'>crypto</span>::<span class='ident'>hash</span>::<span class='ident'>hash</span>;
 <span class='kw'>use</span> <span class='ident'>openssl</span>::<span class='ident'>crypto</span>::<span class='ident'>hmac</span>::<span class='ident'>hmac</span>;
@@ -378,9 +493,14 @@
 <span class='kw'>use</span> <span class='ident'>time</span>::<span class='ident'>now_utc</span>;
 <span class='kw'>use</span> <span class='ident'>url</span>::<span class='ident'>percent_encoding</span>::{<span class='ident'>percent_encode_to</span>, <span class='ident'>FORM_URLENCODED_ENCODE_SET</span>};
 <span class='kw'>use</span> <span class='ident'>regions</span>::<span class='op'>*</span>;
+<span class='kw'>use</span> <span class='ident'>request</span>::<span class='ident'>send_request</span>;
+<span class='kw'>use</span> <span class='ident'>xmlutil</span>::<span class='op'>*</span>;
+<span class='kw'>use</span> <span class='ident'>error</span>::<span class='op'>*</span>;
+<span class='kw'>use</span> <span class='ident'>xml</span>::<span class='ident'>reader</span>::<span class='op'>*</span>;
 <span class='comment'>// Debug:</span>
 <span class='comment'>// use std::io::Read;</span>
 
+<span class='kw'>const</span> <span class='ident'>HTTP_TEMPORARY_REDIRECT</span>: <span class='ident'>StatusCode</span> <span class='op'>=</span> <span class='ident'>StatusCode</span>::<span class='ident'>TemporaryRedirect</span>;
 
 <span class='doccomment'>/// A data structure for all the elements of an HTTP request that are involved in</span>
 <span class='doccomment'>/// the Amazon Signature Version 4 signing process</span>
@@ -393,7 +513,9 @@
 	<span class='ident'>headers</span>: <span class='ident'>BTreeMap</span><span class='op'>&lt;</span><span class='ident'>String</span>, <span class='ident'>Vec</span><span class='op'>&lt;</span><span class='ident'>Vec</span><span class='op'>&lt;</span><span class='ident'>u8</span><span class='op'>&gt;&gt;</span><span class='op'>&gt;</span>,
 	<span class='ident'>params</span>: <span class='ident'>Params</span>,
 	<span class='ident'>hostname</span>: <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>String</span><span class='op'>&gt;</span>,
-	<span class='ident'>payload</span>: <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='ident'>Vec</span><span class='op'>&lt;</span><span class='ident'>u8</span><span class='op'>&gt;&gt;</span>,
+	<span class='ident'>payload</span>: <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> [<span class='ident'>u8</span>]<span class='op'>&gt;</span>,
+	<span class='ident'>canonical_query_string</span>: <span class='ident'>String</span>,
+	<span class='ident'>canonical_uri</span>: <span class='ident'>String</span>,
 }
 
 <span class='kw'>impl</span> <span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> <span class='ident'>SignedRequest</span> <span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> {
@@ -408,6 +530,8 @@
 			<span class='ident'>params</span>: <span class='ident'>Params</span>::<span class='ident'>new</span>(),
 			<span class='ident'>hostname</span>: <span class='prelude-val'>None</span>,
 			<span class='ident'>payload</span>: <span class='prelude-val'>None</span>,
+			<span class='ident'>canonical_query_string</span>: <span class='ident'>String</span>::<span class='ident'>new</span>(),
+			<span class='ident'>canonical_uri</span>: <span class='ident'>String</span>::<span class='ident'>new</span>(),
 		 }
 	}
 
@@ -415,8 +539,41 @@
 		<span class='self'>self</span>.<span class='ident'>hostname</span> <span class='op'>=</span> <span class='ident'>hostname</span>;
 	}
 
-	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>set_payload</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>payload</span>: <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='ident'>Vec</span><span class='op'>&lt;</span><span class='ident'>u8</span><span class='op'>&gt;&gt;</span>) {
+	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>set_payload</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>payload</span>: <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> [<span class='ident'>u8</span>]<span class='op'>&gt;</span>) {
 		<span class='self'>self</span>.<span class='ident'>payload</span> <span class='op'>=</span> <span class='ident'>payload</span>;
+	}
+
+	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_method</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span><span class='ident'>str</span> {
+		<span class='kw-2'>&amp;</span><span class='self'>self</span>.<span class='ident'>method</span>
+	}
+
+	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_canonical_uri</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span><span class='ident'>str</span> {
+		<span class='kw-2'>&amp;</span><span class='self'>self</span>.<span class='ident'>canonical_uri</span>
+	}
+
+	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_canonical_query_string</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span><span class='ident'>str</span> {
+		<span class='kw-2'>&amp;</span><span class='self'>self</span>.<span class='ident'>canonical_query_string</span>
+	}
+
+	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_payload</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> [<span class='ident'>u8</span>]<span class='op'>&gt;</span> {
+		<span class='self'>self</span>.<span class='ident'>payload</span>
+	}
+
+	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_headers</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='ident'>BTreeMap</span><span class='op'>&lt;</span><span class='ident'>String</span>, <span class='ident'>Vec</span><span class='op'>&lt;</span><span class='ident'>Vec</span><span class='op'>&lt;</span><span class='ident'>u8</span><span class='op'>&gt;&gt;</span><span class='op'>&gt;</span> {
+		<span class='kw-2'>&amp;</span><span class='self'>self</span>.<span class='ident'>headers</span>
+	}
+
+	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_hostname</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>String</span> {
+		<span class='kw'>match</span> <span class='self'>self</span>.<span class='ident'>hostname</span> {
+			<span class='prelude-val'>Some</span>(<span class='kw-2'>ref</span> <span class='ident'>h</span>) <span class='op'>=&gt;</span> <span class='ident'>h</span>.<span class='ident'>to_string</span>(),
+			<span class='prelude-val'>None</span> <span class='op'>=&gt;</span> <span class='ident'>build_hostname</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>.<span class='ident'>service</span>, <span class='kw-2'>&amp;</span><span class='self'>self</span>.<span class='ident'>region</span>)
+		}
+	}
+
+	<span class='comment'>// If the key exists in headers, set it to blank/unoccupied:</span>
+	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>remove_header</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>key</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>) {
+		<span class='kw'>let</span> <span class='ident'>key_lower</span> <span class='op'>=</span> <span class='ident'>key</span>.<span class='ident'>to_ascii_lowercase</span>().<span class='ident'>to_string</span>();
+		<span class='self'>self</span>.<span class='ident'>headers</span>.<span class='ident'>remove</span>(<span class='kw-2'>&amp;</span><span class='ident'>key_lower</span>);
 	}
 
 	<span class='doccomment'>/// Add a value to the array of headers for the specified key.</span>
@@ -449,73 +606,66 @@
 	<span class='doccomment'>/// Add the calculated signature to the request headers and execute it</span>
 	<span class='doccomment'>/// Return the hyper HTTP response</span>
 	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>sign_and_execute</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>creds</span>: <span class='kw-2'>&amp;</span><span class='ident'>AWSCredentials</span>) <span class='op'>-&gt;</span> <span class='ident'>Response</span> {
-		<span class='kw'>let</span> <span class='ident'>date</span> <span class='op'>=</span> <span class='ident'>now_utc</span>();
-
-		<span class='comment'>// set the required host/date headers</span>
 		<span class='kw'>let</span> <span class='ident'>hostname</span> <span class='op'>=</span> <span class='kw'>match</span> <span class='self'>self</span>.<span class='ident'>hostname</span> {
 			<span class='prelude-val'>Some</span>(<span class='kw-2'>ref</span> <span class='ident'>h</span>) <span class='op'>=&gt;</span> <span class='ident'>h</span>.<span class='ident'>to_string</span>(),
 			<span class='prelude-val'>None</span> <span class='op'>=&gt;</span> <span class='ident'>build_hostname</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>.<span class='ident'>service</span>, <span class='kw-2'>&amp;</span><span class='self'>self</span>.<span class='ident'>region</span>)
 		};
 
+		<span class='comment'>// Gotta remove and re-add headers since by default they append the value.  If we&#39;re following</span>
+		<span class='comment'>// a 307 redirect we end up with Three Stooges in the headers with duplicate values.</span>
+		<span class='self'>self</span>.<span class='ident'>remove_header</span>(<span class='string'>&quot;host&quot;</span>);
 		<span class='self'>self</span>.<span class='ident'>add_header</span>(<span class='string'>&quot;host&quot;</span>, <span class='kw-2'>&amp;</span><span class='ident'>hostname</span>);
-		<span class='self'>self</span>.<span class='ident'>add_header</span>(<span class='string'>&quot;x-amz-date&quot;</span>, <span class='kw-2'>&amp;</span><span class='ident'>date</span>.<span class='ident'>strftime</span>(<span class='string'>&quot;%Y%m%dT%H%M%SZ&quot;</span>).<span class='ident'>unwrap</span>().<span class='ident'>to_string</span>());
 
 		<span class='kw'>if</span> <span class='kw'>let</span> <span class='prelude-val'>Some</span>(<span class='kw-2'>ref</span> <span class='ident'>token</span>) <span class='op'>=</span> <span class='op'>*</span><span class='ident'>creds</span>.<span class='ident'>get_token</span>() {
+			<span class='self'>self</span>.<span class='ident'>remove_header</span>(<span class='string'>&quot;X-Amz-Security-Token&quot;</span>);
 			<span class='self'>self</span>.<span class='ident'>add_header</span>(<span class='string'>&quot;X-Amz-Security-Token&quot;</span>, <span class='ident'>token</span>);
 		}
 
-		<span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>payload</span>: <span class='ident'>String</span>;
-		<span class='kw'>match</span> <span class='self'>self</span>.<span class='ident'>payload</span> {
-			<span class='prelude-val'>None</span> <span class='op'>=&gt;</span> <span class='ident'>payload</span> <span class='op'>=</span> <span class='ident'>String</span>::<span class='ident'>new</span>(),
-			<span class='prelude-val'>Some</span>(<span class='kw-2'>ref</span> <span class='ident'>payload_data</span>) <span class='op'>=&gt;</span> <span class='ident'>payload</span> <span class='op'>=</span> <span class='ident'>str</span>::<span class='ident'>from_utf8</span>(<span class='kw-2'>&amp;</span><span class='ident'>payload_data</span>).<span class='ident'>unwrap</span>().<span class='ident'>to_string</span>(),
-		}
+		<span class='self'>self</span>.<span class='ident'>canonical_query_string</span> <span class='op'>=</span> <span class='ident'>build_canonical_query_string</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>.<span class='ident'>params</span>);
 
-		<span class='kw'>let</span> <span class='ident'>canonical_query_string</span>: <span class='ident'>String</span>;
-		<span class='kw'>let</span> <span class='ident'>hyper_method</span>;
-
-		<span class='comment'>// get the parameters in the right place for the http method being used</span>
-		<span class='comment'>// TODO: handle PUT/DELTE/HEAD methods (with a matcher, not if/else if)</span>
-		<span class='kw'>if</span> <span class='self'>self</span>.<span class='ident'>method</span> <span class='op'>==</span> <span class='string'>&quot;POST&quot;</span> {
-			<span class='ident'>payload</span> <span class='op'>=</span> <span class='ident'>build_canonical_query_string</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>.<span class='ident'>params</span>); <span class='comment'>// can we move this up to the matcher above?</span>
-			<span class='ident'>canonical_query_string</span> <span class='op'>=</span> <span class='string'>&quot;&quot;</span>.<span class='ident'>to_string</span>();
-			<span class='ident'>hyper_method</span> <span class='op'>=</span> <span class='ident'>Method</span>::<span class='ident'>Post</span>;
-
-			<span class='self'>self</span>.<span class='ident'>add_header</span>(<span class='string'>&quot;content-type&quot;</span>, <span class='string'>&quot;application/x-www-form-urlencoded; charset=utf-8&quot;</span>);
-			<span class='self'>self</span>.<span class='ident'>add_header</span>(<span class='string'>&quot;content-length&quot;</span>, <span class='kw-2'>&amp;</span><span class='macro'>format</span><span class='macro'>!</span>(<span class='string'>&quot;{}&quot;</span>, <span class='ident'>payload</span>.<span class='ident'>len</span>()));
-		} <span class='kw'>else</span> <span class='kw'>if</span> <span class='self'>self</span>.<span class='ident'>method</span> <span class='op'>==</span> <span class='string'>&quot;PUT&quot;</span> {
-			<span class='ident'>canonical_query_string</span> <span class='op'>=</span> <span class='string'>&quot;&quot;</span>.<span class='ident'>to_string</span>();
-			<span class='ident'>hyper_method</span> <span class='op'>=</span> <span class='ident'>Method</span>::<span class='ident'>Put</span>;
-
-			<span class='self'>self</span>.<span class='ident'>add_header</span>(<span class='string'>&quot;content-type&quot;</span>, <span class='string'>&quot;application/x-www-form-urlencoded; charset=utf-8&quot;</span>);
-			<span class='self'>self</span>.<span class='ident'>add_header</span>(<span class='string'>&quot;content-length&quot;</span>, <span class='kw-2'>&amp;</span><span class='macro'>format</span><span class='macro'>!</span>(<span class='string'>&quot;{}&quot;</span>, <span class='ident'>payload</span>.<span class='ident'>len</span>()));
-		} <span class='kw'>else</span> <span class='kw'>if</span> <span class='self'>self</span>.<span class='ident'>method</span> <span class='op'>==</span> <span class='string'>&quot;DELETE&quot;</span> {
-			<span class='ident'>canonical_query_string</span> <span class='op'>=</span> <span class='string'>&quot;&quot;</span>.<span class='ident'>to_string</span>();
-			<span class='ident'>hyper_method</span> <span class='op'>=</span> <span class='ident'>Method</span>::<span class='ident'>Delete</span>;
-
-			<span class='self'>self</span>.<span class='ident'>add_header</span>(<span class='string'>&quot;content-type&quot;</span>, <span class='string'>&quot;application/x-www-form-urlencoded; charset=utf-8&quot;</span>);
-			<span class='self'>self</span>.<span class='ident'>add_header</span>(<span class='string'>&quot;content-length&quot;</span>, <span class='kw-2'>&amp;</span><span class='macro'>format</span><span class='macro'>!</span>(<span class='string'>&quot;{}&quot;</span>, <span class='ident'>payload</span>.<span class='ident'>len</span>()));
-		} <span class='kw'>else</span> {
-			<span class='ident'>payload</span> <span class='op'>=</span> <span class='string'>&quot;&quot;</span>.<span class='ident'>to_string</span>();
-			<span class='ident'>canonical_query_string</span> <span class='op'>=</span>  <span class='ident'>build_canonical_query_string</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>.<span class='ident'>params</span>);
-			<span class='ident'>hyper_method</span> <span class='op'>=</span> <span class='ident'>Method</span>::<span class='ident'>Get</span>;
-		}
-
-		<span class='self'>self</span>.<span class='ident'>add_header</span>(<span class='string'>&quot;x-amz-content-sha256&quot;</span>, <span class='kw-2'>&amp;</span><span class='ident'>to_hexdigest</span>(<span class='kw-2'>&amp;</span><span class='ident'>payload</span>));
+		<span class='kw'>let</span> <span class='ident'>date</span> <span class='op'>=</span> <span class='ident'>now_utc</span>();
+		<span class='self'>self</span>.<span class='ident'>remove_header</span>(<span class='string'>&quot;x-amz-date&quot;</span>);
+		<span class='self'>self</span>.<span class='ident'>add_header</span>(<span class='string'>&quot;x-amz-date&quot;</span>, <span class='kw-2'>&amp;</span><span class='ident'>date</span>.<span class='ident'>strftime</span>(<span class='string'>&quot;%Y%m%dT%H%M%SZ&quot;</span>).<span class='ident'>unwrap</span>().<span class='ident'>to_string</span>());
 
 		<span class='comment'>// build the canonical request</span>
 		<span class='kw'>let</span> <span class='ident'>signed_headers</span> <span class='op'>=</span> <span class='ident'>signed_headers</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>.<span class='ident'>headers</span>);
-		<span class='kw'>let</span> <span class='ident'>canonical_uri</span> <span class='op'>=</span> <span class='ident'>canonical_uri</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>.<span class='ident'>path</span>);
+		<span class='self'>self</span>.<span class='ident'>canonical_uri</span> <span class='op'>=</span> <span class='ident'>canonical_uri</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>.<span class='ident'>path</span>);
 		<span class='kw'>let</span> <span class='ident'>canonical_headers</span> <span class='op'>=</span> <span class='ident'>canonical_headers</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>.<span class='ident'>headers</span>);
-		<span class='kw'>let</span> <span class='ident'>canonical_request</span> <span class='op'>=</span> <span class='macro'>format</span><span class='macro'>!</span>(<span class='string'>&quot;{}\n{}\n{}\n{}\n{}\n{}&quot;</span>,
-				<span class='kw-2'>&amp;</span><span class='self'>self</span>.<span class='ident'>method</span>,
-				<span class='ident'>canonical_uri</span>,
-				<span class='ident'>canonical_query_string</span>,
-				<span class='ident'>canonical_headers</span>,
-				<span class='ident'>signed_headers</span>,
-				<span class='ident'>to_hexdigest</span>(<span class='kw-2'>&amp;</span><span class='ident'>payload</span>));
+
+		<span class='kw'>let</span> <span class='ident'>canonical_request</span> : <span class='ident'>String</span>;
+
+		<span class='kw'>match</span> <span class='self'>self</span>.<span class='ident'>payload</span> {
+			<span class='prelude-val'>None</span> <span class='op'>=&gt;</span> {
+				<span class='ident'>canonical_request</span> <span class='op'>=</span> <span class='macro'>format</span><span class='macro'>!</span>(<span class='string'>&quot;{}\n{}\n{}\n{}\n{}\n{}&quot;</span>,
+					<span class='kw-2'>&amp;</span><span class='self'>self</span>.<span class='ident'>method</span>,
+					<span class='self'>self</span>.<span class='ident'>canonical_uri</span>,
+					<span class='self'>self</span>.<span class='ident'>canonical_query_string</span>,
+					<span class='ident'>canonical_headers</span>,
+					<span class='ident'>signed_headers</span>,
+					<span class='kw-2'>&amp;</span><span class='ident'>to_hexdigest_from_string</span>(<span class='string'>&quot;&quot;</span>));
+				<span class='self'>self</span>.<span class='ident'>remove_header</span>(<span class='string'>&quot;x-amz-content-sha256&quot;</span>);
+				<span class='self'>self</span>.<span class='ident'>add_header</span>(<span class='string'>&quot;x-amz-content-sha256&quot;</span>, <span class='kw-2'>&amp;</span><span class='ident'>to_hexdigest_from_string</span>(<span class='string'>&quot;&quot;</span>));
+			}
+			<span class='prelude-val'>Some</span>(<span class='ident'>payload</span>) <span class='op'>=&gt;</span> {
+				<span class='comment'>// This is hashing the payload twice, booo:</span>
+				<span class='ident'>canonical_request</span> <span class='op'>=</span> <span class='macro'>format</span><span class='macro'>!</span>(<span class='string'>&quot;{}\n{}\n{}\n{}\n{}\n{}&quot;</span>,
+					<span class='kw-2'>&amp;</span><span class='self'>self</span>.<span class='ident'>method</span>,
+					<span class='self'>self</span>.<span class='ident'>canonical_uri</span>,
+					<span class='self'>self</span>.<span class='ident'>canonical_query_string</span>,
+					<span class='ident'>canonical_headers</span>,
+					<span class='ident'>signed_headers</span>,
+					<span class='kw-2'>&amp;</span><span class='ident'>to_hexdigest_from_bytes</span>(<span class='ident'>payload</span>));
+				<span class='self'>self</span>.<span class='ident'>remove_header</span>(<span class='string'>&quot;x-amz-content-sha256&quot;</span>);
+				<span class='self'>self</span>.<span class='ident'>add_header</span>(<span class='string'>&quot;x-amz-content-sha256&quot;</span>, <span class='kw-2'>&amp;</span><span class='ident'>to_hexdigest_from_bytes</span>(<span class='ident'>payload</span>));
+				<span class='self'>self</span>.<span class='ident'>remove_header</span>(<span class='string'>&quot;content-length&quot;</span>);
+				<span class='self'>self</span>.<span class='ident'>add_header</span>(<span class='string'>&quot;content-length&quot;</span>, <span class='kw-2'>&amp;</span><span class='macro'>format</span><span class='macro'>!</span>(<span class='string'>&quot;{}&quot;</span>, <span class='ident'>payload</span>.<span class='ident'>len</span>()));
+			}
+		}
+		<span class='self'>self</span>.<span class='ident'>remove_header</span>(<span class='string'>&quot;content-type&quot;</span>);
+		<span class='self'>self</span>.<span class='ident'>add_header</span>(<span class='string'>&quot;content-type&quot;</span>, <span class='string'>&quot;application/octet-stream&quot;</span>);
 
 		<span class='comment'>// use the hashed canonical request to build the string to sign</span>
-		<span class='kw'>let</span> <span class='ident'>hashed_canonical_request</span> <span class='op'>=</span> <span class='ident'>to_hexdigest</span>(<span class='kw-2'>&amp;</span><span class='ident'>canonical_request</span>);
+		<span class='kw'>let</span> <span class='ident'>hashed_canonical_request</span> <span class='op'>=</span> <span class='ident'>to_hexdigest_from_string</span>(<span class='kw-2'>&amp;</span><span class='ident'>canonical_request</span>);
 		<span class='kw'>let</span> <span class='ident'>scope</span> <span class='op'>=</span> <span class='macro'>format</span><span class='macro'>!</span>(<span class='string'>&quot;{}/{}/{}/aws4_request&quot;</span>, <span class='ident'>date</span>.<span class='ident'>strftime</span>(<span class='string'>&quot;%Y%m%d&quot;</span>).<span class='ident'>unwrap</span>(), <span class='ident'>region_in_aws_format</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>.<span class='ident'>region</span>), <span class='kw-2'>&amp;</span><span class='self'>self</span>.<span class='ident'>service</span>);
 		<span class='kw'>let</span> <span class='ident'>string_to_sign</span> <span class='op'>=</span> <span class='ident'>string_to_sign</span>(<span class='ident'>date</span>, <span class='kw-2'>&amp;</span><span class='ident'>hashed_canonical_request</span>, <span class='kw-2'>&amp;</span><span class='ident'>scope</span>);
 
@@ -526,38 +676,21 @@
 		<span class='comment'>// build the actual auth header</span>
 		<span class='kw'>let</span> <span class='ident'>auth_header</span> <span class='op'>=</span> <span class='macro'>format</span><span class='macro'>!</span>(<span class='string'>&quot;AWS4-HMAC-SHA256 Credential={}/{}, SignedHeaders={}, Signature={}&quot;</span>,
 	               <span class='kw-2'>&amp;</span><span class='ident'>creds</span>.<span class='ident'>get_aws_access_key_id</span>(), <span class='ident'>scope</span>, <span class='ident'>signed_headers</span>, <span class='ident'>signature</span>);
+	   <span class='self'>self</span>.<span class='ident'>remove_header</span>(<span class='string'>&quot;authorization&quot;</span>);
 		<span class='self'>self</span>.<span class='ident'>add_header</span>(<span class='string'>&quot;authorization&quot;</span>, <span class='kw-2'>&amp;</span><span class='ident'>auth_header</span>);
 
-		<span class='comment'>// translate the headers map to a format Hyper likes</span>
-		<span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>hyper_headers</span> <span class='op'>=</span> <span class='ident'>Headers</span>::<span class='ident'>new</span>();
-		<span class='kw'>for</span> <span class='ident'>h</span> <span class='kw'>in</span> <span class='self'>self</span>.<span class='ident'>headers</span>.<span class='ident'>iter</span>() {
-			<span class='ident'>hyper_headers</span>.<span class='ident'>set_raw</span>(<span class='ident'>h</span>.<span class='number'>0</span>.<span class='ident'>to_owned</span>(), <span class='ident'>h</span>.<span class='number'>1</span>.<span class='ident'>to_owned</span>());
+		<span class='kw'>let</span> <span class='ident'>response</span> <span class='op'>=</span> <span class='ident'>send_request</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>);
+
+		<span class='kw'>if</span> <span class='ident'>response</span>.<span class='ident'>status</span> <span class='op'>==</span> <span class='ident'>HTTP_TEMPORARY_REDIRECT</span> {
+			<span class='comment'>// extract location from response, modify request and re-sign and resend.</span>
+			<span class='kw'>let</span> <span class='ident'>new_hostname</span> <span class='op'>=</span> <span class='ident'>extract_s3_redirect_location</span>(<span class='ident'>response</span>).<span class='ident'>unwrap</span>();
+			<span class='self'>self</span>.<span class='ident'>set_hostname</span>(<span class='prelude-val'>Some</span>(<span class='ident'>new_hostname</span>.<span class='ident'>to_string</span>()));
+
+			<span class='comment'>// This does a lot of appending and not clearing/creation, so we&#39;ll have to do that ourselves:</span>
+			<span class='kw'>return</span> <span class='self'>self</span>.<span class='ident'>sign_and_execute</span>(<span class='ident'>creds</span>);
 		}
 
-		<span class='comment'>// determine the final URI to use based on http method</span>
-		<span class='comment'>// println!(&quot;Canonical url is {}&quot;, canonical_uri);</span>
-		<span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>final_uri</span> <span class='op'>=</span> <span class='macro'>format</span><span class='macro'>!</span>(<span class='string'>&quot;https://{}{}&quot;</span>, <span class='ident'>hostname</span>, <span class='ident'>canonical_uri</span>);
-		<span class='kw'>if</span> <span class='self'>self</span>.<span class='ident'>method</span> <span class='op'>==</span> <span class='string'>&quot;GET&quot;</span> {
-			<span class='ident'>final_uri</span> <span class='op'>=</span> <span class='ident'>final_uri</span> <span class='op'>+</span> <span class='kw-2'>&amp;</span><span class='macro'>format</span><span class='macro'>!</span>(<span class='string'>&quot;?{}&quot;</span>, <span class='ident'>canonical_query_string</span>);
-		}
-
-		<span class='comment'>// S3 can be tricky, signature is against us-east-1 for now.  To verify:</span>
-		<span class='comment'>// println!(&quot;Region is {}&quot;, region_in_aws_format(&amp;self.region));</span>
-		<span class='comment'>// println!(&quot;Full request: {}\n{}\n{}\n&quot;, self.method, final_uri, payload);</span>
-
-	    <span class='comment'>// execute the request already</span>
-	    <span class='kw'>let</span> <span class='ident'>client</span> <span class='op'>=</span> <span class='ident'>Client</span>::<span class='ident'>new</span>();
-		<span class='comment'>// Set to mut for debug:</span>
-	    <span class='kw'>let</span> <span class='ident'>result</span> <span class='op'>=</span> <span class='ident'>client</span>.<span class='ident'>request</span>(<span class='ident'>hyper_method</span>, <span class='kw-2'>&amp;</span><span class='ident'>final_uri</span>).<span class='ident'>headers</span>(<span class='ident'>hyper_headers</span>).<span class='ident'>body</span>(<span class='kw-2'>&amp;</span><span class='ident'>payload</span>).<span class='ident'>send</span>().<span class='ident'>unwrap</span>();
-
-		<span class='comment'>// Debug:</span>
-		<span class='comment'>// let mut body = String::new();</span>
-	    <span class='comment'>// result.read_to_string(&amp;mut body).unwrap();</span>
-	    <span class='comment'>// println!(&quot;Response: {}&quot;, body);</span>
-		<span class='comment'>// result is now consumed, would have to reset it to original.  Perhaps make a copy to consume with read_to_string.</span>
-		<span class='comment'>// /Debug</span>
-
-	    <span class='ident'>result</span>
+		<span class='ident'>response</span>
 	}
 }
 
@@ -659,8 +792,14 @@
 	}
 }
 
-<span class='kw'>fn</span> <span class='ident'>to_hexdigest</span>(<span class='ident'>val</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>) <span class='op'>-&gt;</span> <span class='ident'>String</span> {
+<span class='comment'>// TODO: consolidate these functions</span>
+<span class='kw'>fn</span> <span class='ident'>to_hexdigest_from_string</span>(<span class='ident'>val</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>) <span class='op'>-&gt;</span> <span class='ident'>String</span> {
     <span class='kw'>let</span> <span class='ident'>h</span> <span class='op'>=</span> <span class='ident'>hash</span>(<span class='ident'>SHA256</span>, <span class='ident'>val</span>.<span class='ident'>as_bytes</span>());
+    <span class='ident'>h</span>.<span class='ident'>to_hex</span>().<span class='ident'>to_string</span>()
+}
+
+<span class='kw'>fn</span> <span class='ident'>to_hexdigest_from_bytes</span>(<span class='ident'>val</span>: <span class='kw-2'>&amp;</span>[<span class='ident'>u8</span>]) <span class='op'>-&gt;</span> <span class='ident'>String</span> {
+	<span class='kw'>let</span> <span class='ident'>h</span> <span class='op'>=</span> <span class='ident'>hash</span>(<span class='ident'>SHA256</span>, <span class='ident'>val</span>);
     <span class='ident'>h</span>.<span class='ident'>to_hex</span>().<span class='ident'>to_string</span>()
 }
 
@@ -677,6 +816,101 @@
 		_ <span class='op'>=&gt;</span> <span class='macro'>format</span><span class='macro'>!</span>(<span class='string'>&quot;{}.{}.amazonaws.com&quot;</span>, <span class='ident'>service</span>, <span class='ident'>region_in_aws_format</span>(<span class='ident'>region</span>))
 	}
 }
+
+<span class='doccomment'>/// extract_s3_redirect_location takes a Hyper Response and attempts to pull out the temporary endpoint.</span>
+<span class='kw'>fn</span> <span class='ident'>extract_s3_redirect_location</span>(<span class='ident'>response</span>: <span class='ident'>Response</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>String</span>, <span class='ident'>AWSError</span><span class='op'>&gt;</span> {
+	<span class='comment'>// Double checking this feels like belts and suspenders since we&#39;re checking the status code</span>
+	<span class='comment'>// before calling this.  Remove this check?</span>
+
+	<span class='comment'>// Verify it&#39;s a 307 temporary redirect</span>
+	<span class='kw'>if</span> <span class='ident'>response</span>.<span class='ident'>status</span> <span class='op'>!=</span> <span class='ident'>HTTP_TEMPORARY_REDIRECT</span> {
+		<span class='kw'>return</span> <span class='prelude-val'>Err</span>(<span class='ident'>AWSError</span>::<span class='ident'>new</span>(<span class='string'>&quot;Trying to find temporary location when status is not 307 temp redirect.&quot;</span>))
+	}
+
+	<span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>reader</span> <span class='op'>=</span> <span class='ident'>EventReader</span>::<span class='ident'>new</span>(<span class='ident'>response</span>);
+	<span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>stack</span> <span class='op'>=</span> <span class='ident'>XmlResponseFromAws</span>::<span class='ident'>new</span>(<span class='ident'>reader</span>.<span class='ident'>events</span>().<span class='ident'>peekable</span>());
+	<span class='ident'>stack</span>.<span class='ident'>next</span>(); <span class='comment'>// xml start tag</span>
+
+	<span class='comment'>// extract and return temporary endpoint location</span>
+	<span class='ident'>extract_s3_temporary_endpoint_from_xml</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>stack</span>)
+}
+
+<span class='kw'>fn</span> <span class='ident'>field_in_s3_redirect</span>(<span class='ident'>name</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>) <span class='op'>-&gt;</span> <span class='ident'>bool</span> {
+	<span class='kw'>if</span> <span class='ident'>name</span> <span class='op'>==</span> <span class='string'>&quot;Code&quot;</span> <span class='op'>||</span> <span class='ident'>name</span> <span class='op'>==</span> <span class='string'>&quot;Message&quot;</span> <span class='op'>||</span> <span class='ident'>name</span> <span class='op'>==</span> <span class='string'>&quot;Bucket&quot;</span> <span class='op'>||</span> <span class='ident'>name</span> <span class='op'>==</span> <span class='string'>&quot;RequestId&quot;</span> <span class='op'>||</span> <span class='ident'>name</span> <span class='op'>==</span> <span class='string'>&quot;HostId&quot;</span> {
+		<span class='kw'>return</span> <span class='boolval'>true</span>;
+	}
+	<span class='boolval'>false</span>
+}
+
+<span class='doccomment'>/// extract_s3_temporary_endpoint_from_xml takes in XML and tries to find the value of the Endpoint node.</span>
+<span class='kw'>fn</span> <span class='ident'>extract_s3_temporary_endpoint_from_xml</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>T</span>: <span class='ident'>Peek</span> <span class='op'>+</span> <span class='ident'>Next</span><span class='op'>&gt;</span>(<span class='ident'>stack</span>: <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>T</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>String</span>, <span class='ident'>AWSError</span><span class='op'>&gt;</span> {
+	<span class='macro'>try</span><span class='macro'>!</span>(<span class='ident'>start_element</span>(<span class='kw-2'>&amp;</span><span class='string'>&quot;Error&quot;</span>.<span class='ident'>to_string</span>(), <span class='ident'>stack</span>));
+
+	<span class='comment'>// now find Endpoint contents</span>
+	<span class='comment'>// This may infinite loop if there&#39;s no endpoint in the response: how can we prevent that?</span>
+	<span class='kw'>loop</span> {
+		<span class='kw'>let</span> <span class='ident'>current_name</span> <span class='op'>=</span> <span class='macro'>try</span><span class='macro'>!</span>(<span class='ident'>peek_at_name</span>(<span class='ident'>stack</span>));
+		<span class='kw'>if</span> <span class='ident'>current_name</span> <span class='op'>==</span> <span class='string'>&quot;Endpoint&quot;</span> {
+			<span class='kw'>let</span> <span class='ident'>obj</span> <span class='op'>=</span> <span class='macro'>try</span><span class='macro'>!</span>(<span class='ident'>string_field</span>(<span class='string'>&quot;Endpoint&quot;</span>, <span class='ident'>stack</span>));
+			<span class='kw'>return</span> <span class='prelude-val'>Ok</span>(<span class='ident'>obj</span>);
+		}
+		<span class='kw'>if</span> <span class='ident'>field_in_s3_redirect</span>(<span class='kw-2'>&amp;</span><span class='ident'>current_name</span>){
+			<span class='comment'>// &lt;foo&gt;bar&lt;/foo&gt;:</span>
+			<span class='ident'>stack</span>.<span class='ident'>next</span>(); <span class='comment'>// skip the start tag &lt;foo&gt;</span>
+			<span class='ident'>stack</span>.<span class='ident'>next</span>(); <span class='comment'>// skip contents bar</span>
+			<span class='ident'>stack</span>.<span class='ident'>next</span>(); <span class='comment'>// skip close tag &lt;/foo&gt;</span>
+			<span class='kw'>continue</span>;
+		}
+		<span class='kw'>break</span>;
+	}
+	<span class='prelude-val'>Err</span>(<span class='ident'>AWSError</span>::<span class='ident'>new</span>(<span class='string'>&quot;Couldn&#39;t find redirect location for S3 bucket&quot;</span>))
+}
+
+
+<span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>test</span>)]</span>
+<span class='kw'>mod</span> <span class='ident'>tests</span> {
+    <span class='kw'>use</span> <span class='ident'>super</span>::<span class='ident'>SignedRequest</span>;
+	<span class='kw'>use</span> <span class='ident'>super</span>::<span class='ident'>extract_s3_temporary_endpoint_from_xml</span>;
+	<span class='kw'>use</span> <span class='ident'>xmlutil</span>::<span class='op'>*</span>;
+	<span class='kw'>use</span> <span class='ident'>regions</span>::<span class='op'>*</span>;
+	<span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>io</span>::<span class='ident'>BufReader</span>;
+	<span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>fs</span>::<span class='ident'>File</span>;
+	<span class='kw'>use</span> <span class='ident'>xml</span>::<span class='ident'>reader</span>::<span class='op'>*</span>;
+
+	<span class='attribute'>#[<span class='ident'>test</span>]</span>
+	<span class='kw'>fn</span> <span class='ident'>get_hostname_none_present</span>() {
+		<span class='kw'>let</span> <span class='ident'>region</span> <span class='op'>=</span> <span class='ident'>Region</span>::<span class='ident'>UsEast1</span>;
+		<span class='kw'>let</span> <span class='ident'>request</span> <span class='op'>=</span> <span class='ident'>SignedRequest</span>::<span class='ident'>new</span>(<span class='string'>&quot;POST&quot;</span>, <span class='string'>&quot;sqs&quot;</span>, <span class='kw-2'>&amp;</span><span class='ident'>region</span>, <span class='string'>&quot;/&quot;</span>);
+		<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='string'>&quot;sqs.us-east-1.amazonaws.com&quot;</span>, <span class='ident'>request</span>.<span class='ident'>get_hostname</span>());
+	}
+
+	<span class='attribute'>#[<span class='ident'>test</span>]</span>
+	<span class='kw'>fn</span> <span class='ident'>get_hostname_happy_path</span>() {
+		<span class='kw'>let</span> <span class='ident'>region</span> <span class='op'>=</span> <span class='ident'>Region</span>::<span class='ident'>UsEast1</span>;
+		<span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>request</span> <span class='op'>=</span> <span class='ident'>SignedRequest</span>::<span class='ident'>new</span>(<span class='string'>&quot;POST&quot;</span>, <span class='string'>&quot;sqs&quot;</span>, <span class='kw-2'>&amp;</span><span class='ident'>region</span>, <span class='string'>&quot;/&quot;</span>);
+		<span class='ident'>request</span>.<span class='ident'>set_hostname</span>(<span class='prelude-val'>Some</span>(<span class='string'>&quot;test-hostname&quot;</span>.<span class='ident'>to_string</span>()));
+		<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='string'>&quot;test-hostname&quot;</span>, <span class='ident'>request</span>.<span class='ident'>get_hostname</span>());
+	}
+
+	<span class='attribute'>#[<span class='ident'>test</span>]</span>
+	<span class='kw'>fn</span> <span class='ident'>get_redirect_location_from_s3</span>() {
+		<span class='kw'>let</span> <span class='ident'>file</span> <span class='op'>=</span> <span class='ident'>File</span>::<span class='ident'>open</span>(<span class='string'>&quot;tests/sample-data/s3_temp_redirect.xml&quot;</span>).<span class='ident'>unwrap</span>();
+	    <span class='kw'>let</span> <span class='ident'>file</span> <span class='op'>=</span> <span class='ident'>BufReader</span>::<span class='ident'>new</span>(<span class='ident'>file</span>);
+	    <span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>my_parser</span>  <span class='op'>=</span> <span class='ident'>EventReader</span>::<span class='ident'>new</span>(<span class='ident'>file</span>);
+	    <span class='kw'>let</span> <span class='ident'>my_stack</span> <span class='op'>=</span> <span class='ident'>my_parser</span>.<span class='ident'>events</span>().<span class='ident'>peekable</span>();
+	    <span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>reader</span> <span class='op'>=</span> <span class='ident'>XmlResponseFromFile</span>::<span class='ident'>new</span>(<span class='ident'>my_stack</span>);
+		<span class='ident'>reader</span>.<span class='ident'>next</span>(); <span class='comment'>// xml start node</span>
+		<span class='kw'>let</span> <span class='ident'>result</span> <span class='op'>=</span> <span class='ident'>extract_s3_temporary_endpoint_from_xml</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>reader</span>);
+
+		<span class='kw'>match</span> <span class='ident'>result</span> {
+			<span class='prelude-val'>Err</span>(_) <span class='op'>=&gt;</span> <span class='macro'>panic</span><span class='macro'>!</span>(<span class='string'>&quot;Couldn&#39;t parse s3_temp_redirect.xml&quot;</span>),
+			<span class='prelude-val'>Ok</span>(<span class='ident'>location</span>) <span class='op'>=&gt;</span> {
+				<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>location</span>, <span class='string'>&quot;rusoto1441045966.s3-us-west-1.amazonaws.com&quot;</span>);
+			}
+		}
+	}
+
+}
 </pre>
 </section>
     <section id='search' class="content hidden"></section>
@@ -684,37 +918,44 @@
     <section class="footer"></section>
 
     <div id="help" class="hidden">
-        <div class="shortcuts">
-            <h1>Keyboard shortcuts</h1>
-            <dl>
-                <dt>?</dt>
-                <dd>Show this help dialog</dd>
-                <dt>S</dt>
-                <dd>Focus the search field</dd>
-                <dt>&larrb;</dt>
-                <dd>Move up in search results</dd>
-                <dt>&rarrb;</dt>
-                <dd>Move down in search results</dd>
-                <dt>&#9166;</dt>
-                <dd>Go to active search result</dd>
-            </dl>
-        </div>
-        <div class="infos">
-            <h1>Search tricks</h1>
-            <p>
-                Prefix searches with a type followed by a colon (e.g.
-                <code>fn:</code>) to restrict the search to a given type.
-            </p>
-            <p>
-                Accepted types are: <code>fn</code>, <code>mod</code>,
-                <code>struct</code>, <code>enum</code>,
-                <code>trait</code>, <code>typedef</code> (or
-                <code>tdef</code>).
-            </p>
-            <p>
-                Search functions by type signature (e.g.
-                <code>vec -> usize</code>)
-            </p>
+        <div>
+            <div class="shortcuts">
+                <h1>Keyboard Shortcuts</h1>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h1>Search Tricks</h1>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>typedef</code> (or
+                    <code>tdef</code>).
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code>)
+                </p>
+            </div>
         </div>
     </div>
 

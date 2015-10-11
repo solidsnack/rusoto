@@ -34,7 +34,7 @@
             <div class="search-container">
                 <input class="search-input" name="search"
                        autocomplete="off"
-                       placeholder="Click or press 'S' to search, '?' for more options..."
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
                        type="search">
             </div>
         </form>
@@ -45,7 +45,7 @@
             <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                 [<span class='inner'>&#x2212;</span>]
             </a>
-        </span><a id='src-139044' class='srclink' href='../../src/rusoto///Users/adimarco/code/rust-aws/codegen/s3.rs.html#11112-11115' title='goto source code'>[src]</a></span></h1>
+        </span><a id='src-98754' class='srclink' href='../../src/rusoto///Users/matthewmayer/Documents/DualSpark/rust-aws/codegen/s3.rs.html#10989-10992' title='goto source code'>[src]</a></span></h1>
 <pre class='rust struct'>pub struct S3Client&lt;'a&gt; {
     // some fields omitted
 }</pre><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl&lt;'a&gt; <a class='struct' href='../../rusoto/s3/struct.S3Client.html' title='rusoto::s3::S3Client'>S3Client</a>&lt;'a&gt;</code></h3><div class='impl-items'><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;P: <a class='trait' href='../../rusoto/credentials/trait.AWSCredentialsProvider.html' title='rusoto::credentials::AWSCredentialsProvider'>AWSCredentialsProvider</a> + 'a&gt;(creds: P, region: &amp;'a <a class='enum' href='../../rusoto/regions/enum.Region.html' title='rusoto::regions::Region'>Region</a>) -&gt; <a class='struct' href='../../rusoto/s3/struct.S3Client.html' title='rusoto::s3::S3Client'>S3Client</a>&lt;'a&gt;</code></h4>
@@ -69,10 +69,10 @@ you must be the bucket owner.</p>
 </div><h4 id='method.put_bucket_replication' class='method'><code>fn <a href='#method.put_bucket_replication' class='fnname'>put_bucket_replication</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/s3/struct.PutBucketReplicationRequest.html' title='rusoto::s3::PutBucketReplicationRequest'>PutBucketReplicationRequest</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a href='http://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
 <div class='docblock'><p>Creates a new replication configuration (or replaces an existing one, if
 present).</p>
-</div><h4 id='method.upload_part' class='method'><code>fn <a href='#method.upload_part' class='fnname'>upload_part</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/s3/struct.UploadPartRequest.html' title='rusoto::s3::UploadPartRequest'>UploadPartRequest</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/s3/struct.UploadPartOutput.html' title='rusoto::s3::UploadPartOutput'>UploadPartOutput</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
+</div><h4 id='method.upload_part' class='method'><code>fn <a href='#method.upload_part' class='fnname'>upload_part</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/s3/struct.UploadPartRequest.html' title='rusoto::s3::UploadPartRequest'>UploadPartRequest</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='http://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
 <div class='docblock'><p>Uploads a part in a multipart upload.
 <strong>Note:</strong> After you initiate multipart upload and upload one or more parts, you must either complete or abort multipart upload in order to stop getting charged for storage of the uploaded parts. Only after you either complete or abort multipart upload, Amazon S3 frees up the parts storage and stops charging you for the parts storage.</p>
-</div><h4 id='method.put_object' class='method'><code>fn <a href='#method.put_object' class='fnname'>put_object</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/s3/struct.PutObjectRequest.html' title='rusoto::s3::PutObjectRequest'>PutObjectRequest</a>, use_reduced_redundency: <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/s3/struct.PutObjectOutput.html' title='rusoto::s3::PutObjectOutput'>PutObjectOutput</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
+</div><h4 id='method.put_object' class='method'><code>fn <a href='#method.put_object' class='fnname'>put_object</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/s3/struct.PutObjectRequest.html' title='rusoto::s3::PutObjectRequest'>PutObjectRequest</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/s3/struct.PutObjectOutput.html' title='rusoto::s3::PutObjectOutput'>PutObjectOutput</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
 <div class='docblock'><p>Adds an object to a bucket.</p>
 </div><h4 id='method.delete_bucket_cors' class='method'><code>fn <a href='#method.delete_bucket_cors' class='fnname'>delete_bucket_cors</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/s3/struct.DeleteBucketCorsRequest.html' title='rusoto::s3::DeleteBucketCorsRequest'>DeleteBucketCorsRequest</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a href='http://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
 <div class='docblock'><p>Deletes the cors configuration information set for the bucket.</p>
@@ -179,10 +179,9 @@ an object that already exists in a bucket</p>
 <div class='docblock'><p>Lists the parts that have been uploaded for a specific multipart upload.</p>
 </div><h4 id='method.get_object_acl' class='method'><code>fn <a href='#method.get_object_acl' class='fnname'>get_object_acl</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/s3/struct.GetObjectAclRequest.html' title='rusoto::s3::GetObjectAclRequest'>GetObjectAclRequest</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/s3/struct.GetObjectAclOutput.html' title='rusoto::s3::GetObjectAclOutput'>GetObjectAclOutput</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
 <div class='docblock'><p>Returns the access control list (ACL) of an object.</p>
-</div><h4 id='method.upload_part_copy' class='method'><code>fn <a href='#method.upload_part_copy' class='fnname'>upload_part_copy</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/s3/struct.UploadPartCopyRequest.html' title='rusoto::s3::UploadPartCopyRequest'>UploadPartCopyRequest</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/s3/struct.UploadPartCopyOutput.html' title='rusoto::s3::UploadPartCopyOutput'>UploadPartCopyOutput</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
-<div class='docblock'><p>Uploads a part by copying data from an existing object as data source.</p>
 </div><h4 id='method.delete_object' class='method'><code>fn <a href='#method.delete_object' class='fnname'>delete_object</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/s3/struct.DeleteObjectRequest.html' title='rusoto::s3::DeleteObjectRequest'>DeleteObjectRequest</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/s3/struct.DeleteObjectOutput.html' title='rusoto::s3::DeleteObjectOutput'>DeleteObjectOutput</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
-<div class='docblock'><p>Removes the null version (if there is one) of an object and inserts a delete
+<div class='docblock'><p>Uploads a part by copying data from an existing object as data source.
+Removes the null version (if there is one) of an object and inserts a delete
 marker, which becomes the latest version of the object. If there isn&#39;t a null
 version, Amazon S3 does not remove any objects.</p>
 </div><h4 id='method.restore_object' class='method'><code>fn <a href='#method.restore_object' class='fnname'>restore_object</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/s3/struct.RestoreObjectRequest.html' title='rusoto::s3::RestoreObjectRequest'>RestoreObjectRequest</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/s3/struct.RestoreObjectOutput.html' title='rusoto::s3::RestoreObjectOutput'>RestoreObjectOutput</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
@@ -194,37 +193,44 @@ version, Amazon S3 does not remove any objects.</p>
     <section class="footer"></section>
 
     <div id="help" class="hidden">
-        <div class="shortcuts">
-            <h1>Keyboard shortcuts</h1>
-            <dl>
-                <dt>?</dt>
-                <dd>Show this help dialog</dd>
-                <dt>S</dt>
-                <dd>Focus the search field</dd>
-                <dt>&larrb;</dt>
-                <dd>Move up in search results</dd>
-                <dt>&rarrb;</dt>
-                <dd>Move down in search results</dd>
-                <dt>&#9166;</dt>
-                <dd>Go to active search result</dd>
-            </dl>
-        </div>
-        <div class="infos">
-            <h1>Search tricks</h1>
-            <p>
-                Prefix searches with a type followed by a colon (e.g.
-                <code>fn:</code>) to restrict the search to a given type.
-            </p>
-            <p>
-                Accepted types are: <code>fn</code>, <code>mod</code>,
-                <code>struct</code>, <code>enum</code>,
-                <code>trait</code>, <code>typedef</code> (or
-                <code>tdef</code>).
-            </p>
-            <p>
-                Search functions by type signature (e.g.
-                <code>vec -> usize</code>)
-            </p>
+        <div>
+            <div class="shortcuts">
+                <h1>Keyboard Shortcuts</h1>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h1>Search Tricks</h1>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>typedef</code> (or
+                    <code>tdef</code>).
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code>)
+                </p>
+            </div>
         </div>
     </div>
 

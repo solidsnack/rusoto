@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["AWSCredentials",""],["DefaultAWSCredentialsProviderChain",""],["EnvironmentCredentialsProvider",""],["IAMRoleCredentialsProvider",""],["ProfileCredentialsProvider",""]],"trait":[["AWSCredentialsProvider",""]]});
+initSidebarItems({"struct":[["AWSCredentials","Represents AWS credentials."],["DefaultAWSCredentialsProviderChain",""],["EnvironmentCredentialsProvider",""],["IAMRoleCredentialsProvider",""],["ProfileCredentialsProvider",""]],"trait":[["AWSCredentialsProvider",""]]});

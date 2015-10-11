@@ -1,1 +1,1 @@
-initSidebarItems({"mod":[["credentials",""],["dynamodb","DynamoDB bindings for Rust"],["error",""],["params",""],["regions",""],["s3","S3 bindings for Rust"],["signature",""],["sqs","SQS bindings for Rust"],["xmlutil",""]]});
+initSidebarItems({"mod":[["credentials",""],["error",""],["params",""],["regions",""],["request",""],["s3","S3 bindings for Rust"],["signature",""],["sqs","SQS bindings for Rust"],["xmlutil",""]]});
