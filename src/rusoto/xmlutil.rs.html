@@ -288,6 +288,7 @@
 <span id="246">246</span>
 <span id="247">247</span>
 <span id="248">248</span>
+<span id="249">249</span>
 </pre><pre class='rust '>
 <span class='doccomment'>//! Tools for handling XML from AWS with helper functions for testing</span>
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>iter</span>::<span class='ident'>Peekable</span>;
@@ -312,15 +313,17 @@
 <span class='doccomment'>/// syntactic sugar for the XML event stack we pass around</span>
 <span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>XmlStack</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> <span class='op'>=</span> <span class='ident'>Peekable</span><span class='op'>&lt;</span><span class='ident'>Events</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>Response</span><span class='op'>&gt;&gt;</span>;
 
+<span class='doccomment'>/// Peek at next items in the XML stack</span>
 <span class='kw'>pub</span> <span class='kw'>trait</span> <span class='ident'>Peek</span> {
     <span class='kw'>fn</span> <span class='ident'>peek</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='kw-2'>&amp;</span><span class='ident'>XmlEvent</span><span class='op'>&gt;</span>;
 }
 
+<span class='doccomment'>/// Move to the next part of the XML stack</span>
 <span class='kw'>pub</span> <span class='kw'>trait</span> <span class='ident'>Next</span> {
 	<span class='kw'>fn</span> <span class='ident'>next</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>XmlEvent</span><span class='op'>&gt;</span>;
 }
 
-<span class='comment'>// Wraps the Hyper Response type</span>
+<span class='doccomment'>/// Wraps the Hyper Response type</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>XmlResponseFromAws</span><span class='op'>&lt;</span><span class='lifetime'>&#39;b</span><span class='op'>&gt;</span> {
 	<span class='ident'>xml_stack</span>: <span class='ident'>Peekable</span><span class='op'>&lt;</span><span class='ident'>Events</span><span class='op'>&lt;</span><span class='lifetime'>&#39;b</span>, <span class='ident'>Response</span><span class='op'>&gt;&gt;</span> <span class='comment'>// refactor to use XmlStack type?</span>
 }
@@ -349,12 +352,11 @@
     <span class='kw'>fn</span> <span class='ident'>from</span>(<span class='ident'>_e</span>:<span class='ident'>ParseIntError</span>) <span class='op'>-&gt;</span> <span class='ident'>XmlParseError</span> { <span class='ident'>XmlParseError</span>::<span class='ident'>new</span>(<span class='string'>&quot;ParseIntError&quot;</span>) }
 }
 
-<span class='comment'>// Testing helper:</span>
+<span class='doccomment'>/// Testing helper, reads from file</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>XmlResponseFromFile</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> {
 	<span class='ident'>xml_stack</span>: <span class='ident'>Peekable</span><span class='op'>&lt;</span><span class='ident'>Events</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>BufReader</span><span class='op'>&lt;</span><span class='ident'>File</span><span class='op'>&gt;&gt;</span><span class='op'>&gt;</span>,
 }
 
-<span class='comment'>// I cannot explain how these lifetimes work to a child, therefore I need to understand them better:</span>
 <span class='kw'>impl</span> <span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span><span class='ident'>XmlResponseFromFile</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> {
 	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>new</span><span class='op'>&lt;</span><span class='lifetime'>&#39;c</span><span class='op'>&gt;</span>(<span class='ident'>my_stack</span>: <span class='ident'>Peekable</span><span class='op'>&lt;</span><span class='ident'>Events</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>BufReader</span><span class='op'>&lt;</span><span class='ident'>File</span><span class='op'>&gt;&gt;</span><span class='op'>&gt;</span>) <span class='op'>-&gt;</span> <span class='ident'>XmlResponseFromFile</span> {
 		<span class='kw'>return</span> <span class='ident'>XmlResponseFromFile</span> { <span class='ident'>xml_stack</span>: <span class='ident'>my_stack</span> };

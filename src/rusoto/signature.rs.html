@@ -476,6 +476,7 @@
 <span id="434">434</span>
 <span id="435">435</span>
 <span id="436">436</span>
+<span id="437">437</span>
 </pre><pre class='rust '>
 <span class='doccomment'>//! Tools for signing a request to AWS</span>
 <span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>regex</span>;
@@ -707,6 +708,7 @@
 	<span class='ident'>hmac</span>(<span class='ident'>SHA256</span>, <span class='kw-2'>&amp;</span><span class='ident'>k_service</span>, <span class='string'>&quot;aws4_request&quot;</span>.<span class='ident'>as_bytes</span>())
 }
 
+<span class='doccomment'>/// Mark string as AWS4-HMAC-SHA256 hashed</span>
 <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>string_to_sign</span>(<span class='ident'>date</span>: <span class='ident'>Tm</span>, <span class='ident'>hashed_canonical_request</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>, <span class='ident'>scope</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>) <span class='op'>-&gt;</span> <span class='ident'>String</span> {
 	<span class='macro'>format</span><span class='macro'>!</span>(<span class='string'>&quot;AWS4-HMAC-SHA256\n{}\n{}\n{}&quot;</span>,
 		<span class='ident'>date</span>.<span class='ident'>strftime</span>(<span class='string'>&quot;%Y%m%dT%H%M%SZ&quot;</span>).<span class='ident'>unwrap</span>(),
