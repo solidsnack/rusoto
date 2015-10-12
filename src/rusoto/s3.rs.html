@@ -623,6 +623,8 @@
 <span id="581">581</span>
 <span id="582">582</span>
 <span id="583">583</span>
+<span id="584">584</span>
+<span id="585">585</span>
 </pre><pre class='rust '>
 <span class='doccomment'>//! S3 bindings for Rust</span>
 <span class='attribute'>#<span class='op'>!</span>[<span class='ident'>allow</span>(<span class='ident'>unused_variables</span>, <span class='ident'>unused_mut</span>)]</span>
@@ -650,10 +652,12 @@
 <span class='comment'>// need to sort this out, but having issues going declaring a String here, not a str.</span>
 <span class='comment'>// static S3_REDUCED_REDUNDANCY: &amp;&#39;static str = &quot;REDUCED_REDUNDANCY&quot;;</span>
 
+<span class='doccomment'>/// Wraps the generated S3 client with a higher level interface</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>S3Helper</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> {
 	<span class='ident'>client</span>: <span class='ident'>S3Client</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span>
 }
 
+<span class='doccomment'>/// Canned ACL for S3</span>
 <span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Debug</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>CannedAcl</span> {
     <span class='ident'>Private</span>,
