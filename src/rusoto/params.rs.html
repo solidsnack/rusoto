@@ -87,6 +87,8 @@
 <span id="45">45</span>
 <span id="46">46</span>
 <span id="47">47</span>
+<span id="48">48</span>
+<span id="49">49</span>
 </pre><pre class='rust '>
 <span class='doccomment'>//! Parameters for talking to SQS</span>
 
@@ -105,6 +107,7 @@
 	}
 }
 
+<span class='doccomment'>/// Key:value pair for an SQS parameter.</span>
 <span class='kw'>pub</span> <span class='kw'>trait</span> <span class='ident'>SQSParams</span> {
 	<span class='kw'>fn</span> <span class='ident'>put</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>key</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>, <span class='ident'>val</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>);
 }
@@ -115,6 +118,7 @@
 	}
 }
 
+<span class='doccomment'>/// Optional fields for SQS call</span>
 <span class='kw'>pub</span> <span class='kw'>trait</span> <span class='ident'>OptionalMap</span><span class='op'>&lt;</span><span class='ident'>T</span><span class='op'>&gt;</span> {
 	<span class='kw'>fn</span> <span class='ident'>optional_put</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>name</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>, <span class='ident'>value_opt</span>: <span class='kw-2'>&amp;</span><span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>T</span><span class='op'>&gt;</span>) ;
 

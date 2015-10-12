@@ -57,10 +57,12 @@
 <span id="15">15</span>
 <span id="16">16</span>
 <span id="17">17</span>
+<span id="18">18</span>
 </pre><pre class='rust '>
 <span class='doccomment'>//! Errors during AWS communication or parsing</span>
 <span class='kw'>use</span> <span class='ident'>xmlutil</span>::<span class='ident'>XmlParseError</span>;
 
+<span class='doccomment'>/// Simple wraper around a String to store the error</span>
 <span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Debug</span>, <span class='ident'>PartialEq</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>AWSError</span>(<span class='kw'>pub</span> <span class='ident'>String</span>);
 
