@@ -110,6 +110,11 @@
 <span id="68">68</span>
 <span id="69">69</span>
 <span id="70">70</span>
+<span id="71">71</span>
+<span id="72">72</span>
+<span id="73">73</span>
+<span id="74">74</span>
+<span id="75">75</span>
 </pre><pre class='rust '>
 <span class='doccomment'>//! SQS bindings for Rust</span>
 <span class='attribute'>#<span class='op'>!</span>[<span class='ident'>allow</span>(<span class='ident'>unused_variables</span>, <span class='ident'>unused_mut</span>)]</span>
@@ -148,12 +153,14 @@
 		<span class='self'>self</span>.<span class='ident'>client</span>.<span class='ident'>create_queue</span>(<span class='kw-2'>&amp;</span><span class='ident'>req</span>)
 	}
 
+	<span class='doccomment'>/// Gets a queue URL by the queue&#39;s name</span>
 	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_queue_url</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>queue_name</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>GetQueueUrlResult</span>, <span class='ident'>AWSError</span><span class='op'>&gt;</span> {
 		<span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>req</span> <span class='op'>=</span> <span class='ident'>GetQueueUrlRequest</span>::<span class='ident'>default</span>();
 		<span class='ident'>req</span>.<span class='ident'>queue_name</span> <span class='op'>=</span> <span class='ident'>queue_name</span>.<span class='ident'>to_string</span>();
 		<span class='self'>self</span>.<span class='ident'>client</span>.<span class='ident'>get_queue_url</span>(<span class='kw-2'>&amp;</span><span class='ident'>req</span>)
 	}
 
+	<span class='doccomment'>/// Send message to specified queue</span>
 	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>send_message</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>queue_url</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>, <span class='ident'>message_body</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>SendMessageResult</span>, <span class='ident'>AWSError</span><span class='op'>&gt;</span> {
 		<span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>req</span> <span class='op'>=</span> <span class='ident'>SendMessageRequest</span>::<span class='ident'>default</span>();
 		<span class='ident'>req</span>.<span class='ident'>queue_url</span> <span class='op'>=</span> <span class='ident'>queue_url</span>.<span class='ident'>to_string</span>();
@@ -161,12 +168,14 @@
 		<span class='self'>self</span>.<span class='ident'>client</span>.<span class='ident'>send_message</span>(<span class='kw-2'>&amp;</span><span class='ident'>req</span>)
 	}
 
+	<span class='doccomment'>/// Receive a message from specified queue</span>
 	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>receive_message</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>queue_url</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>ReceiveMessageResult</span>, <span class='ident'>AWSError</span><span class='op'>&gt;</span> {
 		<span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>req</span> <span class='op'>=</span> <span class='ident'>ReceiveMessageRequest</span>::<span class='ident'>default</span>();
 		<span class='ident'>req</span>.<span class='ident'>queue_url</span> <span class='op'>=</span> <span class='ident'>queue_url</span>.<span class='ident'>to_string</span>();
 		<span class='self'>self</span>.<span class='ident'>client</span>.<span class='ident'>receive_message</span>(<span class='kw-2'>&amp;</span><span class='ident'>req</span>)
 	}
 
+	<span class='doccomment'>/// Delete a message from the specified queue</span>
 	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>delete_message</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>queue_url</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>, <span class='ident'>receipt_handle</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span>(), <span class='ident'>AWSError</span><span class='op'>&gt;</span> {
 		<span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>req</span> <span class='op'>=</span> <span class='ident'>DeleteMessageRequest</span>::<span class='ident'>default</span>();
 		<span class='ident'>req</span>.<span class='ident'>queue_url</span> <span class='op'>=</span> <span class='ident'>queue_url</span>.<span class='ident'>to_string</span>();
@@ -174,6 +183,7 @@
 		<span class='self'>self</span>.<span class='ident'>client</span>.<span class='ident'>delete_message</span>(<span class='kw-2'>&amp;</span><span class='ident'>req</span>)
 	}
 
+	<span class='doccomment'>/// Delete the specified queue</span>
 	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>delete_queue</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>queue_url</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span>(), <span class='ident'>AWSError</span><span class='op'>&gt;</span> {
 		<span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>req</span> <span class='op'>=</span> <span class='ident'>DeleteQueueRequest</span>::<span class='ident'>default</span>();
 		<span class='ident'>req</span>.<span class='ident'>queue_url</span> <span class='op'>=</span> <span class='ident'>queue_url</span>.<span class='ident'>to_string</span>();

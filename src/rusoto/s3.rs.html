@@ -629,6 +629,20 @@
 <span id="587">587</span>
 <span id="588">588</span>
 <span id="589">589</span>
+<span id="590">590</span>
+<span id="591">591</span>
+<span id="592">592</span>
+<span id="593">593</span>
+<span id="594">594</span>
+<span id="595">595</span>
+<span id="596">596</span>
+<span id="597">597</span>
+<span id="598">598</span>
+<span id="599">599</span>
+<span id="600">600</span>
+<span id="601">601</span>
+<span id="602">602</span>
+<span id="603">603</span>
 </pre><pre class='rust '>
 <span class='doccomment'>//! S3 bindings for Rust</span>
 <span class='attribute'>#<span class='op'>!</span>[<span class='ident'>allow</span>(<span class='ident'>unused_variables</span>, <span class='ident'>unused_mut</span>)]</span>
@@ -673,10 +687,12 @@
 }
 
 <span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> <span class='ident'>S3Helper</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> {
+	<span class='doccomment'>/// Creates a new S3 helper</span>
 	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>new</span><span class='op'>&lt;</span><span class='ident'>CP</span>: <span class='ident'>AWSCredentialsProvider</span> <span class='op'>+</span> <span class='lifetime'>&#39;a</span><span class='op'>&gt;</span>(<span class='ident'>credentials</span>: <span class='ident'>CP</span>, <span class='ident'>region</span>:<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='ident'>Region</span>) <span class='op'>-&gt;</span> <span class='ident'>S3Helper</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> {
 		<span class='ident'>S3Helper</span> { <span class='ident'>client</span>: <span class='ident'>S3Client</span>::<span class='ident'>new</span>(<span class='ident'>credentials</span>, <span class='ident'>region</span>) }
 	}
 
+	<span class='doccomment'>/// Lists buckets</span>
 	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>list_buckets</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>ListBucketsOutput</span>, <span class='ident'>AWSError</span><span class='op'>&gt;</span> {
 		<span class='self'>self</span>.<span class='ident'>client</span>.<span class='ident'>list_buckets</span>()
 	}
@@ -708,6 +724,7 @@
 		<span class='ident'>result</span>
 	}
 
+	<span class='doccomment'>/// Deletes specified bucket</span>
 	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>delete_bucket</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>bucket_name</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>, <span class='ident'>region</span>: <span class='kw-2'>&amp;</span><span class='ident'>Region</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span>(), <span class='ident'>AWSError</span><span class='op'>&gt;</span> {
 		<span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>request</span> <span class='op'>=</span> <span class='ident'>DeleteBucketRequest</span>::<span class='ident'>default</span>();
 		<span class='ident'>request</span>.<span class='ident'>bucket</span> <span class='op'>=</span> <span class='ident'>bucket_name</span>.<span class='ident'>to_string</span>();
@@ -715,6 +732,7 @@
 		<span class='ident'>result</span>
 	}
 
+	<span class='doccomment'>/// Download a named object from bucket</span>
 	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_object</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>bucket_name</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>, <span class='ident'>object_name</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>) <span class='op'>-&gt;</span>  <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>GetObjectOutput</span>, <span class='ident'>AWSError</span><span class='op'>&gt;</span> {
 		<span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>request</span> <span class='op'>=</span> <span class='ident'>GetObjectRequest</span>::<span class='ident'>default</span>();
 		<span class='ident'>request</span>.<span class='ident'>key</span> <span class='op'>=</span> <span class='ident'>object_name</span>.<span class='ident'>to_string</span>();
@@ -723,10 +741,12 @@
 		<span class='ident'>result</span>
 	}
 
+	<span class='doccomment'>/// Upload an object to specified bucket</span>
 	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>put_object</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>bucket_name</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>, <span class='ident'>object_name</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>, <span class='ident'>object_as_bytes</span>: <span class='kw-2'>&amp;</span><span class='ident'>Vec</span><span class='op'>&lt;</span><span class='ident'>u8</span><span class='op'>&gt;</span>) <span class='op'>-&gt;</span>  <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>PutObjectOutput</span>, <span class='ident'>AWSError</span><span class='op'>&gt;</span> {
 		<span class='self'>self</span>.<span class='ident'>put_object_with_optional_reduced_redundancy</span>(<span class='ident'>bucket_name</span>, <span class='ident'>object_name</span>, <span class='ident'>object_as_bytes</span>, <span class='boolval'>false</span>)
 	}
 
+	<span class='doccomment'>/// Helper: uploads object to specified bucket using reduced redudancy storage settings</span>
 	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>put_object_with_reduced_redundancy</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>bucket_name</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>, <span class='ident'>object_name</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>, <span class='ident'>object_as_bytes</span>: <span class='kw-2'>&amp;</span><span class='ident'>Vec</span><span class='op'>&lt;</span><span class='ident'>u8</span><span class='op'>&gt;</span>) <span class='op'>-&gt;</span>  <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>PutObjectOutput</span>, <span class='ident'>AWSError</span><span class='op'>&gt;</span> {
 		<span class='self'>self</span>.<span class='ident'>put_object_with_optional_reduced_redundancy</span>(<span class='ident'>bucket_name</span>, <span class='ident'>object_name</span>, <span class='ident'>object_as_bytes</span>, <span class='boolval'>true</span>)
 	}
@@ -745,6 +765,7 @@
 		<span class='ident'>result</span>
 	}
 
+	<span class='doccomment'>/// Uploads object to specified S3 bucket with server side encryption at rest.</span>
 	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>put_object_with_aws_encryption</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>bucket_name</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>, <span class='ident'>object_name</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>,
 		<span class='ident'>object_as_bytes</span>: <span class='kw-2'>&amp;</span><span class='ident'>Vec</span><span class='op'>&lt;</span><span class='ident'>u8</span><span class='op'>&gt;</span>) <span class='op'>-&gt;</span>  <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>PutObjectOutput</span>, <span class='ident'>AWSError</span><span class='op'>&gt;</span> {
 
@@ -758,6 +779,7 @@
 		<span class='ident'>result</span>
 	}
 
+	<span class='doccomment'>/// Uploads object to specified S3 bucket using AWS KMS for key management of encryption at rest.</span>
 	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>put_object_with_kms_encryption</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>bucket_name</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>, <span class='ident'>object_name</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>,
 		<span class='ident'>object_as_bytes</span>: <span class='kw-2'>&amp;</span><span class='ident'>Vec</span><span class='op'>&lt;</span><span class='ident'>u8</span><span class='op'>&gt;</span>, <span class='ident'>key_id</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>) <span class='op'>-&gt;</span>  <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>PutObjectOutput</span>, <span class='ident'>AWSError</span><span class='op'>&gt;</span> {
 
@@ -772,7 +794,8 @@
 		<span class='ident'>result</span>
 	}
 
-	<span class='comment'>// The most generic of put_object: caller specifies the whole request.</span>
+	<span class='doccomment'>/// Uploads object: lets sender specify options.</span>
+	<span class='doccomment'>/// The most generic of put_object: caller specifies the whole request.</span>
 	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>put_object_with_request</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>request</span>: <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>PutObjectRequest</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>PutObjectOutput</span>, <span class='ident'>AWSError</span><span class='op'>&gt;</span> {
 		<span class='comment'>// This may be where we do some basic sanity checking: ensure we have:</span>
 		<span class='comment'>// bucket name, region, object id, payload.</span>
@@ -784,6 +807,7 @@
 	}
 
 	<span class='comment'>// TODO: does this make a copy of the object_as_reader or just transfers ownership to this?</span>
+	<span class='doccomment'>/// Uploads a multi-part object to specified bucket.  Allows for large file uploads.</span>
 	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>put_multipart_object</span><span class='op'>&lt;</span><span class='ident'>T</span>: <span class='ident'>Read</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>bucket_name</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>, <span class='ident'>object_name</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>,
 		<span class='ident'>object_as_reader</span>: <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>T</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>PutObjectOutput</span>, <span class='ident'>AWSError</span><span class='op'>&gt;</span> { <span class='comment'>// TODO: return type correct?</span>
 
@@ -909,6 +933,7 @@
 		}
 	}
 
+	<span class='doccomment'>/// Lists multipart uploads not yet completed for specified bucket</span>
 	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>list_multipart_uploads_for_bucket</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>bucket_name</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>ListMultipartUploadsOutput</span>, <span class='ident'>AWSError</span><span class='op'>&gt;</span> {
 		<span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>request</span> <span class='op'>=</span> <span class='ident'>ListMultipartUploadsRequest</span>::<span class='ident'>default</span>();
 		<span class='ident'>request</span>.<span class='ident'>bucket</span> <span class='op'>=</span> <span class='ident'>bucket_name</span>.<span class='ident'>to_string</span>();
@@ -919,6 +944,7 @@
 		}
 	}
 
+	<span class='doccomment'>/// Deletes specified object from specified bucket.</span>
 	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>delete_object</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>bucket_name</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>, <span class='ident'>object_name</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>) <span class='op'>-&gt;</span>  <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>DeleteObjectOutput</span>, <span class='ident'>AWSError</span><span class='op'>&gt;</span> {
 		<span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>request</span> <span class='op'>=</span> <span class='ident'>DeleteObjectRequest</span>::<span class='ident'>default</span>();
 		<span class='ident'>request</span>.<span class='ident'>key</span> <span class='op'>=</span> <span class='ident'>object_name</span>.<span class='ident'>to_string</span>();
@@ -926,6 +952,7 @@
 		<span class='self'>self</span>.<span class='ident'>client</span>.<span class='ident'>delete_object</span>(<span class='kw-2'>&amp;</span><span class='ident'>request</span>)
 	}
 
+	<span class='doccomment'>/// Abort multipart upload.</span>
 	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>abort_multipart_upload</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>bucket_name</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>, <span class='ident'>object_name</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>, <span class='ident'>upload_id</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>) <span class='op'>-&gt;</span>  <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>AbortMultipartUploadOutput</span>, <span class='ident'>AWSError</span><span class='op'>&gt;</span> {
 		<span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>request</span> <span class='op'>=</span> <span class='ident'>AbortMultipartUploadRequest</span>::<span class='ident'>default</span>();
 		<span class='ident'>request</span>.<span class='ident'>key</span> <span class='op'>=</span> <span class='ident'>object_name</span>.<span class='ident'>to_string</span>();
@@ -934,6 +961,7 @@
 		<span class='self'>self</span>.<span class='ident'>client</span>.<span class='ident'>abort_multipart_upload</span>(<span class='kw-2'>&amp;</span><span class='ident'>request</span>)
 	}
 
+	<span class='doccomment'>/// List parts from a multiupload request.</span>
 	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>multipart_upload_list_parts</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>bucket_name</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>, <span class='ident'>object_name</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>, <span class='ident'>upload_id</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>) <span class='op'>-&gt;</span>  <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>ListPartsOutput</span>, <span class='ident'>AWSError</span><span class='op'>&gt;</span> {
 		<span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>request</span> <span class='op'>=</span> <span class='ident'>ListPartsRequest</span>::<span class='ident'>default</span>();
 		<span class='ident'>request</span>.<span class='ident'>key</span> <span class='op'>=</span> <span class='ident'>object_name</span>.<span class='ident'>to_string</span>();
