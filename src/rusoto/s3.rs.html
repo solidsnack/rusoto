@@ -643,6 +643,7 @@
 <span id="601">601</span>
 <span id="602">602</span>
 <span id="603">603</span>
+<span id="604">604</span>
 </pre><pre class='rust '>
 <span class='doccomment'>//! S3 bindings for Rust</span>
 <span class='attribute'>#<span class='op'>!</span>[<span class='ident'>allow</span>(<span class='ident'>unused_variables</span>, <span class='ident'>unused_mut</span>)]</span>
@@ -687,6 +688,7 @@
 }
 
 <span class='kw'>impl</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> <span class='ident'>S3Helper</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> {
+	
 	<span class='doccomment'>/// Creates a new S3 helper</span>
 	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>new</span><span class='op'>&lt;</span><span class='ident'>CP</span>: <span class='ident'>AWSCredentialsProvider</span> <span class='op'>+</span> <span class='lifetime'>&#39;a</span><span class='op'>&gt;</span>(<span class='ident'>credentials</span>: <span class='ident'>CP</span>, <span class='ident'>region</span>:<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='ident'>Region</span>) <span class='op'>-&gt;</span> <span class='ident'>S3Helper</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> {
 		<span class='ident'>S3Helper</span> { <span class='ident'>client</span>: <span class='ident'>S3Client</span>::<span class='ident'>new</span>(<span class='ident'>credentials</span>, <span class='ident'>region</span>) }
