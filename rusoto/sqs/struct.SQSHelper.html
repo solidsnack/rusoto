@@ -24,10 +24,10 @@
 
     
 
-    <section class="sidebar">
+    <nav class="sidebar">
         
         <p class='location'><a href='../index.html'>rusoto</a>::<wbr><a href='index.html'>sqs</a></p><script>window.sidebarCurrent = {name: 'SQSHelper', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
-    </section>
+    </nav>
 
     <nav class="sub">
         <form class="search-form js-only">
@@ -49,22 +49,24 @@
 <pre class='rust struct'>pub struct SQSHelper&lt;'a&gt; {
     // some fields omitted
 }</pre><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl&lt;'a&gt; <a class='struct' href='../../rusoto/sqs/struct.SQSHelper.html' title='rusoto::sqs::SQSHelper'>SQSHelper</a>&lt;'a&gt;</code></h3><div class='impl-items'><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;P: <a class='trait' href='../../rusoto/credentials/trait.AWSCredentialsProvider.html' title='rusoto::credentials::AWSCredentialsProvider'>AWSCredentialsProvider</a> + 'a&gt;(credentials: P, region: &amp;'a <a class='enum' href='../../rusoto/regions/enum.Region.html' title='rusoto::regions::Region'>Region</a>) -&gt; <a class='struct' href='../../rusoto/sqs/struct.SQSHelper.html' title='rusoto::sqs::SQSHelper'>SQSHelper</a>&lt;'a&gt;</code></h4>
-<h4 id='method.list_queues' class='method'><code>fn <a href='#method.list_queues' class='fnname'>list_queues</a>(&amp;mut self) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/sqs/struct.ListQueuesResult.html' title='rusoto::sqs::ListQueuesResult'>ListQueuesResult</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
-<h4 id='method.create_queue' class='method'><code>fn <a href='#method.create_queue' class='fnname'>create_queue</a>(&amp;mut self, queue_name: &amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/sqs/struct.CreateQueueResult.html' title='rusoto::sqs::CreateQueueResult'>CreateQueueResult</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
-<h4 id='method.get_queue_url' class='method'><code>fn <a href='#method.get_queue_url' class='fnname'>get_queue_url</a>(&amp;mut self, queue_name: &amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/sqs/struct.GetQueueUrlResult.html' title='rusoto::sqs::GetQueueUrlResult'>GetQueueUrlResult</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
-<h4 id='method.send_message' class='method'><code>fn <a href='#method.send_message' class='fnname'>send_message</a>(&amp;mut self, queue_url: &amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>, message_body: &amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/sqs/struct.SendMessageResult.html' title='rusoto::sqs::SendMessageResult'>SendMessageResult</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
-<h4 id='method.receive_message' class='method'><code>fn <a href='#method.receive_message' class='fnname'>receive_message</a>(&amp;mut self, queue_url: &amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/sqs/struct.ReceiveMessageResult.html' title='rusoto::sqs::ReceiveMessageResult'>ReceiveMessageResult</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
-<h4 id='method.delete_message' class='method'><code>fn <a href='#method.delete_message' class='fnname'>delete_message</a>(&amp;mut self, queue_url: &amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>, receipt_handle: &amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a href='http://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
-<h4 id='method.delete_queue' class='method'><code>fn <a href='#method.delete_queue' class='fnname'>delete_queue</a>(&amp;mut self, queue_url: &amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a href='http://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
+<h4 id='method.list_queues' class='method'><code>fn <a href='#method.list_queues' class='fnname'>list_queues</a>(&amp;mut self) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/sqs/struct.ListQueuesResult.html' title='rusoto::sqs::ListQueuesResult'>ListQueuesResult</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
+<h4 id='method.create_queue' class='method'><code>fn <a href='#method.create_queue' class='fnname'>create_queue</a>(&amp;mut self, queue_name: &amp;<a href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/sqs/struct.CreateQueueResult.html' title='rusoto::sqs::CreateQueueResult'>CreateQueueResult</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
+<h4 id='method.get_queue_url' class='method'><code>fn <a href='#method.get_queue_url' class='fnname'>get_queue_url</a>(&amp;mut self, queue_name: &amp;<a href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/sqs/struct.GetQueueUrlResult.html' title='rusoto::sqs::GetQueueUrlResult'>GetQueueUrlResult</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
+<h4 id='method.send_message' class='method'><code>fn <a href='#method.send_message' class='fnname'>send_message</a>(&amp;mut self, queue_url: &amp;<a href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>, message_body: &amp;<a href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/sqs/struct.SendMessageResult.html' title='rusoto::sqs::SendMessageResult'>SendMessageResult</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
+<h4 id='method.receive_message' class='method'><code>fn <a href='#method.receive_message' class='fnname'>receive_message</a>(&amp;mut self, queue_url: &amp;<a href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/sqs/struct.ReceiveMessageResult.html' title='rusoto::sqs::ReceiveMessageResult'>ReceiveMessageResult</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
+<h4 id='method.delete_message' class='method'><code>fn <a href='#method.delete_message' class='fnname'>delete_message</a>(&amp;mut self, queue_url: &amp;<a href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>, receipt_handle: &amp;<a href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
+<h4 id='method.delete_queue' class='method'><code>fn <a href='#method.delete_queue' class='fnname'>delete_queue</a>(&amp;mut self, queue_url: &amp;<a href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
 </div></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>
 
-    <div id="help" class="hidden">
+    <aside id="help" class="hidden">
         <div>
+            <h1 class="hidden">Help</h1>
+
             <div class="shortcuts">
-                <h1>Keyboard Shortcuts</h1>
+                <h2>Keyboard Shortcuts</h2>
 
                 <dl>
                     <dt>?</dt>
@@ -81,7 +83,7 @@
             </div>
 
             <div class="infos">
-                <h1>Search Tricks</h1>
+                <h2>Search Tricks</h2>
 
                 <p>
                     Prefix searches with a type followed by a colon (e.g.
@@ -91,8 +93,8 @@
                 <p>
                     Accepted types are: <code>fn</code>, <code>mod</code>,
                     <code>struct</code>, <code>enum</code>,
-                    <code>trait</code>, <code>typedef</code> (or
-                    <code>tdef</code>).
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
                 </p>
 
                 <p>
@@ -101,7 +103,7 @@
                 </p>
             </div>
         </div>
-    </div>
+    </aside>
 
     
 

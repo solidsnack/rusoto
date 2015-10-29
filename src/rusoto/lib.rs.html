@@ -24,10 +24,10 @@
 
     
 
-    <section class="sidebar">
+    <nav class="sidebar">
         
         
-    </section>
+    </nav>
 
     <nav class="sub">
         <form class="search-form js-only">
@@ -84,7 +84,6 @@
 <span id="42">42</span>
 <span id="43">43</span>
 <span id="44">44</span>
-<span id="45">45</span>
 </pre><pre class='rust '>
 <span class='attribute'>#<span class='op'>!</span>[<span class='ident'>crate_name</span> <span class='op'>=</span> <span class='string'>&quot;rusoto&quot;</span>]</span>
 <span class='attribute'>#<span class='op'>!</span>[<span class='ident'>crate_type</span> <span class='op'>=</span> <span class='string'>&quot;lib&quot;</span>]</span>
@@ -92,11 +91,10 @@
 
 <span class='doccomment'>//! # Rusoto</span>
 <span class='doccomment'>//!</span>
-<span class='doccomment'>//! Rusoto is an SDK for [Amazon Web Services](http://aws.amazon.com/).  It follows best practices</span>
+<span class='doccomment'>//! Rusoto is a Rust SDK for [Amazon Web Services](http://aws.amazon.com/).  It follows best practices</span>
 <span class='doccomment'>//! for [AWS Credentials](https://blogs.aws.amazon.com/security/post/Tx3D6U6WSFGOK2H/A-New-and-Standardized-Way-to-Manage-Credentials-in-the-AWS-SDKs).</span>
 <span class='doccomment'>//!</span>
-<span class='doccomment'>//! The library is designed with use on AWS EC2 instances in mind but can be used as an</span>
-<span class='doccomment'>//! [AWS CLI](https://aws.amazon.com/cli/) replacement.</span>
+<span class='doccomment'>//! The library interacts with AWS in the same fashion as Python&#39;s [boto3](https://github.com/boto/boto3) SDK.</span>
 <span class='doccomment'>//!</span>
 <span class='doccomment'>//! ## Credentials</span>
 <span class='doccomment'>//!</span>
@@ -137,10 +135,12 @@
 
     <section class="footer"></section>
 
-    <div id="help" class="hidden">
+    <aside id="help" class="hidden">
         <div>
+            <h1 class="hidden">Help</h1>
+
             <div class="shortcuts">
-                <h1>Keyboard Shortcuts</h1>
+                <h2>Keyboard Shortcuts</h2>
 
                 <dl>
                     <dt>?</dt>
@@ -157,7 +157,7 @@
             </div>
 
             <div class="infos">
-                <h1>Search Tricks</h1>
+                <h2>Search Tricks</h2>
 
                 <p>
                     Prefix searches with a type followed by a colon (e.g.
@@ -167,8 +167,8 @@
                 <p>
                     Accepted types are: <code>fn</code>, <code>mod</code>,
                     <code>struct</code>, <code>enum</code>,
-                    <code>trait</code>, <code>typedef</code> (or
-                    <code>tdef</code>).
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
                 </p>
 
                 <p>
@@ -177,7 +177,7 @@
                 </p>
             </div>
         </div>
-    </div>
+    </aside>
 
     
 

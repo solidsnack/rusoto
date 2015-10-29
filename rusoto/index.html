@@ -24,10 +24,10 @@
 
     
 
-    <section class="sidebar">
+    <nav class="sidebar">
         
         <p class='location'></p><script>window.sidebarCurrent = {name: 'rusoto', ty: 'mod', relpath: '../'};</script>
-    </section>
+    </nav>
 
     <nav class="sub">
         <form class="search-form js-only">
@@ -45,15 +45,14 @@
             <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                 [<span class='inner'>&#x2212;</span>]
             </a>
-        </span><a id='src-0' class='srclink' href='../src/rusoto/lib.rs.html#1-45' title='goto source code'>[src]</a></span></h1>
+        </span><a id='src-0' class='srclink' href='../src/rusoto/lib.rs.html#1-44' title='goto source code'>[src]</a></span></h1>
 <div class='docblock'>
 <h1 id="rusoto" class='section-header'><a
                            href="#rusoto">Rusoto</a></h1>
-<p>Rusoto is an SDK for <a href="http://aws.amazon.com/">Amazon Web Services</a>.  It follows best practices
+<p>Rusoto is a Rust SDK for <a href="http://aws.amazon.com/">Amazon Web Services</a>.  It follows best practices
 for <a href="https://blogs.aws.amazon.com/security/post/Tx3D6U6WSFGOK2H/A-New-and-Standardized-Way-to-Manage-Credentials-in-the-AWS-SDKs">AWS Credentials</a>.</p>
 
-<p>The library is designed with use on AWS EC2 instances in mind but can be used as an
-<a href="https://aws.amazon.com/cli/">AWS CLI</a> replacement.</p>
+<p>The library interacts with AWS in the same fashion as Python&#39;s <a href="https://github.com/boto/boto3">boto3</a> SDK.</p>
 
 <h2 id="credentials" class='section-header'><a
                            href="#credentials">Credentials</a></h2>
@@ -158,10 +157,12 @@ to sign requests.</p>
 
     <section class="footer"></section>
 
-    <div id="help" class="hidden">
+    <aside id="help" class="hidden">
         <div>
+            <h1 class="hidden">Help</h1>
+
             <div class="shortcuts">
-                <h1>Keyboard Shortcuts</h1>
+                <h2>Keyboard Shortcuts</h2>
 
                 <dl>
                     <dt>?</dt>
@@ -178,7 +179,7 @@ to sign requests.</p>
             </div>
 
             <div class="infos">
-                <h1>Search Tricks</h1>
+                <h2>Search Tricks</h2>
 
                 <p>
                     Prefix searches with a type followed by a colon (e.g.
@@ -188,8 +189,8 @@ to sign requests.</p>
                 <p>
                     Accepted types are: <code>fn</code>, <code>mod</code>,
                     <code>struct</code>, <code>enum</code>,
-                    <code>trait</code>, <code>typedef</code> (or
-                    <code>tdef</code>).
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
                 </p>
 
                 <p>
@@ -198,7 +199,7 @@ to sign requests.</p>
                 </p>
             </div>
         </div>
-    </div>
+    </aside>
 
     
 

@@ -24,10 +24,10 @@
 
     
 
-    <section class="sidebar">
+    <nav class="sidebar">
         
         <p class='location'><a href='../index.html'>rusoto</a>::<wbr><a href='index.html'>signature</a></p><script>window.sidebarCurrent = {name: 'SignedRequest', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
-    </section>
+    </nav>
 
     <nav class="sub">
         <form class="search-form js-only">
@@ -50,36 +50,38 @@
     // some fields omitted
 }</pre><div class='docblock'><p>A data structure for all the elements of an HTTP request that are involved in
 the Amazon Signature Version 4 signing process</p>
-</div><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl&lt;'a&gt; <a class='struct' href='../../rusoto/signature/struct.SignedRequest.html' title='rusoto::signature::SignedRequest'>SignedRequest</a>&lt;'a&gt;</code></h3><div class='impl-items'><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;'b&gt;(method: &amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>, service: &amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>, region: &amp;'a <a class='enum' href='../../rusoto/regions/enum.Region.html' title='rusoto::regions::Region'>Region</a>, path: &amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='struct' href='../../rusoto/signature/struct.SignedRequest.html' title='rusoto::signature::SignedRequest'>SignedRequest</a>&lt;'a&gt;</code></h4>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl&lt;'a&gt; <a class='struct' href='../../rusoto/signature/struct.SignedRequest.html' title='rusoto::signature::SignedRequest'>SignedRequest</a>&lt;'a&gt;</code></h3><div class='impl-items'><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;'b&gt;(method: &amp;<a href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>, service: &amp;<a href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>, region: &amp;'a <a class='enum' href='../../rusoto/regions/enum.Region.html' title='rusoto::regions::Region'>Region</a>, path: &amp;<a href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='struct' href='../../rusoto/signature/struct.SignedRequest.html' title='rusoto::signature::SignedRequest'>SignedRequest</a>&lt;'a&gt;</code></h4>
 <div class='docblock'><p>Default constructor</p>
-</div><h4 id='method.set_hostname' class='method'><code>fn <a href='#method.set_hostname' class='fnname'>set_hostname</a>(&amp;mut self, hostname: <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='http://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>&gt;)</code></h4>
-<h4 id='method.set_payload' class='method'><code>fn <a href='#method.set_payload' class='fnname'>set_payload</a>(&amp;mut self, payload: <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a href='http://doc.rust-lang.org/nightly/std/primitive.slice.html'>&amp;'a [</a><a href='http://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a><a href='http://doc.rust-lang.org/nightly/std/primitive.slice.html'>]</a>&gt;)</code></h4>
-<h4 id='method.get_method' class='method'><code>fn <a href='#method.get_method' class='fnname'>get_method</a>(&amp;self) -&gt; &amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a></code></h4>
-<h4 id='method.get_canonical_uri' class='method'><code>fn <a href='#method.get_canonical_uri' class='fnname'>get_canonical_uri</a>(&amp;self) -&gt; &amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a></code></h4>
-<h4 id='method.get_canonical_query_string' class='method'><code>fn <a href='#method.get_canonical_query_string' class='fnname'>get_canonical_query_string</a>(&amp;self) -&gt; &amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a></code></h4>
-<h4 id='method.get_payload' class='method'><code>fn <a href='#method.get_payload' class='fnname'>get_payload</a>(&amp;self) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a href='http://doc.rust-lang.org/nightly/std/primitive.slice.html'>&amp;'a [</a><a href='http://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a><a href='http://doc.rust-lang.org/nightly/std/primitive.slice.html'>]</a>&gt;</code></h4>
-<h4 id='method.get_headers' class='method'><code>fn <a href='#method.get_headers' class='fnname'>get_headers</a>(&amp;'a self) -&gt; &amp;'a <a class='struct' href='http://doc.rust-lang.org/nightly/collections/btree/map/struct.BTreeMap.html' title='collections::btree::map::BTreeMap'>BTreeMap</a>&lt;<a class='struct' href='http://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>, <a class='struct' href='http://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='struct' href='http://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a href='http://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>&gt;&gt;&gt;</code></h4>
-<h4 id='method.get_hostname' class='method'><code>fn <a href='#method.get_hostname' class='fnname'>get_hostname</a>(&amp;self) -&gt; <a class='struct' href='http://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a></code></h4>
-<h4 id='method.remove_header' class='method'><code>fn <a href='#method.remove_header' class='fnname'>remove_header</a>(&amp;mut self, key: &amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>)</code></h4>
-<h4 id='method.add_header' class='method'><code>fn <a href='#method.add_header' class='fnname'>add_header</a>(&amp;mut self, key: &amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>, value: &amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>)</code></h4>
+</div><h4 id='method.set_hostname' class='method'><code>fn <a href='#method.set_hostname' class='fnname'>set_hostname</a>(&amp;mut self, hostname: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>&gt;)</code></h4>
+<h4 id='method.set_payload' class='method'><code>fn <a href='#method.set_payload' class='fnname'>set_payload</a>(&amp;mut self, payload: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>&amp;'a [</a><a href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a><a href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>]</a>&gt;)</code></h4>
+<h4 id='method.get_method' class='method'><code>fn <a href='#method.get_method' class='fnname'>get_method</a>(&amp;self) -&gt; &amp;<a href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a></code></h4>
+<h4 id='method.get_canonical_uri' class='method'><code>fn <a href='#method.get_canonical_uri' class='fnname'>get_canonical_uri</a>(&amp;self) -&gt; &amp;<a href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a></code></h4>
+<h4 id='method.get_canonical_query_string' class='method'><code>fn <a href='#method.get_canonical_query_string' class='fnname'>get_canonical_query_string</a>(&amp;self) -&gt; &amp;<a href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a></code></h4>
+<h4 id='method.get_payload' class='method'><code>fn <a href='#method.get_payload' class='fnname'>get_payload</a>(&amp;self) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>&amp;'a [</a><a href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a><a href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>]</a>&gt;</code></h4>
+<h4 id='method.get_headers' class='method'><code>fn <a href='#method.get_headers' class='fnname'>get_headers</a>(&amp;'a self) -&gt; &amp;'a <a class='struct' href='https://doc.rust-lang.org/nightly/collections/btree/map/struct.BTreeMap.html' title='collections::btree::map::BTreeMap'>BTreeMap</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>, <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>&gt;&gt;&gt;</code></h4>
+<h4 id='method.get_hostname' class='method'><code>fn <a href='#method.get_hostname' class='fnname'>get_hostname</a>(&amp;self) -&gt; <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a></code></h4>
+<h4 id='method.remove_header' class='method'><code>fn <a href='#method.remove_header' class='fnname'>remove_header</a>(&amp;mut self, key: &amp;<a href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>)</code></h4>
+<h4 id='method.add_header' class='method'><code>fn <a href='#method.add_header' class='fnname'>add_header</a>(&amp;mut self, key: &amp;<a href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>, value: &amp;<a href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>)</code></h4>
 <div class='docblock'><p>Add a value to the array of headers for the specified key.
 Headers are kept sorted by key name for use at signing (BTreeMap)</p>
-</div><h4 id='method.add_param' class='method'><code>fn <a href='#method.add_param' class='fnname'>add_param</a>&lt;S&gt;(&amp;mut self, key: S, value: S) <span class='where'>where S: <a class='trait' href='http://doc.rust-lang.org/nightly/core/convert/trait.Into.html' title='core::convert::Into'>Into</a>&lt;<a class='struct' href='http://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>&gt;</span></code></h4>
+</div><h4 id='method.add_param' class='method'><code>fn <a href='#method.add_param' class='fnname'>add_param</a>&lt;S&gt;(&amp;mut self, key: S, value: S) <span class='where'>where S: <a class='trait' href='https://doc.rust-lang.org/nightly/core/convert/trait.Into.html' title='core::convert::Into'>Into</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>&gt;</span></code></h4>
 <h4 id='method.set_params' class='method'><code>fn <a href='#method.set_params' class='fnname'>set_params</a>(&amp;mut self, params: <a class='type' href='../../rusoto/params/type.Params.html' title='rusoto::params::Params'>Params</a>)</code></h4>
 <h4 id='method.sign_and_execute' class='method'><code>fn <a href='#method.sign_and_execute' class='fnname'>sign_and_execute</a>(&amp;mut self, creds: &amp;<a class='struct' href='../../rusoto/credentials/struct.AWSCredentials.html' title='rusoto::credentials::AWSCredentials'>AWSCredentials</a>) -&gt; <a class='struct' href='https://hyperium.github.io/hyper/hyper/client/response/struct.Response.html' title='hyper::client::response::Response'>Response</a></code></h4>
 <div class='docblock'><p>Calculate the signature from the credentials provided and the request data
 Add the calculated signature to the request headers and execute it
 Return the hyper HTTP response</p>
-</div></div><h2 id='implementations'>Trait Implementations</h2><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><code>impl&lt;'a&gt; <a class='trait' href='http://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../../rusoto/signature/struct.SignedRequest.html' title='rusoto::signature::SignedRequest'>SignedRequest</a>&lt;'a&gt;</code></h3><div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='http://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#method.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='http://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='http://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><code>impl&lt;'a&gt; <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../../rusoto/signature/struct.SignedRequest.html' title='rusoto::signature::SignedRequest'>SignedRequest</a>&lt;'a&gt;</code></h3><div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#method.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
 </div></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>
 
-    <div id="help" class="hidden">
+    <aside id="help" class="hidden">
         <div>
+            <h1 class="hidden">Help</h1>
+
             <div class="shortcuts">
-                <h1>Keyboard Shortcuts</h1>
+                <h2>Keyboard Shortcuts</h2>
 
                 <dl>
                     <dt>?</dt>
@@ -96,7 +98,7 @@ Return the hyper HTTP response</p>
             </div>
 
             <div class="infos">
-                <h1>Search Tricks</h1>
+                <h2>Search Tricks</h2>
 
                 <p>
                     Prefix searches with a type followed by a colon (e.g.
@@ -106,8 +108,8 @@ Return the hyper HTTP response</p>
                 <p>
                     Accepted types are: <code>fn</code>, <code>mod</code>,
                     <code>struct</code>, <code>enum</code>,
-                    <code>trait</code>, <code>typedef</code> (or
-                    <code>tdef</code>).
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
                 </p>
 
                 <p>
@@ -116,7 +118,7 @@ Return the hyper HTTP response</p>
                 </p>
             </div>
         </div>
-    </div>
+    </aside>
 
     
 

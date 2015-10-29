@@ -24,10 +24,10 @@
 
     
 
-    <section class="sidebar">
+    <nav class="sidebar">
         
         <p class='location'><a href='../index.html'>rusoto</a>::<wbr><a href='index.html'>sqs</a></p><script>window.sidebarCurrent = {name: 'SQSClient', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
-    </section>
+    </nav>
 
     <nav class="sub">
         <form class="search-form js-only">
@@ -49,7 +49,7 @@
 <pre class='rust struct'>pub struct SQSClient&lt;'a&gt; {
     // some fields omitted
 }</pre><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl&lt;'a&gt; <a class='struct' href='../../rusoto/sqs/struct.SQSClient.html' title='rusoto::sqs::SQSClient'>SQSClient</a>&lt;'a&gt;</code></h3><div class='impl-items'><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;P: <a class='trait' href='../../rusoto/credentials/trait.AWSCredentialsProvider.html' title='rusoto::credentials::AWSCredentialsProvider'>AWSCredentialsProvider</a> + 'a&gt;(creds: P, region: &amp;'a <a class='enum' href='../../rusoto/regions/enum.Region.html' title='rusoto::regions::Region'>Region</a>) -&gt; <a class='struct' href='../../rusoto/sqs/struct.SQSClient.html' title='rusoto::sqs::SQSClient'>SQSClient</a>&lt;'a&gt;</code></h4>
-<h4 id='method.create_queue' class='method'><code>fn <a href='#method.create_queue' class='fnname'>create_queue</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/sqs/struct.CreateQueueRequest.html' title='rusoto::sqs::CreateQueueRequest'>CreateQueueRequest</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/sqs/struct.CreateQueueResult.html' title='rusoto::sqs::CreateQueueResult'>CreateQueueResult</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
+<h4 id='method.create_queue' class='method'><code>fn <a href='#method.create_queue' class='fnname'>create_queue</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/sqs/struct.CreateQueueRequest.html' title='rusoto::sqs::CreateQueueRequest'>CreateQueueRequest</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/sqs/struct.CreateQueueResult.html' title='rusoto::sqs::CreateQueueResult'>CreateQueueResult</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
 <div class='docblock'><p>Creates a new queue, or returns the URL of an existing one. When you request
 <code>CreateQueue</code>, you provide a name for the queue. To successfully create a new
 queue, you must provide a name that is unique within the scope of your own
@@ -71,7 +71,7 @@ Some API actions take lists of parameters. These lists are specified using the
 parameter list with two elements looks like this:
 <code>&amp;Attribute.1=this</code>
 <code>&amp;Attribute.2=that</code></p>
-</div><h4 id='method.get_queue_attributes' class='method'><code>fn <a href='#method.get_queue_attributes' class='fnname'>get_queue_attributes</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/sqs/struct.GetQueueAttributesRequest.html' title='rusoto::sqs::GetQueueAttributesRequest'>GetQueueAttributesRequest</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/sqs/struct.GetQueueAttributesResult.html' title='rusoto::sqs::GetQueueAttributesResult'>GetQueueAttributesResult</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
+</div><h4 id='method.get_queue_attributes' class='method'><code>fn <a href='#method.get_queue_attributes' class='fnname'>get_queue_attributes</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/sqs/struct.GetQueueAttributesRequest.html' title='rusoto::sqs::GetQueueAttributesRequest'>GetQueueAttributesRequest</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/sqs/struct.GetQueueAttributesResult.html' title='rusoto::sqs::GetQueueAttributesResult'>GetQueueAttributesResult</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
 <div class='docblock'><p>Gets attributes for the specified queue. The following attributes are
 supported:
   * <code>All</code> - returns all values.
@@ -96,7 +96,7 @@ integers starting from 1. For example, a parameter list with two elements
 looks like this:
 <code>&amp;Attribute.1=this</code>
 <code>&amp;Attribute.2=that</code></p>
-</div><h4 id='method.set_queue_attributes' class='method'><code>fn <a href='#method.set_queue_attributes' class='fnname'>set_queue_attributes</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/sqs/struct.SetQueueAttributesRequest.html' title='rusoto::sqs::SetQueueAttributesRequest'>SetQueueAttributesRequest</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a href='http://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
+</div><h4 id='method.set_queue_attributes' class='method'><code>fn <a href='#method.set_queue_attributes' class='fnname'>set_queue_attributes</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/sqs/struct.SetQueueAttributesRequest.html' title='rusoto::sqs::SetQueueAttributesRequest'>SetQueueAttributesRequest</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
 <div class='docblock'><p>Sets the value of one or more queue attributes. When you change a queue&#39;s
 attributes, the change can take up to 60 seconds for most of the attributes to
 propagate throughout the SQS system. Changes made to the
@@ -104,7 +104,7 @@ propagate throughout the SQS system. Changes made to the
 Going forward, new attributes might be added. If you are writing code that
 calls this action, we recommend that you structure your code so that it can
 handle new attributes gracefully.</p>
-</div><h4 id='method.get_queue_url' class='method'><code>fn <a href='#method.get_queue_url' class='fnname'>get_queue_url</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/sqs/struct.GetQueueUrlRequest.html' title='rusoto::sqs::GetQueueUrlRequest'>GetQueueUrlRequest</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/sqs/struct.GetQueueUrlResult.html' title='rusoto::sqs::GetQueueUrlResult'>GetQueueUrlResult</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
+</div><h4 id='method.get_queue_url' class='method'><code>fn <a href='#method.get_queue_url' class='fnname'>get_queue_url</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/sqs/struct.GetQueueUrlRequest.html' title='rusoto::sqs::GetQueueUrlRequest'>GetQueueUrlRequest</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/sqs/struct.GetQueueUrlResult.html' title='rusoto::sqs::GetQueueUrlResult'>GetQueueUrlResult</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
 <div class='docblock'><p>Returns the URL of an existing queue. This action provides a simple way to
 retrieve the URL of an Amazon SQS queue.
 To access a queue that belongs to another AWS account, use the
@@ -112,7 +112,7 @@ To access a queue that belongs to another AWS account, use the
 owner. The queue&#39;s owner must grant you permission to access the queue. For
 more information about shared queue access, see AddPermission or go to <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGu%0Aide/acp-overview.html">Shared
 Queues</a> in the <em>Amazon SQS Developer Guide</em>.</p>
-</div><h4 id='method.delete_message_batch' class='method'><code>fn <a href='#method.delete_message_batch' class='fnname'>delete_message_batch</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/sqs/struct.DeleteMessageBatchRequest.html' title='rusoto::sqs::DeleteMessageBatchRequest'>DeleteMessageBatchRequest</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/sqs/struct.DeleteMessageBatchResult.html' title='rusoto::sqs::DeleteMessageBatchResult'>DeleteMessageBatchResult</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
+</div><h4 id='method.delete_message_batch' class='method'><code>fn <a href='#method.delete_message_batch' class='fnname'>delete_message_batch</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/sqs/struct.DeleteMessageBatchRequest.html' title='rusoto::sqs::DeleteMessageBatchRequest'>DeleteMessageBatchRequest</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/sqs/struct.DeleteMessageBatchResult.html' title='rusoto::sqs::DeleteMessageBatchResult'>DeleteMessageBatchResult</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
 <div class='docblock'><p>Deletes up to ten messages from the specified queue. This is a batch version
 of DeleteMessage. The result of the delete action on each message is reported
 individually in the response.
@@ -124,7 +124,7 @@ Some API actions take lists of parameters. These lists are specified using the
 parameter list with two elements looks like this:
 <code>&amp;Attribute.1=this</code>
 <code>&amp;Attribute.2=that</code></p>
-</div><h4 id='method.send_message_batch' class='method'><code>fn <a href='#method.send_message_batch' class='fnname'>send_message_batch</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/sqs/struct.SendMessageBatchRequest.html' title='rusoto::sqs::SendMessageBatchRequest'>SendMessageBatchRequest</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/sqs/struct.SendMessageBatchResult.html' title='rusoto::sqs::SendMessageBatchResult'>SendMessageBatchResult</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
+</div><h4 id='method.send_message_batch' class='method'><code>fn <a href='#method.send_message_batch' class='fnname'>send_message_batch</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/sqs/struct.SendMessageBatchRequest.html' title='rusoto::sqs::SendMessageBatchRequest'>SendMessageBatchRequest</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/sqs/struct.SendMessageBatchResult.html' title='rusoto::sqs::SendMessageBatchResult'>SendMessageBatchResult</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
 <div class='docblock'><p>Delivers up to ten messages to the specified queue. This is a batch version of
 SendMessage. The result of the send action on each message is reported
 individually in the response. The maximum allowed individual message size is
@@ -150,12 +150,12 @@ parameters. These lists are specified using the <code>param.n</code> notation. V
 elements looks like this:
 <code>&amp;Attribute.1=this</code>
 <code>&amp;Attribute.2=that</code></p>
-</div><h4 id='method.list_dead_letter_source_queues' class='method'><code>fn <a href='#method.list_dead_letter_source_queues' class='fnname'>list_dead_letter_source_queues</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/sqs/struct.ListDeadLetterSourceQueuesRequest.html' title='rusoto::sqs::ListDeadLetterSourceQueuesRequest'>ListDeadLetterSourceQueuesRequest</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/sqs/struct.ListDeadLetterSourceQueuesResult.html' title='rusoto::sqs::ListDeadLetterSourceQueuesResult'>ListDeadLetterSourceQueuesResult</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
+</div><h4 id='method.list_dead_letter_source_queues' class='method'><code>fn <a href='#method.list_dead_letter_source_queues' class='fnname'>list_dead_letter_source_queues</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/sqs/struct.ListDeadLetterSourceQueuesRequest.html' title='rusoto::sqs::ListDeadLetterSourceQueuesRequest'>ListDeadLetterSourceQueuesRequest</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/sqs/struct.ListDeadLetterSourceQueuesResult.html' title='rusoto::sqs::ListDeadLetterSourceQueuesResult'>ListDeadLetterSourceQueuesResult</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
 <div class='docblock'><p>Returns a list of your queues that have the RedrivePolicy queue attribute
 configured with a dead letter queue.
 For more information about using dead letter queues, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQ%0ASDeveloperGuide/SQSDeadLetterQueue.html">Using Amazon SQS
 Dead Letter Queues</a>.</p>
-</div><h4 id='method.change_message_visibility' class='method'><code>fn <a href='#method.change_message_visibility' class='fnname'>change_message_visibility</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/sqs/struct.ChangeMessageVisibilityRequest.html' title='rusoto::sqs::ChangeMessageVisibilityRequest'>ChangeMessageVisibilityRequest</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a href='http://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
+</div><h4 id='method.change_message_visibility' class='method'><code>fn <a href='#method.change_message_visibility' class='fnname'>change_message_visibility</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/sqs/struct.ChangeMessageVisibilityRequest.html' title='rusoto::sqs::ChangeMessageVisibilityRequest'>ChangeMessageVisibilityRequest</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
 <div class='docblock'><p>Changes the visibility timeout of a specified message in a queue to a new
 value. The maximum allowed timeout value you can set the value to is 12 hours.
 This means you can&#39;t extend the timeout of a message in an existing queue to
@@ -184,7 +184,7 @@ message. If you don&#39;t delete a message after it is received, the visibility
 timeout for the message the next time it is received reverts to the original
 timeout value, not the value you set with the <code>ChangeMessageVisibility</code>
 action.</p>
-</div><h4 id='method.add_permission' class='method'><code>fn <a href='#method.add_permission' class='fnname'>add_permission</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/sqs/struct.AddPermissionRequest.html' title='rusoto::sqs::AddPermissionRequest'>AddPermissionRequest</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a href='http://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
+</div><h4 id='method.add_permission' class='method'><code>fn <a href='#method.add_permission' class='fnname'>add_permission</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/sqs/struct.AddPermissionRequest.html' title='rusoto::sqs::AddPermissionRequest'>AddPermissionRequest</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
 <div class='docblock'><p>Adds a permission to a queue for a specific
 <a href="http://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principal</a>.
 This allows for sharing access to the queue.
@@ -200,7 +200,7 @@ Some API actions take lists of parameters. These lists are specified using the
 parameter list with two elements looks like this:
 <code>&amp;Attribute.1=this</code>
 <code>&amp;Attribute.2=that</code></p>
-</div><h4 id='method.change_message_visibility_batch' class='method'><code>fn <a href='#method.change_message_visibility_batch' class='fnname'>change_message_visibility_batch</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/sqs/struct.ChangeMessageVisibilityBatchRequest.html' title='rusoto::sqs::ChangeMessageVisibilityBatchRequest'>ChangeMessageVisibilityBatchRequest</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/sqs/struct.ChangeMessageVisibilityBatchResult.html' title='rusoto::sqs::ChangeMessageVisibilityBatchResult'>ChangeMessageVisibilityBatchResult</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
+</div><h4 id='method.change_message_visibility_batch' class='method'><code>fn <a href='#method.change_message_visibility_batch' class='fnname'>change_message_visibility_batch</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/sqs/struct.ChangeMessageVisibilityBatchRequest.html' title='rusoto::sqs::ChangeMessageVisibilityBatchRequest'>ChangeMessageVisibilityBatchRequest</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/sqs/struct.ChangeMessageVisibilityBatchResult.html' title='rusoto::sqs::ChangeMessageVisibilityBatchResult'>ChangeMessageVisibilityBatchResult</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
 <div class='docblock'><p>Changes the visibility timeout of multiple messages. This is a batch version
 of ChangeMessageVisibility. The result of the action on each message is
 reported individually in the response. You can send up to 10
@@ -214,7 +214,7 @@ integers starting from 1. For example, a parameter list with two elements
 looks like this:
 <code>&amp;Attribute.1=this</code>
 <code>&amp;Attribute.2=that</code></p>
-</div><h4 id='method.send_message' class='method'><code>fn <a href='#method.send_message' class='fnname'>send_message</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/sqs/struct.SendMessageRequest.html' title='rusoto::sqs::SendMessageRequest'>SendMessageRequest</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/sqs/struct.SendMessageResult.html' title='rusoto::sqs::SendMessageResult'>SendMessageResult</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
+</div><h4 id='method.send_message' class='method'><code>fn <a href='#method.send_message' class='fnname'>send_message</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/sqs/struct.SendMessageRequest.html' title='rusoto::sqs::SendMessageRequest'>SendMessageRequest</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/sqs/struct.SendMessageResult.html' title='rusoto::sqs::SendMessageResult'>SendMessageResult</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
 <div class='docblock'><p>Delivers a message to the specified queue. With Amazon SQS, you now have the
 ability to send large payload messages that are up to 256KB (262,144 bytes) in
 size. To send large payloads, you must use an AWS SDK that supports SigV4
@@ -228,7 +228,7 @@ included in the list, your request will be rejected.</p>
 <h1 id="x9-|-#xa-|-#xd-|-[#x20-to-#xd7ff]-|-[#xe000-to-#xfffd]-|-[#x10000-to" class='section-header'><a
                            href="#x9-|-#xa-|-#xd-|-[#x20-to-#xd7ff]-|-[#xe000-to-#xfffd]-|-[#x10000-to">x9 | #xA | #xD | [#x20 to #xD7FF] | [#xE000 to #xFFFD] | [#x10000 to</a></h1>
 <h1 id="x10ffff]" class='section-header'><a
-                           href="#x10ffff]">x10FFFF]</a></h1></div><h4 id='method.delete_queue' class='method'><code>fn <a href='#method.delete_queue' class='fnname'>delete_queue</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/sqs/struct.DeleteQueueRequest.html' title='rusoto::sqs::DeleteQueueRequest'>DeleteQueueRequest</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a href='http://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
+                           href="#x10ffff]">x10FFFF]</a></h1></div><h4 id='method.delete_queue' class='method'><code>fn <a href='#method.delete_queue' class='fnname'>delete_queue</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/sqs/struct.DeleteQueueRequest.html' title='rusoto::sqs::DeleteQueueRequest'>DeleteQueueRequest</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
 <div class='docblock'><p>Deletes the queue specified by the <strong>queue URL</strong>, regardless of whether the
 queue is empty. If the specified queue does not exist, Amazon SQS returns a
 successful response.
@@ -243,7 +243,7 @@ name.
 We reserve the right to delete queues that have had no activity for more than
 30 days. For more information, see <a href="http://docs.aw%0As.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSConcepts.html">How Amazon SQS Queues Work</a>
 in the <em>Amazon SQS Developer Guide</em>.</p>
-</div><h4 id='method.purge_queue' class='method'><code>fn <a href='#method.purge_queue' class='fnname'>purge_queue</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/sqs/struct.PurgeQueueRequest.html' title='rusoto::sqs::PurgeQueueRequest'>PurgeQueueRequest</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a href='http://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
+</div><h4 id='method.purge_queue' class='method'><code>fn <a href='#method.purge_queue' class='fnname'>purge_queue</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/sqs/struct.PurgeQueueRequest.html' title='rusoto::sqs::PurgeQueueRequest'>PurgeQueueRequest</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
 <div class='docblock'><p>Deletes the messages in a queue specified by the <strong>queue URL</strong>.
 When you use the <code>PurgeQueue</code> API, the deleted messages in the queue cannot be
 retrieved.
@@ -252,7 +252,7 @@ All messages sent to the queue before calling <code>PurgeQueue</code> will be de
 messages sent to the queue while it is being purged may be deleted. While the
 queue is being purged, messages sent to the queue before <code>PurgeQueue</code> was
 called may be received, but will be deleted within the next minute.</p>
-</div><h4 id='method.receive_message' class='method'><code>fn <a href='#method.receive_message' class='fnname'>receive_message</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/sqs/struct.ReceiveMessageRequest.html' title='rusoto::sqs::ReceiveMessageRequest'>ReceiveMessageRequest</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/sqs/struct.ReceiveMessageResult.html' title='rusoto::sqs::ReceiveMessageResult'>ReceiveMessageResult</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
+</div><h4 id='method.receive_message' class='method'><code>fn <a href='#method.receive_message' class='fnname'>receive_message</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/sqs/struct.ReceiveMessageRequest.html' title='rusoto::sqs::ReceiveMessageRequest'>ReceiveMessageRequest</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/sqs/struct.ReceiveMessageResult.html' title='rusoto::sqs::ReceiveMessageResult'>ReceiveMessageResult</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
 <div class='docblock'><p>Retrieves one or more messages, with a maximum limit of 10 messages, from the
 specified queue. Long poll support is enabled by using the <code>WaitTimeSeconds</code>
 parameter. For more information, see <a href="http://docs.aws.am%0Aazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-long-polling.html">Amazon SQS Long Poll</a>
@@ -280,7 +280,7 @@ used for the returned messages. For more information, see <a href="http://docs.a
 Going forward, new attributes might be added. If you are writing code that
 calls this action, we recommend that you structure your code so that it can
 handle new attributes gracefully.</p>
-</div><h4 id='method.delete_message' class='method'><code>fn <a href='#method.delete_message' class='fnname'>delete_message</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/sqs/struct.DeleteMessageRequest.html' title='rusoto::sqs::DeleteMessageRequest'>DeleteMessageRequest</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a href='http://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
+</div><h4 id='method.delete_message' class='method'><code>fn <a href='#method.delete_message' class='fnname'>delete_message</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/sqs/struct.DeleteMessageRequest.html' title='rusoto::sqs::DeleteMessageRequest'>DeleteMessageRequest</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
 <div class='docblock'><p>Deletes the specified message from the specified queue. You specify the
 message by using the message&#39;s <code>receipt handle</code> and not the <code>message ID</code> you
 received when you sent the message. Even if the message is locked by another
@@ -299,12 +299,12 @@ message is unavailable when you request to delete the message. The copy
 remains on the server and might be returned to you again on a subsequent
 receive request. You should create your system to be idempotent so that
 receiving a particular message more than once is not a problem.</p>
-</div><h4 id='method.list_queues' class='method'><code>fn <a href='#method.list_queues' class='fnname'>list_queues</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/sqs/struct.ListQueuesRequest.html' title='rusoto::sqs::ListQueuesRequest'>ListQueuesRequest</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/sqs/struct.ListQueuesResult.html' title='rusoto::sqs::ListQueuesResult'>ListQueuesResult</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
+</div><h4 id='method.list_queues' class='method'><code>fn <a href='#method.list_queues' class='fnname'>list_queues</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/sqs/struct.ListQueuesRequest.html' title='rusoto::sqs::ListQueuesRequest'>ListQueuesRequest</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/sqs/struct.ListQueuesResult.html' title='rusoto::sqs::ListQueuesResult'>ListQueuesResult</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
 <div class='docblock'><p>Returns a list of your queues. The maximum number of queues that can be
 returned is 1000. If you specify a value for the optional <code>QueueNamePrefix</code>
 parameter, only queues with a name beginning with the specified value are
 returned.</p>
-</div><h4 id='method.remove_permission' class='method'><code>fn <a href='#method.remove_permission' class='fnname'>remove_permission</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/sqs/struct.RemovePermissionRequest.html' title='rusoto::sqs::RemovePermissionRequest'>RemovePermissionRequest</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a href='http://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
+</div><h4 id='method.remove_permission' class='method'><code>fn <a href='#method.remove_permission' class='fnname'>remove_permission</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/sqs/struct.RemovePermissionRequest.html' title='rusoto::sqs::RemovePermissionRequest'>RemovePermissionRequest</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
 <div class='docblock'><p>Revokes any permissions in the queue policy that matches the specified <code>Label</code>
 parameter. Only the owner of the queue can remove permissions.</p>
 </div></div></section>
@@ -312,10 +312,12 @@ parameter. Only the owner of the queue can remove permissions.</p>
 
     <section class="footer"></section>
 
-    <div id="help" class="hidden">
+    <aside id="help" class="hidden">
         <div>
+            <h1 class="hidden">Help</h1>
+
             <div class="shortcuts">
-                <h1>Keyboard Shortcuts</h1>
+                <h2>Keyboard Shortcuts</h2>
 
                 <dl>
                     <dt>?</dt>
@@ -332,7 +334,7 @@ parameter. Only the owner of the queue can remove permissions.</p>
             </div>
 
             <div class="infos">
-                <h1>Search Tricks</h1>
+                <h2>Search Tricks</h2>
 
                 <p>
                     Prefix searches with a type followed by a colon (e.g.
@@ -342,8 +344,8 @@ parameter. Only the owner of the queue can remove permissions.</p>
                 <p>
                     Accepted types are: <code>fn</code>, <code>mod</code>,
                     <code>struct</code>, <code>enum</code>,
-                    <code>trait</code>, <code>typedef</code> (or
-                    <code>tdef</code>).
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
                 </p>
 
                 <p>
@@ -352,7 +354,7 @@ parameter. Only the owner of the queue can remove permissions.</p>
                 </p>
             </div>
         </div>
-    </div>
+    </aside>
 
     
 

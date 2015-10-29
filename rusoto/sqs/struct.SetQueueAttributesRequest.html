@@ -24,10 +24,10 @@
 
     
 
-    <section class="sidebar">
+    <nav class="sidebar">
         
         <p class='location'><a href='../index.html'>rusoto</a>::<wbr><a href='index.html'>sqs</a></p><script>window.sidebarCurrent = {name: 'SetQueueAttributesRequest', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
-    </section>
+    </nav>
 
     <nav class="sub">
         <form class="search-form js-only">
@@ -47,7 +47,7 @@
             </a>
         </span><a id='src-4885' class='srclink' href='../../src/rusoto///Users/matthewmayer/Documents/DualSpark/rust-aws/codegen/sqs.rs.html#175-189' title='goto source code'>[src]</a></span></h1>
 <pre class='rust struct'>pub struct SetQueueAttributesRequest {
-    pub queue_url: <a class='struct' href='http://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>,
+    pub queue_url: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>,
     pub attributes: <a class='type' href='../../rusoto/sqs/type.AttributeMap.html' title='rusoto::sqs::AttributeMap'>AttributeMap</a>,
 }</pre><h2 class='fields'>Fields</h2>
 <table><tr class='stab '>
@@ -63,17 +63,19 @@ parameters the <code>SetQueueAttributes</code> action uses:
   * <code>ReceiveMessageWaitTimeSeconds</code> - The time for which a ReceiveMessage call will wait for a message to arrive. An integer from 0 to 20 (seconds). The default for this attribute is 0.
   * <code>VisibilityTimeout</code> - The visibility timeout for the queue. An integer from 0 to 43200 (12 hours). The default for this attribute is 30. For more information about visibility timeout, see Visibility Timeout in the <em>Amazon SQS Developer Guide</em>.
   * <code>RedrivePolicy</code> - The parameters for dead letter queue functionality of the source queue. For more information about RedrivePolicy and dead letter queues, see Using Amazon SQS Dead Letter Queues in the <em>Amazon SQS Developer Guide</em>.</p>
-</div></td></tr></table><h2 id='implementations'>Trait Implementations</h2><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><code>impl <a class='trait' href='http://doc.rust-lang.org/nightly/core/default/trait.Default.html' title='core::default::Default'>Default</a> for <a class='struct' href='../../rusoto/sqs/struct.SetQueueAttributesRequest.html' title='rusoto::sqs::SetQueueAttributesRequest'>SetQueueAttributesRequest</a></code></h3><div class='impl-items'><h4 id='method.default' class='method'><code>fn <a href='http://doc.rust-lang.org/nightly/core/default/trait.Default.html#method.default' class='fnname'>default</a>() -&gt; <a class='struct' href='../../rusoto/sqs/struct.SetQueueAttributesRequest.html' title='rusoto::sqs::SetQueueAttributesRequest'>SetQueueAttributesRequest</a></code></h4>
-</div><h3 class='impl'><code>impl <a class='trait' href='http://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../../rusoto/sqs/struct.SetQueueAttributesRequest.html' title='rusoto::sqs::SetQueueAttributesRequest'>SetQueueAttributesRequest</a></code></h3><div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='http://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#method.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='http://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='http://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+</div></td></tr></table><h2 id='implementations'>Trait Implementations</h2><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/default/trait.Default.html' title='core::default::Default'>Default</a> for <a class='struct' href='../../rusoto/sqs/struct.SetQueueAttributesRequest.html' title='rusoto::sqs::SetQueueAttributesRequest'>SetQueueAttributesRequest</a></code></h3><div class='impl-items'><h4 id='method.default' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/default/trait.Default.html#method.default' class='fnname'>default</a>() -&gt; <a class='struct' href='../../rusoto/sqs/struct.SetQueueAttributesRequest.html' title='rusoto::sqs::SetQueueAttributesRequest'>SetQueueAttributesRequest</a></code></h4>
+</div><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../../rusoto/sqs/struct.SetQueueAttributesRequest.html' title='rusoto::sqs::SetQueueAttributesRequest'>SetQueueAttributesRequest</a></code></h3><div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#method.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
 </div></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>
 
-    <div id="help" class="hidden">
+    <aside id="help" class="hidden">
         <div>
+            <h1 class="hidden">Help</h1>
+
             <div class="shortcuts">
-                <h1>Keyboard Shortcuts</h1>
+                <h2>Keyboard Shortcuts</h2>
 
                 <dl>
                     <dt>?</dt>
@@ -90,7 +92,7 @@ parameters the <code>SetQueueAttributes</code> action uses:
             </div>
 
             <div class="infos">
-                <h1>Search Tricks</h1>
+                <h2>Search Tricks</h2>
 
                 <p>
                     Prefix searches with a type followed by a colon (e.g.
@@ -100,8 +102,8 @@ parameters the <code>SetQueueAttributes</code> action uses:
                 <p>
                     Accepted types are: <code>fn</code>, <code>mod</code>,
                     <code>struct</code>, <code>enum</code>,
-                    <code>trait</code>, <code>typedef</code> (or
-                    <code>tdef</code>).
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
                 </p>
 
                 <p>
@@ -110,7 +112,7 @@ parameters the <code>SetQueueAttributes</code> action uses:
                 </p>
             </div>
         </div>
-    </div>
+    </aside>
 
     
 
