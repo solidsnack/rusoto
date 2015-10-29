@@ -83,8 +83,16 @@
 <span id="41">41</span>
 <span id="42">42</span>
 <span id="43">43</span>
+<span id="44">44</span>
+<span id="45">45</span>
+<span id="46">46</span>
+<span id="47">47</span>
 </pre><pre class='rust '>
 <span class='doccomment'>//! A request to AWS, pre-signed</span>
+<span class='doccomment'>//!</span>
+<span class='doccomment'>//! Wraps the Hyper library to send PUT, POST, DELETE and GET requests.</span>
+<span class='doccomment'>//!</span>
+
 <span class='kw'>use</span> <span class='ident'>hyper</span>::<span class='ident'>Client</span>;
 <span class='kw'>use</span> <span class='ident'>hyper</span>::<span class='ident'>client</span>::<span class='ident'>Response</span>;
 <span class='kw'>use</span> <span class='ident'>hyper</span>::<span class='ident'>client</span>::<span class='ident'>RedirectPolicy</span>;
