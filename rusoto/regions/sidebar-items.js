@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["Region","AWS Region"]],"fn":[["region_in_aws_format","Translates region enum into AWS format.  EG: us-east-1"]]});
+initSidebarItems({"enum":[["Region","AWS Region"]],"fn":[["region_in_aws_format","Translates region enum into AWS format.  EG: us-east-1"]],"struct":[["ParseRegionError",""]]});
