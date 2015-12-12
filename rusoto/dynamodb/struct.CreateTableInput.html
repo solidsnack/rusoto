@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `CreateTableInput` struct in crate `rusoto`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, CreateTableInput">
+
+    <title>rusoto::dynamodb::CreateTableInput - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>rusoto</a>::<wbr><a href='index.html'>dynamodb</a></p><script>window.sidebarCurrent = {name: 'CreateTableInput', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>rusoto</a>::<wbr><a href='index.html'>dynamodb</a>::<wbr><a class='struct' href=''>CreateTableInput</a></span><span class='out-of-band'><span id='render-detail'>
+            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                [<span class='inner'>&#x2212;</span>]
+            </a>
+        </span><a id='src-1068' class='srclink' href='../../src/rusoto///home/matthew/Documents/DualSpark/rust-aws/codegen/dynamodb.rs.html#541-598' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct CreateTableInput {
+    pub GlobalSecondaryIndexes: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../../rusoto/dynamodb/type.GlobalSecondaryIndexList.html' title='rusoto::dynamodb::GlobalSecondaryIndexList'>GlobalSecondaryIndexList</a>&gt;,
+    pub AttributeDefinitions: <a class='type' href='../../rusoto/dynamodb/type.AttributeDefinitions.html' title='rusoto::dynamodb::AttributeDefinitions'>AttributeDefinitions</a>,
+    pub LocalSecondaryIndexes: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../../rusoto/dynamodb/type.LocalSecondaryIndexList.html' title='rusoto::dynamodb::LocalSecondaryIndexList'>LocalSecondaryIndexList</a>&gt;,
+    pub ProvisionedThroughput: <a class='struct' href='../../rusoto/dynamodb/struct.ProvisionedThroughput.html' title='rusoto::dynamodb::ProvisionedThroughput'>ProvisionedThroughput</a>,
+    pub TableName: <a class='type' href='../../rusoto/dynamodb/type.TableName.html' title='rusoto::dynamodb::TableName'>TableName</a>,
+    pub StreamSpecification: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../../rusoto/dynamodb/struct.StreamSpecification.html' title='rusoto::dynamodb::StreamSpecification'>StreamSpecification</a>&gt;,
+    pub KeySchema: <a class='type' href='../../rusoto/dynamodb/type.KeySchema.html' title='rusoto::dynamodb::KeySchema'>KeySchema</a>,
+}</pre><div class='docblock'><p>Represents the input of a <em>CreateTable</em> operation.</p>
+</div><h2 class='fields'>Fields</h2>
+<table><tr class='stab '>
+                                  <td id='structfield.GlobalSecondaryIndexes'><code>GlobalSecondaryIndexes</code></td><td><div class='docblock'><p>One or more global secondary indexes (the maximum is five) to be created on
+the table. Each global secondary index in the array includes the following:
+  * <em>IndexName</em> - The name of the global secondary index. Must be unique only for this table.
+  * <em>KeySchema</em> - Specifies the key schema for the global secondary index.
+  * <em>Projection</em> - Specifies attributes that are copied (projected) from the table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. Each attribute specification is composed of:
+    * <em>ProjectionType</em> - One of the following:
+      * <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.
+      * <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected attributes are in <em>NonKeyAttributes</em>.
+      * <code>ALL</code> - All of the table attributes are projected into the index.
+    * <em>NonKeyAttributes</em> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <em>NonKeyAttributes</em>, summed across all of the secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.
+  * <em>ProvisionedThroughput</em> - The provisioned throughput settings for the global secondary index, consisting of read and write capacity units.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.AttributeDefinitions'><code>AttributeDefinitions</code></td><td><div class='docblock'><p>An array of attributes that describe the key schema for the table and indexes.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.LocalSecondaryIndexes'><code>LocalSecondaryIndexes</code></td><td><div class='docblock'><p>One or more local secondary indexes (the maximum is five) to be created on the
+table. Each index is scoped to a given hash key value. There is a 10 GB size
+limit per hash key; otherwise, the size of a local secondary index is
+unconstrained.
+Each local secondary index in the array includes the following:
+  * <em>IndexName</em> - The name of the local secondary index. Must be unique only for this table.
+  * <em>KeySchema</em> - Specifies the key schema for the local secondary index. The key schema must begin with the same hash key attribute as the table.
+  * <em>Projection</em> - Specifies attributes that are copied (projected) from the table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. Each attribute specification is composed of:
+    * <em>ProjectionType</em> - One of the following:
+      * <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.
+      * <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected attributes are in <em>NonKeyAttributes</em>.
+      * <code>ALL</code> - All of the table attributes are projected into the index.
+    * <em>NonKeyAttributes</em> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <em>NonKeyAttributes</em>, summed across all of the secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.ProvisionedThroughput'><code>ProvisionedThroughput</code></td><td></td></tr><tr class='stab '>
+                                  <td id='structfield.TableName'><code>TableName</code></td><td><div class='docblock'><p>The name of the table to create.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.StreamSpecification'><code>StreamSpecification</code></td><td><div class='docblock'><p>The settings for DynamoDB Streams on the table. These settings consist of:
+* <em>StreamEnabled</em> - Indicates whether Streams is to be enabled (true) or disabled (false).
+* <em>StreamViewType</em> - When an item in the table is modified, <em>StreamViewType</em> determines what information is written to the table&#39;s stream. Valid values for <em>StreamViewType</em> are:
+  * _KEYS_ONLY_ - Only the key attributes of the modified item are written to the stream.
+  * _NEW_IMAGE_ - The entire item, as it appears after it was modified, is written to the stream.
+  * _OLD_IMAGE_ - The entire item, as it appeared before it was modified, is written to the stream.
+  * _NEW_AND_OLD_IMAGES_ - Both the new and the old item images of the item are written to the stream.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.KeySchema'><code>KeySchema</code></td><td><div class='docblock'><p>Specifies the attributes that make up the primary key for a table or an index.
+The attributes in <em>KeySchema</em> must also be defined in the
+<em>AttributeDefinitions</em> array. For more information, see <a href="http://do%0Acs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in the
+<em>Amazon DynamoDB Developer Guide</em>.
+Each <em>KeySchemaElement</em> in the array is composed of:
+  * <em>AttributeName</em> - The name of this key attribute.
+  * <em>KeyType</em> - Determines whether the key attribute is <code>HASH</code> or <code>RANGE</code>.
+For a primary key that consists of a hash attribute, you must provide exactly
+one element with a <em>KeyType</em> of <code>HASH</code>.
+For a primary key that consists of hash and range attributes, you must provide
+exactly two elements, in this order: The first element must have a <em>KeyType</em>
+of <code>HASH</code>, and the second element must have a <em>KeyType</em> of <code>RANGE</code>.
+For more information, see <a href="http://docs.aws.amazon.%0Acom/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTab%0Ales.primary.key">Specifying the Primary Key</a> in the <em>Amazon DynamoDB Developer Guide</em>.</p>
+</div></td></tr></table><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl <a class='struct' href='../../rusoto/dynamodb/struct.CreateTableInput.html' title='rusoto::dynamodb::CreateTableInput'>CreateTableInput</a></code></h3><div class='impl-items'><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>() -&gt; <a class='struct' href='../../rusoto/dynamodb/struct.CreateTableInput.html' title='rusoto::dynamodb::CreateTableInput'>CreateTableInput</a></code></h4>
+<h4 id='method.with_name' class='method'><code>fn <a href='#method.with_name' class='fnname'>with_name</a>(self, table_name: &amp;<a href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='struct' href='../../rusoto/dynamodb/struct.CreateTableInput.html' title='rusoto::dynamodb::CreateTableInput'>CreateTableInput</a></code></h4>
+<h4 id='method.with_write_capacity' class='method'><code>fn <a href='#method.with_write_capacity' class='fnname'>with_write_capacity</a>(self, write_capacity: <a class='type' href='../../rusoto/dynamodb/type.PositiveLongObject.html' title='rusoto::dynamodb::PositiveLongObject'>PositiveLongObject</a>) -&gt; <a class='struct' href='../../rusoto/dynamodb/struct.CreateTableInput.html' title='rusoto::dynamodb::CreateTableInput'>CreateTableInput</a></code></h4>
+<h4 id='method.with_read_capacity' class='method'><code>fn <a href='#method.with_read_capacity' class='fnname'>with_read_capacity</a>(self, read_capacity: <a class='type' href='../../rusoto/dynamodb/type.PositiveLongObject.html' title='rusoto::dynamodb::PositiveLongObject'>PositiveLongObject</a>) -&gt; <a class='struct' href='../../rusoto/dynamodb/struct.CreateTableInput.html' title='rusoto::dynamodb::CreateTableInput'>CreateTableInput</a></code></h4>
+<h4 id='method.with_attributes' class='method'><code>fn <a href='#method.with_attributes' class='fnname'>with_attributes</a>(self, attributes: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='struct' href='../../rusoto/dynamodb/struct.AttributeDefinition.html' title='rusoto::dynamodb::AttributeDefinition'>AttributeDefinition</a>&gt;) -&gt; <a class='struct' href='../../rusoto/dynamodb/struct.CreateTableInput.html' title='rusoto::dynamodb::CreateTableInput'>CreateTableInput</a></code></h4>
+<h4 id='method.with_key_schema' class='method'><code>fn <a href='#method.with_key_schema' class='fnname'>with_key_schema</a>(self, key_schema: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='struct' href='../../rusoto/dynamodb/struct.KeySchemaElement.html' title='rusoto::dynamodb::KeySchemaElement'>KeySchemaElement</a>&gt;) -&gt; <a class='struct' href='../../rusoto/dynamodb/struct.CreateTableInput.html' title='rusoto::dynamodb::CreateTableInput'>CreateTableInput</a></code></h4>
+<h4 id='method.add_attribute' class='method'><code>fn <a href='#method.add_attribute' class='fnname'>add_attribute</a>&lt;N: <a class='trait' href='https://doc.rust-lang.org/nightly/core/convert/trait.Into.html' title='core::convert::Into'>Into</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>&gt;, T: <a class='trait' href='https://doc.rust-lang.org/nightly/core/convert/trait.Into.html' title='core::convert::Into'>Into</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>&gt;&gt;(self, name: N, attr_type: T) -&gt; <a class='struct' href='../../rusoto/dynamodb/struct.CreateTableInput.html' title='rusoto::dynamodb::CreateTableInput'>CreateTableInput</a></code></h4>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><code>impl <a class='trait' href='http://doc.rust-lang.org/rustc-serialize/rustc_serialize/serialize/trait.Encodable.html' title='rustc_serialize::serialize::Encodable'>Encodable</a> for <a class='struct' href='../../rusoto/dynamodb/struct.CreateTableInput.html' title='rusoto::dynamodb::CreateTableInput'>CreateTableInput</a></code></h3><div class='impl-items'><h4 id='method.encode' class='method'><code>fn <a href='http://doc.rust-lang.org/rustc-serialize/rustc_serialize/serialize/trait.Encodable.html#method.encode' class='fnname'>encode</a>&lt;__S: <a class='trait' href='http://doc.rust-lang.org/rustc-serialize/rustc_serialize/serialize/trait.Encoder.html' title='rustc_serialize::serialize::Encoder'>Encoder</a>&gt;(&amp;self, __arg_0: &amp;mut __S) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, __S::Error&gt;</code></h4>
+</div><h3 class='impl'><code>impl <a class='trait' href='http://doc.rust-lang.org/rustc-serialize/rustc_serialize/serialize/trait.Decodable.html' title='rustc_serialize::serialize::Decodable'>Decodable</a> for <a class='struct' href='../../rusoto/dynamodb/struct.CreateTableInput.html' title='rusoto::dynamodb::CreateTableInput'>CreateTableInput</a></code></h3><div class='impl-items'><h4 id='method.decode' class='method'><code>fn <a href='http://doc.rust-lang.org/rustc-serialize/rustc_serialize/serialize/trait.Decodable.html#method.decode' class='fnname'>decode</a>&lt;__D: <a class='trait' href='http://doc.rust-lang.org/rustc-serialize/rustc_serialize/serialize/trait.Decoder.html' title='rustc_serialize::serialize::Decoder'>Decoder</a>&gt;(__arg_0: &amp;mut __D) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/dynamodb/struct.CreateTableInput.html' title='rusoto::dynamodb::CreateTableInput'>CreateTableInput</a>, __D::Error&gt;</code></h4>
+</div><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/default/trait.Default.html' title='core::default::Default'>Default</a> for <a class='struct' href='../../rusoto/dynamodb/struct.CreateTableInput.html' title='rusoto::dynamodb::CreateTableInput'>CreateTableInput</a></code></h3><div class='impl-items'><h4 id='method.default' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/default/trait.Default.html#method.default' class='fnname'>default</a>() -&gt; <a class='struct' href='../../rusoto/dynamodb/struct.CreateTableInput.html' title='rusoto::dynamodb::CreateTableInput'>CreateTableInput</a></code></h4>
+</div><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../../rusoto/dynamodb/struct.CreateTableInput.html' title='rusoto::dynamodb::CreateTableInput'>CreateTableInput</a></code></h3><div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#method.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "rusoto";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script async src="../../search-index.js"></script>
+</body>
+</html>

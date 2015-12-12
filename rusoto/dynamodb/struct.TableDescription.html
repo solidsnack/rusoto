@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `TableDescription` struct in crate `rusoto`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, TableDescription">
+
+    <title>rusoto::dynamodb::TableDescription - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>rusoto</a>::<wbr><a href='index.html'>dynamodb</a></p><script>window.sidebarCurrent = {name: 'TableDescription', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>rusoto</a>::<wbr><a href='index.html'>dynamodb</a>::<wbr><a class='struct' href=''>TableDescription</a></span><span class='out-of-band'><span id='render-detail'>
+            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                [<span class='inner'>&#x2212;</span>]
+            </a>
+        </span><a id='src-3509' class='srclink' href='../../src/rusoto///home/matthew/Documents/DualSpark/rust-aws/codegen/dynamodb.rs.html#2596-2688' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct TableDescription {
+    pub TableArn: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>&gt;,
+    pub LocalSecondaryIndexes: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../../rusoto/dynamodb/type.LocalSecondaryIndexDescriptionList.html' title='rusoto::dynamodb::LocalSecondaryIndexDescriptionList'>LocalSecondaryIndexDescriptionList</a>&gt;,
+    pub AttributeDefinitions: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../../rusoto/dynamodb/type.AttributeDefinitions.html' title='rusoto::dynamodb::AttributeDefinitions'>AttributeDefinitions</a>&gt;,
+    pub GlobalSecondaryIndexes: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../../rusoto/dynamodb/type.GlobalSecondaryIndexDescriptionList.html' title='rusoto::dynamodb::GlobalSecondaryIndexDescriptionList'>GlobalSecondaryIndexDescriptionList</a>&gt;,
+    pub ProvisionedThroughput: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../../rusoto/dynamodb/struct.ProvisionedThroughputDescription.html' title='rusoto::dynamodb::ProvisionedThroughputDescription'>ProvisionedThroughputDescription</a>&gt;,
+    pub TableSizeBytes: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../../rusoto/dynamodb/type.Long.html' title='rusoto::dynamodb::Long'>Long</a>&gt;,
+    pub TableName: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../../rusoto/dynamodb/type.TableName.html' title='rusoto::dynamodb::TableName'>TableName</a>&gt;,
+    pub TableStatus: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../../rusoto/dynamodb/type.TableStatus.html' title='rusoto::dynamodb::TableStatus'>TableStatus</a>&gt;,
+    pub StreamSpecification: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../../rusoto/dynamodb/struct.StreamSpecification.html' title='rusoto::dynamodb::StreamSpecification'>StreamSpecification</a>&gt;,
+    pub LatestStreamLabel: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>&gt;,
+    pub KeySchema: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../../rusoto/dynamodb/type.KeySchema.html' title='rusoto::dynamodb::KeySchema'>KeySchema</a>&gt;,
+    pub ItemCount: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../../rusoto/dynamodb/type.Long.html' title='rusoto::dynamodb::Long'>Long</a>&gt;,
+    pub CreationDateTime: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../../rusoto/dynamodb/type.Date.html' title='rusoto::dynamodb::Date'>Date</a>&gt;,
+    pub LatestStreamArn: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../../rusoto/dynamodb/type.StreamArn.html' title='rusoto::dynamodb::StreamArn'>StreamArn</a>&gt;,
+}</pre><div class='docblock'><p>Represents the properties of a table.</p>
+</div><h2 class='fields'>Fields</h2>
+<table><tr class='stab '>
+                                  <td id='structfield.TableArn'><code>TableArn</code></td><td><div class='docblock'><p>The Amazon Resource Name (ARN) that uniquely identifies the table.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.LocalSecondaryIndexes'><code>LocalSecondaryIndexes</code></td><td><div class='docblock'><p>Represents one or more local secondary indexes on the table. Each index is
+scoped to a given hash key value. Tables with one or more local secondary
+indexes are subject to an item collection size limit, where the amount of data
+within a given item collection cannot exceed 10 GB. Each element is composed
+of:
+  * <em>IndexName</em> - The name of the local secondary index.
+  * <em>KeySchema</em> - Specifies the complete index key schema. The attribute names in the key schema must be between 1 and 255 characters (inclusive). The key schema must begin with the same hash key attribute as the table.
+  * <em>Projection</em> - Specifies attributes that are copied (projected) from the table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. Each attribute specification is composed of:
+    * <em>ProjectionType</em> - One of the following:
+      * <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.
+      * <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected attributes are in <em>NonKeyAttributes</em>.
+      * <code>ALL</code> - All of the table attributes are projected into the index.
+    * <em>NonKeyAttributes</em> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <em>NonKeyAttributes</em>, summed across all of the secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.
+  * <em>IndexSizeBytes</em> - Represents the total size of the index, in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.
+  * <em>ItemCount</em> - Represents the number of items in the index. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.
+If the table is in the <code>DELETING</code> state, no information about indexes will be
+returned.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.AttributeDefinitions'><code>AttributeDefinitions</code></td><td><div class='docblock'><p>An array of <em>AttributeDefinition</em> objects. Each of these objects describes one
+attribute in the table and index key schema.
+Each <em>AttributeDefinition</em> object in this array is composed of:
+  * <em>AttributeName</em> - The name of the attribute.
+  * <em>AttributeType</em> - The data type for the attribute.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.GlobalSecondaryIndexes'><code>GlobalSecondaryIndexes</code></td><td><div class='docblock'><p>The global secondary indexes, if any, on the table. Each index is scoped to a
+given hash key value. Each element is composed of:
+  * <em>Backfilling</em> - If true, then the index is currently in the backfilling phase. Backfilling occurs only when a new global secondary index is added to the table; it is the process by which DynamoDB populates the new index with data from the table. (This attribute does not appear for indexes that were created during a <em>CreateTable</em> operation.)
+  * <em>IndexName</em> - The name of the global secondary index.
+  * <em>IndexSizeBytes</em> - The total size of the global secondary index, in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value. 
+  * <em>IndexStatus</em> - The current status of the global secondary index:
+    * <em>CREATING</em> - The index is being created.
+    * <em>UPDATING</em> - The index is being updated.
+    * <em>DELETING</em> - The index is being deleted.
+    * <em>ACTIVE</em> - The index is ready for use.
+  * <em>ItemCount</em> - The number of items in the global secondary index. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value. 
+  * <em>KeySchema</em> - Specifies the complete index key schema. The attribute names in the key schema must be between 1 and 255 characters (inclusive). The key schema must begin with the same hash key attribute as the table.
+  * <em>Projection</em> - Specifies attributes that are copied (projected) from the table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. Each attribute specification is composed of:
+    * <em>ProjectionType</em> - One of the following:
+      * <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.
+      * <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected attributes are in <em>NonKeyAttributes</em>.
+      * <code>ALL</code> - All of the table attributes are projected into the index.
+    * <em>NonKeyAttributes</em> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <em>NonKeyAttributes</em>, summed across all of the secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.
+  * <em>ProvisionedThroughput</em> - The provisioned throughput settings for the global secondary index, consisting of read and write capacity units, along with data about increases and decreases. 
+If the table is in the <code>DELETING</code> state, no information about indexes will be
+returned.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.ProvisionedThroughput'><code>ProvisionedThroughput</code></td><td><div class='docblock'><p>The provisioned throughput settings for the table, consisting of read and
+write capacity units, along with data about increases and decreases.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.TableSizeBytes'><code>TableSizeBytes</code></td><td><div class='docblock'><p>The total size of the specified table, in bytes. DynamoDB updates this value
+approximately every six hours. Recent changes might not be reflected in this
+value.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.TableName'><code>TableName</code></td><td><div class='docblock'><p>The name of the table.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.TableStatus'><code>TableStatus</code></td><td><div class='docblock'><p>The current state of the table:
+* <em>CREATING</em> - The table is being created.
+* <em>UPDATING</em> - The table is being updated.
+* <em>DELETING</em> - The table is being deleted.
+* <em>ACTIVE</em> - The table is ready for use.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.StreamSpecification'><code>StreamSpecification</code></td><td><div class='docblock'><p>The current DynamoDB Streams configuration for the table.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.LatestStreamLabel'><code>LatestStreamLabel</code></td><td><div class='docblock'><p>A timestamp, in ISO 8601 format, for this stream.
+Note that <em>LatestStreamLabel</em> is not a unique identifier for the stream,
+because it is possible that a stream from another table might have the same
+timestamp. However, the combination of the following three elements is
+guaranteed to be unique:
+  * the AWS customer ID.
+  * the table name.
+  * the <em>StreamLabel</em>.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.KeySchema'><code>KeySchema</code></td><td><div class='docblock'><p>The primary key structure for the table. Each <em>KeySchemaElement</em> consists of:
+  * <em>AttributeName</em> - The name of the attribute.
+  * <em>KeyType</em> - The key type for the attribute. Can be either <code>HASH</code> or <code>RANGE</code>.
+For more information about primary keys, see <a href="http://docs.aws.ama%0Azon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKe%0Ay">Primary Key</a> in the <em>Amazon DynamoDB Developer Guide</em>.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.ItemCount'><code>ItemCount</code></td><td><div class='docblock'><p>The number of items in the specified table. DynamoDB updates this value
+approximately every six hours. Recent changes might not be reflected in this
+value.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.CreationDateTime'><code>CreationDateTime</code></td><td><div class='docblock'><p>The date and time when the table was created, in <a href="http://www.epochconverter.com/">UNIX epoch
+time</a> format.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.LatestStreamArn'><code>LatestStreamArn</code></td><td><div class='docblock'><p>The Amazon Resource Name (ARN) that uniquely identifies the latest stream for
+this table.</p>
+</div></td></tr></table><h2 id='implementations'>Trait Implementations</h2><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><code>impl <a class='trait' href='http://doc.rust-lang.org/rustc-serialize/rustc_serialize/serialize/trait.Encodable.html' title='rustc_serialize::serialize::Encodable'>Encodable</a> for <a class='struct' href='../../rusoto/dynamodb/struct.TableDescription.html' title='rusoto::dynamodb::TableDescription'>TableDescription</a></code></h3><div class='impl-items'><h4 id='method.encode' class='method'><code>fn <a href='http://doc.rust-lang.org/rustc-serialize/rustc_serialize/serialize/trait.Encodable.html#method.encode' class='fnname'>encode</a>&lt;__S: <a class='trait' href='http://doc.rust-lang.org/rustc-serialize/rustc_serialize/serialize/trait.Encoder.html' title='rustc_serialize::serialize::Encoder'>Encoder</a>&gt;(&amp;self, __arg_0: &amp;mut __S) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, __S::Error&gt;</code></h4>
+</div><h3 class='impl'><code>impl <a class='trait' href='http://doc.rust-lang.org/rustc-serialize/rustc_serialize/serialize/trait.Decodable.html' title='rustc_serialize::serialize::Decodable'>Decodable</a> for <a class='struct' href='../../rusoto/dynamodb/struct.TableDescription.html' title='rusoto::dynamodb::TableDescription'>TableDescription</a></code></h3><div class='impl-items'><h4 id='method.decode' class='method'><code>fn <a href='http://doc.rust-lang.org/rustc-serialize/rustc_serialize/serialize/trait.Decodable.html#method.decode' class='fnname'>decode</a>&lt;__D: <a class='trait' href='http://doc.rust-lang.org/rustc-serialize/rustc_serialize/serialize/trait.Decoder.html' title='rustc_serialize::serialize::Decoder'>Decoder</a>&gt;(__arg_0: &amp;mut __D) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/dynamodb/struct.TableDescription.html' title='rusoto::dynamodb::TableDescription'>TableDescription</a>, __D::Error&gt;</code></h4>
+</div><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/default/trait.Default.html' title='core::default::Default'>Default</a> for <a class='struct' href='../../rusoto/dynamodb/struct.TableDescription.html' title='rusoto::dynamodb::TableDescription'>TableDescription</a></code></h3><div class='impl-items'><h4 id='method.default' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/default/trait.Default.html#method.default' class='fnname'>default</a>() -&gt; <a class='struct' href='../../rusoto/dynamodb/struct.TableDescription.html' title='rusoto::dynamodb::TableDescription'>TableDescription</a></code></h4>
+</div><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../../rusoto/dynamodb/struct.TableDescription.html' title='rusoto::dynamodb::TableDescription'>TableDescription</a></code></h3><div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#method.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "rusoto";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script async src="../../search-index.js"></script>
+</body>
+</html>

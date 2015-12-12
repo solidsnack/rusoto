@@ -45,7 +45,7 @@
             <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                 [<span class='inner'>&#x2212;</span>]
             </a>
-        </span><a id='src-21039' class='srclink' href='../../src/rusoto///home/matthew/Documents/DualSpark/rust-aws/codegen/sqs.rs.html#2620-2623' title='goto source code'>[src]</a></span></h1>
+        </span><a id='src-6602' class='srclink' href='../../src/rusoto///home/matthew/Documents/DualSpark/rust-aws/codegen/sqs.rs.html#2620-2623' title='goto source code'>[src]</a></span></h1>
 <pre class='rust struct'>pub struct SQSClient&lt;'a&gt; {
     // some fields omitted
 }</pre><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl&lt;'a&gt; <a class='struct' href='../../rusoto/sqs/struct.SQSClient.html' title='rusoto::sqs::SQSClient'>SQSClient</a>&lt;'a&gt;</code></h3><div class='impl-items'><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;P: <a class='trait' href='../../rusoto/credentials/trait.AWSCredentialsProvider.html' title='rusoto::credentials::AWSCredentialsProvider'>AWSCredentialsProvider</a> + 'a&gt;(creds: P, region: &amp;'a <a class='enum' href='../../rusoto/regions/enum.Region.html' title='rusoto::regions::Region'>Region</a>) -&gt; <a class='struct' href='../../rusoto/sqs/struct.SQSClient.html' title='rusoto::sqs::SQSClient'>SQSClient</a>&lt;'a&gt;</code></h4>
@@ -138,10 +138,8 @@ message, according to the W3C XML specification. For more information, go to
 <a href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a>. If you send any characters that are
 not included in the list, your request will be rejected.</p>
 
-<h1 id="x9-|-#xa-|-#xd-|-[#x20-to-#xd7ff]-|-[#xe000-to-#xfffd]-|-[#x10000-to" class='section-header'><a
-                           href="#x9-|-#xa-|-#xd-|-[#x20-to-#xd7ff]-|-[#xe000-to-#xfffd]-|-[#x10000-to">x9 | #xA | #xD | [#x20 to #xD7FF] | [#xE000 to #xFFFD] | [#x10000 to</a></h1>
-<h1 id="x10ffff]" class='section-header'><a
-                           href="#x10ffff]">x10FFFF]</a></h1>
+<h1 id='x9--xa--xd--x20-to-xd7ff--xe000-to-xfffd--x10000-to' class='section-header'><a href='#x9--xa--xd--x20-to-xd7ff--xe000-to-xfffd--x10000-to'>x9 | #xA | #xD | [#x20 to #xD7FF] | [#xE000 to #xFFFD] | [#x10000 to</a></h1>
+<h1 id='x10ffff' class='section-header'><a href='#x10ffff'>x10FFFF]</a></h1>
 <p>Because the batch request can result in a combination of successful and
 unsuccessful actions, you should check for batch errors even when the call
 returns an HTTP status code of 200.  Some API actions take lists of
@@ -225,10 +223,8 @@ according to the W3C XML specification. For more information, go to
 <a href="http://www.w3.org/TR/REC-xml/#charsets">http://www.w3.org/TR/REC-xml/#charsets</a> If you send any characters not
 included in the list, your request will be rejected.</p>
 
-<h1 id="x9-|-#xa-|-#xd-|-[#x20-to-#xd7ff]-|-[#xe000-to-#xfffd]-|-[#x10000-to" class='section-header'><a
-                           href="#x9-|-#xa-|-#xd-|-[#x20-to-#xd7ff]-|-[#xe000-to-#xfffd]-|-[#x10000-to">x9 | #xA | #xD | [#x20 to #xD7FF] | [#xE000 to #xFFFD] | [#x10000 to</a></h1>
-<h1 id="x10ffff]" class='section-header'><a
-                           href="#x10ffff]">x10FFFF]</a></h1></div><h4 id='method.delete_queue' class='method'><code>fn <a href='#method.delete_queue' class='fnname'>delete_queue</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/sqs/struct.DeleteQueueRequest.html' title='rusoto::sqs::DeleteQueueRequest'>DeleteQueueRequest</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
+<h1 id='x9--xa--xd--x20-to-xd7ff--xe000-to-xfffd--x10000-to' class='section-header'><a href='#x9--xa--xd--x20-to-xd7ff--xe000-to-xfffd--x10000-to'>x9 | #xA | #xD | [#x20 to #xD7FF] | [#xE000 to #xFFFD] | [#x10000 to</a></h1>
+<h1 id='x10ffff' class='section-header'><a href='#x10ffff'>x10FFFF]</a></h1></div><h4 id='method.delete_queue' class='method'><code>fn <a href='#method.delete_queue' class='fnname'>delete_queue</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/sqs/struct.DeleteQueueRequest.html' title='rusoto::sqs::DeleteQueueRequest'>DeleteQueueRequest</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='struct' href='../../rusoto/error/struct.AWSError.html' title='rusoto::error::AWSError'>AWSError</a>&gt;</code></h4>
 <div class='docblock'><p>Deletes the queue specified by the <strong>queue URL</strong>, regardless of whether the
 queue is empty. If the specified queue does not exist, Amazon SQS returns a
 successful response.

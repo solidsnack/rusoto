@@ -85,6 +85,8 @@
 <span id="43">43</span>
 <span id="44">44</span>
 <span id="45">45</span>
+<span id="46">46</span>
+<span id="47">47</span>
 </pre><pre class='rust '>
 <span class='attribute'>#<span class='op'>!</span>[<span class='ident'>crate_name</span> <span class='op'>=</span> <span class='string'>&quot;rusoto&quot;</span>]</span>
 <span class='attribute'>#<span class='op'>!</span>[<span class='ident'>crate_type</span> <span class='op'>=</span> <span class='string'>&quot;lib&quot;</span>]</span>
@@ -106,6 +108,7 @@
 <span class='doccomment'>//!</span>
 <span class='doccomment'>//! * SQS</span>
 <span class='doccomment'>//! * S3 (partial implementation)</span>
+<span class='doccomment'>//! * DynamoDB </span>
 <span class='doccomment'>//!</span>
 <span class='doccomment'>//! ## Requests and request signing</span>
 <span class='doccomment'>//!</span>
@@ -117,7 +120,7 @@
 <span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>hyper</span>;
 <span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>openssl</span>;
 <span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>url</span>;
-<span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>rustc_serialize</span> <span class='kw'>as</span> <span class='ident'>serialize</span>;
+<span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>rustc_serialize</span>;
 <span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>regex</span>;
 <span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>crypto</span>;
 <span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>chrono</span>;
@@ -125,6 +128,7 @@
 <span class='attribute'>#[<span class='ident'>macro_use</span>]</span> <span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>params</span>;
 <span class='attribute'>#[<span class='ident'>macro_use</span>]</span> <span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>signature</span>;
 <span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>credentials</span>;
+<span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>dynamodb</span>;
 <span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>error</span>;
 <span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>sqs</span>;
 <span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>s3</span>;

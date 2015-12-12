@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `QueryInput` struct in crate `rusoto`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, QueryInput">
+
+    <title>rusoto::dynamodb::QueryInput - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>rusoto</a>::<wbr><a href='index.html'>dynamodb</a></p><script>window.sidebarCurrent = {name: 'QueryInput', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>rusoto</a>::<wbr><a href='index.html'>dynamodb</a>::<wbr><a class='struct' href=''>QueryInput</a></span><span class='out-of-band'><span id='render-detail'>
+            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                [<span class='inner'>&#x2212;</span>]
+            </a>
+        </span><a id='src-2260' class='srclink' href='../../src/rusoto///home/matthew/Documents/DualSpark/rust-aws/codegen/dynamodb.rs.html#1292-1608' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct QueryInput {
+    pub FilterExpression: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../../rusoto/dynamodb/type.ConditionExpression.html' title='rusoto::dynamodb::ConditionExpression'>ConditionExpression</a>&gt;,
+    pub ConsistentRead: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../../rusoto/dynamodb/type.ConsistentRead.html' title='rusoto::dynamodb::ConsistentRead'>ConsistentRead</a>&gt;,
+    pub ConditionalOperator: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../../rusoto/dynamodb/type.ConditionalOperator.html' title='rusoto::dynamodb::ConditionalOperator'>ConditionalOperator</a>&gt;,
+    pub IndexName: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../../rusoto/dynamodb/type.IndexName.html' title='rusoto::dynamodb::IndexName'>IndexName</a>&gt;,
+    pub ProjectionExpression: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../../rusoto/dynamodb/type.ProjectionExpression.html' title='rusoto::dynamodb::ProjectionExpression'>ProjectionExpression</a>&gt;,
+    pub ExpressionAttributeNames: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../../rusoto/dynamodb/type.ExpressionAttributeNameMap.html' title='rusoto::dynamodb::ExpressionAttributeNameMap'>ExpressionAttributeNameMap</a>&gt;,
+    pub QueryFilter: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../../rusoto/dynamodb/type.FilterConditionMap.html' title='rusoto::dynamodb::FilterConditionMap'>FilterConditionMap</a>&gt;,
+    pub TableName: <a class='type' href='../../rusoto/dynamodb/type.TableName.html' title='rusoto::dynamodb::TableName'>TableName</a>,
+    pub ReturnConsumedCapacity: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../../rusoto/dynamodb/type.ReturnConsumedCapacity.html' title='rusoto::dynamodb::ReturnConsumedCapacity'>ReturnConsumedCapacity</a>&gt;,
+    pub ExclusiveStartKey: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../../rusoto/dynamodb/type.Key.html' title='rusoto::dynamodb::Key'>Key</a>&gt;,
+    pub AttributesToGet: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../../rusoto/dynamodb/type.AttributeNameList.html' title='rusoto::dynamodb::AttributeNameList'>AttributeNameList</a>&gt;,
+    pub Limit: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../../rusoto/dynamodb/type.PositiveIntegerObject.html' title='rusoto::dynamodb::PositiveIntegerObject'>PositiveIntegerObject</a>&gt;,
+    pub ExpressionAttributeValues: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../../rusoto/dynamodb/type.ExpressionAttributeValueMap.html' title='rusoto::dynamodb::ExpressionAttributeValueMap'>ExpressionAttributeValueMap</a>&gt;,
+    pub KeyConditions: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../../rusoto/dynamodb/type.KeyConditions.html' title='rusoto::dynamodb::KeyConditions'>KeyConditions</a>&gt;,
+    pub KeyConditionExpression: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../../rusoto/dynamodb/type.KeyExpression.html' title='rusoto::dynamodb::KeyExpression'>KeyExpression</a>&gt;,
+    pub ScanIndexForward: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../../rusoto/dynamodb/type.BooleanObject.html' title='rusoto::dynamodb::BooleanObject'>BooleanObject</a>&gt;,
+    pub Select: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../../rusoto/dynamodb/type.Select.html' title='rusoto::dynamodb::Select'>Select</a>&gt;,
+}</pre><div class='docblock'><p>Represents the input of a <em>Query</em> operation.</p>
+</div><h2 class='fields'>Fields</h2>
+<table><tr class='stab '>
+                                  <td id='structfield.FilterExpression'><code>FilterExpression</code></td><td><div class='docblock'><p>A string that contains conditions that DynamoDB applies after the <em>Query</em>
+operation, but before the data is returned to you. Items that do not satisfy
+the <em>FilterExpression</em> criteria are not returned.
+A <em>FilterExpression</em> is applied after the items have already been read; the
+process of filtering does not consume any additional read capacity units.
+For more information, see <a href="http://docs.aws.amazon.com/amaz%0Aondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter Expressions</a> in the
+<em>Amazon DynamoDB Developer Guide</em>.
+<em>FilterExpression</em> replaces the legacy <em>QueryFilter</em> and <em>ConditionalOperator</em>
+parameters.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.ConsistentRead'><code>ConsistentRead</code></td><td><div class='docblock'><p>Determines the read consistency model: If set to <code>true</code>, then the operation
+uses strongly consistent reads; otherwise, the operation uses eventually
+consistent reads.
+Strongly consistent reads are not supported on global secondary indexes. If
+you query a global secondary index with <em>ConsistentRead</em> set to <code>true</code>, you
+will receive a <em>ValidationException</em>.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.ConditionalOperator'><code>ConditionalOperator</code></td><td><div class='docblock'><p>This is a legacy parameter, for backward compatibility. New applications
+should use <em>FilterExpression</em> instead. Do not combine legacy parameters and
+expression parameters in a single API call; otherwise, DynamoDB will return a
+<em>ValidationException</em> exception.
+A logical operator to apply to the conditions in a <em>QueryFilter</em> map:
+  * <code>AND</code> - If all of the conditions evaluate to true, then the entire map evaluates to true.
+  * <code>OR</code> - If at least one of the conditions evaluate to true, then the entire map evaluates to true.
+If you omit <em>ConditionalOperator</em>, then <code>AND</code> is the default.
+The operation will succeed only if the entire map evaluates to true.
+This parameter does not support attributes of type List or Map.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.IndexName'><code>IndexName</code></td><td><div class='docblock'><p>The name of an index to query. This index can be any local secondary index or
+global secondary index on the table. Note that if you use the <em>IndexName</em>
+parameter, you must also provide <em>TableName.</em></p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.ProjectionExpression'><code>ProjectionExpression</code></td><td><div class='docblock'><p>A string that identifies one or more attributes to retrieve from the table.
+These attributes can include scalars, sets, or elements of a JSON document.
+The attributes in the expression must be separated by commas.
+If no attribute names are specified, then all attributes will be returned. If
+any of the requested attributes are not found, they will not appear in the
+result.
+For more information, see <a href="http://docs.aws.amazon.c%0Aom/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.ht%0Aml">Accessing Item Attributes</a> in the <em>Amazon DynamoDB Developer Guide</em>.
+<em>ProjectionExpression</em> replaces the legacy <em>AttributesToGet</em> parameter.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.ExpressionAttributeNames'><code>ExpressionAttributeNames</code></td><td><div class='docblock'><p>One or more substitution tokens for attribute names in an expression. The
+following are some use cases for using <em>ExpressionAttributeNames</em>:
+  * To access an attribute whose name conflicts with a DynamoDB reserved word.
+  * To create a placeholder for repeating occurrences of an attribute name in an expression.
+  * To prevent special characters in an attribute name from being misinterpreted in an expression.
+Use the <strong>#</strong> character in an expression to dereference an attribute name. For
+example, consider the following attribute name:
+  * <code>Percentile</code>
+The name of this attribute conflicts with a reserved word, so it cannot be
+used directly in an expression. (For the complete list of reserved words, see
+<a href="http://docs.aws.amazon.com/amazondynamodb/latest/developergui%0Ade/ReservedWords.html">Reserved Words</a> in the <em>Amazon DynamoDB Developer Guide</em>). To work
+around this, you could specify the following for <em>ExpressionAttributeNames</em>:
+  * <code>{&quot;#P&quot;:&quot;Percentile&quot;}</code>
+You could then use this substitution in an expression, as in this example:
+  * <code>#P = :val</code>
+Tokens that begin with the <strong>:</strong> character are <em>expression attribute values</em>,
+which are placeholders for the actual value at runtime.
+For more information on expression attribute names, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressi%0Aons.AccessingItemAttributes.html">Accessing Item Attrib
+utes</a> in the <em>Amazon DynamoDB Developer Guide</em>.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.QueryFilter'><code>QueryFilter</code></td><td><div class='docblock'><p>This is a legacy parameter, for backward compatibility. New applications
+should use <em>FilterExpression</em> instead. Do not combine legacy parameters and
+expression parameters in a single API call; otherwise, DynamoDB will return a
+<em>ValidationException</em> exception.
+A condition that evaluates the query results after the items are read and
+returns only the desired values.
+This parameter does not support attributes of type List or Map.
+A <em>QueryFilter</em> is applied after the items have already been read; the process
+of filtering does not consume any additional read capacity units.
+If you provide more than one condition in the <em>QueryFilter</em> map, then by
+default all of the conditions must evaluate to true. In other words, the
+conditions are ANDed together. (You can use the <em>ConditionalOperator</em>
+parameter to OR the conditions instead. If you do this, then at least one of
+the conditions must evaluate to true, rather than all of them.)
+Note that <em>QueryFilter</em> does not allow key attributes. You cannot define a
+filter condition on a hash key or range key.
+Each <em>QueryFilter</em> element consists of an attribute name to compare, along
+with the following:
+  * <em>AttributeValueList</em> - One or more values to evaluate against the supplied attribute. The number of values in the list depends on the operator specified in <em>ComparisonOperator</em>.
+For type Number, value comparisons are numeric.
+String value comparisons for greater than, equals, or less than are based on
+ASCII character code values. For example, <code>a</code> is greater than <code>A</code>, and <code>a</code> is
+greater than <code>B</code>. For a list of code values, see
+<a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
+For type Binary, DynamoDB treats each byte of the binary data as unsigned when
+it compares binary values.
+For information on specifying data types in JSON, see <a href="http:%0A//docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a> in
+the <em>Amazon DynamoDB Developer Guide</em>.
+  * <em>ComparisonOperator</em> - A comparator for evaluating attributes. For example, equals, greater than, less than, etc.
+The following comparison operators are available:
+<code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code>
+For complete descriptions of all comparison operators, see the <a href="htt%0Ap://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">Condition</a>
+data type.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.TableName'><code>TableName</code></td><td><div class='docblock'><p>The name of the table containing the requested items.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.ReturnConsumedCapacity'><code>ReturnConsumedCapacity</code></td><td></td></tr><tr class='stab '>
+                                  <td id='structfield.ExclusiveStartKey'><code>ExclusiveStartKey</code></td><td><div class='docblock'><p>The primary key of the first item that this operation will evaluate. Use the
+value that was returned for <em>LastEvaluatedKey</em> in the previous operation.
+The data type for <em>ExclusiveStartKey</em> must be String, Number or Binary. No set
+data types are allowed.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.AttributesToGet'><code>AttributesToGet</code></td><td><div class='docblock'><p>This is a legacy parameter, for backward compatibility. New applications
+should use <em>ProjectionExpression</em> instead. Do not combine legacy parameters
+and expression parameters in a single API call; otherwise, DynamoDB will
+return a <em>ValidationException</em> exception.
+This parameter allows you to retrieve attributes of type List or Map; however,
+it cannot retrieve individual elements within a List or a Map.
+The names of one or more attributes to retrieve. If no attribute names are
+provided, then all attributes will be returned. If any of the requested
+attributes are not found, they will not appear in the result.
+Note that <em>AttributesToGet</em> has no effect on provisioned throughput
+consumption. DynamoDB determines capacity units consumed based on item size,
+not on the amount of data that is returned to an application.
+You cannot use both <em>AttributesToGet</em> and <em>Select</em> together in a <em>Query</em>
+request, <em>unless</em> the value for <em>Select</em> is <code>SPECIFIC_ATTRIBUTES</code>. (This usage
+is equivalent to specifying <em>AttributesToGet</em> without any value for <em>Select</em>.)
+If you query a local secondary index and request only attributes that are
+projected into that index, the operation will read only the index and not the
+table. If any of the requested attributes are not projected into the local
+secondary index, DynamoDB will fetch each of these attributes from the parent
+table. This extra fetching incurs additional throughput cost and latency.
+If you query a global secondary index, you can only request attributes that
+are projected into the index. Global secondary index queries cannot fetch
+attributes from the parent table.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.Limit'><code>Limit</code></td><td><div class='docblock'><p>The maximum number of items to evaluate (not necessarily the number of
+matching items). If DynamoDB processes the number of items up to the limit
+while processing the results, it stops the operation and returns the matching
+values up to that point, and a key in <em>LastEvaluatedKey</em> to apply in a
+subsequent operation, so that you can pick up where you left off. Also, if the
+processed data set size exceeds 1 MB before DynamoDB reaches this limit, it
+stops the operation and returns the matching values up to the limit, and a key
+in <em>LastEvaluatedKey</em> to apply in a subsequent operation to continue the
+operation. For more information, see <a href="http://docs.aws.amazon.c%0Aom/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and Scan</a> in the <em>Amazon
+DynamoDB Developer Guide</em>.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.ExpressionAttributeValues'><code>ExpressionAttributeValues</code></td><td><div class='docblock'><p>One or more values that can be substituted in an expression.
+Use the <strong>:</strong> (colon) character in an expression to dereference an attribute
+value. For example, suppose that you wanted to check whether the value of the
+<em>ProductStatus</em> attribute was one of the following:
+<code>Available | Backordered | Discontinued</code>
+You would first need to specify <em>ExpressionAttributeValues</em> as follows:
+<code>{ &quot;:avail&quot;:{&quot;S&quot;:&quot;Available&quot;}, &quot;:back&quot;:{&quot;S&quot;:&quot;Backordered&quot;}, &quot;:disc&quot;:{&quot;S&quot;:&quot;Discontinued&quot;} }</code>
+You could then use these values in an expression, such as this:
+<code>ProductStatus IN (:avail, :back, :disc)</code>
+For more information on expression attribute values, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions%0A.SpecifyingConditions.html">Specifying Condition
+s</a> in the <em>Amazon DynamoDB Developer Guide</em>.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.KeyConditions'><code>KeyConditions</code></td><td><div class='docblock'><p>This is a legacy parameter, for backward compatibility. New applications
+should use <em>KeyConditionExpression</em> instead. Do not combine legacy parameters
+and expression parameters in a single API call; otherwise, DynamoDB will
+return a <em>ValidationException</em> exception.
+The selection criteria for the query. For a query on a table, you can have
+conditions only on the table primary key attributes. You must provide the hash
+key attribute name and value as an <code>EQ</code> condition. You can optionally provide
+a second condition, referring to the range key attribute.
+If you don&#39;t provide a range key condition, all of the items that match the
+hash key will be retrieved. If a <em>FilterExpression</em> or <em>QueryFilter</em> is
+present, it will be applied after the items are retrieved.
+For a query on an index, you can have conditions only on the index key
+attributes. You must provide the index hash attribute name and value as an
+<code>EQ</code> condition. You can optionally provide a second condition, referring to
+the index key range attribute.
+Each <em>KeyConditions</em> element consists of an attribute name to compare, along
+with the following:
+  * <em>AttributeValueList</em> - One or more values to evaluate against the supplied attribute. The number of values in the list depends on the <em>ComparisonOperator</em> being used.
+For type Number, value comparisons are numeric.
+String value comparisons for greater than, equals, or less than are based on
+ASCII character code values. For example, <code>a</code> is greater than <code>A</code>, and <code>a</code> is
+greater than <code>B</code>. For a list of code values, see
+<a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
+For Binary, DynamoDB treats each byte of the binary data as unsigned when it
+compares binary values.
+  * <em>ComparisonOperator</em> - A comparator for evaluating attributes, for example, equals, greater than, less than, and so on.
+For <em>KeyConditions</em>, only the following comparison operators are supported:
+<code>EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN</code>
+The following are descriptions of these comparison operators.
+    * <code>EQ</code> : Equal. 
+<em>AttributeValueList</em> can contain only one <em>AttributeValue</em> of type String,
+Number, or Binary (not a set type). If an item contains an <em>AttributeValue</em>
+element of a different type than the one specified in the request, the value
+does not match. For example, <code>{&quot;S&quot;:&quot;6&quot;}</code> does not equal <code>{&quot;N&quot;:&quot;6&quot;}</code>. Also,
+<code>{&quot;N&quot;:&quot;6&quot;}</code> does not equal <code>{&quot;NS&quot;:[&quot;6&quot;, &quot;2&quot;, &quot;1&quot;]}</code>.
+    * <code>LE</code> : Less than or equal. 
+<em>AttributeValueList</em> can contain only one <em>AttributeValue</em> element of type
+String, Number, or Binary (not a set type). If an item contains an
+<em>AttributeValue</em> element of a different type than the one provided in the
+request, the value does not match. For example, <code>{&quot;S&quot;:&quot;6&quot;}</code> does not equal
+<code>{&quot;N&quot;:&quot;6&quot;}</code>. Also, <code>{&quot;N&quot;:&quot;6&quot;}</code> does not compare to <code>{&quot;NS&quot;:[&quot;6&quot;, &quot;2&quot;, &quot;1&quot;]}</code>.
+    * <code>LT</code> : Less than. 
+<em>AttributeValueList</em> can contain only one <em>AttributeValue</em> of type String,
+Number, or Binary (not a set type). If an item contains an <em>AttributeValue</em>
+element of a different type than the one provided in the request, the value
+does not match. For example, <code>{&quot;S&quot;:&quot;6&quot;}</code> does not equal <code>{&quot;N&quot;:&quot;6&quot;}</code>. Also,
+<code>{&quot;N&quot;:&quot;6&quot;}</code> does not compare to <code>{&quot;NS&quot;:[&quot;6&quot;, &quot;2&quot;, &quot;1&quot;]}</code>.
+    * <code>GE</code> : Greater than or equal. 
+<em>AttributeValueList</em> can contain only one <em>AttributeValue</em> element of type
+String, Number, or Binary (not a set type). If an item contains an
+<em>AttributeValue</em> element of a different type than the one provided in the
+request, the value does not match. For example, <code>{&quot;S&quot;:&quot;6&quot;}</code> does not equal
+<code>{&quot;N&quot;:&quot;6&quot;}</code>. Also, <code>{&quot;N&quot;:&quot;6&quot;}</code> does not compare to <code>{&quot;NS&quot;:[&quot;6&quot;, &quot;2&quot;, &quot;1&quot;]}</code>.
+    * <code>GT</code> : Greater than. 
+<em>AttributeValueList</em> can contain only one <em>AttributeValue</em> element of type
+String, Number, or Binary (not a set type). If an item contains an
+<em>AttributeValue</em> element of a different type than the one provided in the
+request, the value does not match. For example, <code>{&quot;S&quot;:&quot;6&quot;}</code> does not equal
+<code>{&quot;N&quot;:&quot;6&quot;}</code>. Also, <code>{&quot;N&quot;:&quot;6&quot;}</code> does not compare to <code>{&quot;NS&quot;:[&quot;6&quot;, &quot;2&quot;, &quot;1&quot;]}</code>.
+    * <code>BEGINS_WITH</code> : Checks for a prefix. 
+<em>AttributeValueList</em> can contain only one <em>AttributeValue</em> of type String or
+Binary (not a Number or a set type). The target attribute of the comparison
+must be of type String or Binary (not a Number or a set type).
+    * <code>BETWEEN</code> : Greater than or equal to the first value, and less than or equal to the second value. 
+<em>AttributeValueList</em> must contain two <em>AttributeValue</em> elements of the same
+type, either String, Number, or Binary (not a set type). A target attribute
+matches if the target value is greater than, or equal to, the first element
+and less than, or equal to, the second element. If an item contains an
+<em>AttributeValue</em> element of a different type than the one provided in the
+request, the value does not match. For example, <code>{&quot;S&quot;:&quot;6&quot;}</code> does not compare
+to <code>{&quot;N&quot;:&quot;6&quot;}</code>. Also, <code>{&quot;N&quot;:&quot;6&quot;}</code> does not compare to <code>{&quot;NS&quot;:[&quot;6&quot;, &quot;2&quot;, &quot;1&quot;]}</code>
+For usage examples of <em>AttributeValueList</em> and <em>ComparisonOperator</em>, see
+<a href="http://docs.aws.amazon.com/amazondynamodb/late%0Ast/developerguide/LegacyConditionalParameters.html">Legacy Conditional Parameters</a> in the <em>Amazon DynamoDB
+Developer Guide</em>.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.KeyConditionExpression'><code>KeyConditionExpression</code></td><td><div class='docblock'><p>The condition that specifies the key value(s) for items to be retrieved by the
+<em>Query</em> action.
+The condition must perform an equality test on a single hash key value. The
+condition can also perform one of several comparison tests on a single range
+key value. <em>Query</em> can use <em>KeyConditionExpression</em> to retrieve one item with
+a given hash and range key value, or several items that have the same hash key
+value but different range key values.
+The hash key equality test is required, and must be specified in the following
+format:
+<code>hashAttributeName</code> <em>=</em> <code>:hashval</code>
+If you also want to provide a range key condition, it must be combined using
+<em>AND</em> with the hash key condition. Following is an example, using the <strong>=</strong>
+comparison operator for the range key:
+<code>hashAttributeName</code> <em>=</em> <code>:hashval</code> <em>AND</em> <code>rangeAttributeName</code> <em>=</em> <code>:rangeval</code>
+Valid comparisons for the range key condition are as follows:
+  * <code>rangeAttributeName</code> <em>=</em> <code>:rangeval</code> - true if the range key is equal to <code>:rangeval</code>.
+  * <code>rangeAttributeName</code> <em>&lt;</em> <code>:rangeval</code> - true if the range key is less than <code>:rangeval</code>.
+  * <code>rangeAttributeName</code> <em>&lt;=</em> <code>:rangeval</code> - true if the range key is less than or equal to <code>:rangeval</code>.
+  * <code>rangeAttributeName</code> <em>&gt;</em> <code>:rangeval</code> - true if the range key is greater than <code>:rangeval</code>.
+  * <code>rangeAttributeName</code> _&gt;= _<code>:rangeval</code> - true if the range key is greater than or equal to <code>:rangeval</code>.
+  * <code>rangeAttributeName</code> <em>BETWEEN</em> <code>:rangeval1</code> <em>AND</em> <code>:rangeval2</code> - true if the range key is greater than or equal to <code>:rangeval1</code>, and less than or equal to <code>:rangeval2</code>.
+  * _begins_with (<em><code>rangeAttributeName</code>, <code>:rangeval</code></em>)_ - true if the range key begins with a particular operand. (You cannot use this function with a range key that is of type Number.) Note that the function name <code>begins_with</code> is case-sensitive.
+Use the <em>ExpressionAttributeValues</em> parameter to replace tokens such as
+<code>:hashval</code> and <code>:rangeval</code> with actual values at runtime.
+You can optionally use the <em>ExpressionAttributeNames</em> parameter to replace the
+names of the hash and range attributes with placeholder tokens. This option
+might be necessary if an attribute name conflicts with a DynamoDB reserved
+word. For example, the following <em>KeyConditionExpression</em> parameter causes an
+error because <em>Size</em> is a reserved word:
+  * <code>Size = :myval</code>
+To work around this, define a placeholder (such a <code>#S</code>) to represent the
+attribute name <em>Size</em>. <em>KeyConditionExpression</em> then is as follows:
+  * <code>#S = :myval</code>
+For a list of reserved words, see <a href="http://docs.aws.amazon.com/%0Aamazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <em>Amazon
+DynamoDB Developer Guide</em>.
+For more information on <em>ExpressionAttributeNames</em> and
+<em>ExpressionAttributeValues</em>, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Express%0AionPlaceholders.html">Using Placeholders for Attribute Names and V
+alues</a> in the <em>Amazon DynamoDB Developer Guide</em>.
+<em>KeyConditionExpression</em> replaces the legacy <em>KeyConditions</em> parameter.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.ScanIndexForward'><code>ScanIndexForward</code></td><td><div class='docblock'><p>Specifies the order in which to return the query results - either ascending
+(<code>true</code>) or descending (<code>false</code>).
+Items with the same hash key are stored in sorted order by range key .If the
+range key data type is Number, the results are stored in numeric order. For
+type String, the results are returned in order of ASCII character code values.
+For type Binary, DynamoDB treats each byte of the binary data as unsigned.
+If <em>ScanIndexForward</em> is <code>true</code>, DynamoDB returns the results in order, by
+range key. This is the default behavior.
+If <em>ScanIndexForward</em> is <code>false</code>, DynamoDB sorts the results in descending
+order by range key, and then returns the results to the client.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.Select'><code>Select</code></td><td><div class='docblock'><p>The attributes to be returned in the result. You can retrieve all item
+attributes, specific item attributes, the count of matching items, or in the
+case of an index, some or all of the attributes projected into the index.
+  * <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes from the specified table or index. If you query a local secondary index, then for each matching item in the index DynamoDB will fetch the entire item from the parent table. If the index is configured to project all item attributes, then all of the data can be obtained from the local secondary index, and no fetching is required.
+  * <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed only when querying an index. Retrieves all attributes that have been projected into the index. If the index is configured to project all attributes, this return value is equivalent to specifying <code>ALL_ATTRIBUTES</code>.
+  * <code>COUNT</code> - Returns the number of matching items, rather than the matching items themselves.
+  * <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes listed in <em>AttributesToGet</em>. This return value is equivalent to specifying <em>AttributesToGet</em> without specifying any value for <em>Select</em>.
+If you query a local secondary index and request only attributes that are
+projected into that index, the operation will read only the index and not the
+table. If any of the requested attributes are not projected into the local
+secondary index, DynamoDB will fetch each of these attributes from the parent
+table. This extra fetching incurs additional throughput cost and latency.
+If you query a global secondary index, you can only request attributes that
+are projected into the index. Global secondary index queries cannot fetch
+attributes from the parent table.
+If neither <em>Select</em> nor <em>AttributesToGet</em> are specified, DynamoDB defaults to
+<code>ALL_ATTRIBUTES</code> when accessing a table, and <code>ALL_PROJECTED_ATTRIBUTES</code> when
+accessing an index. You cannot use both <em>Select</em> and <em>AttributesToGet</em>
+together in a single request, unless the value for <em>Select</em> is
+<code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to specifying
+<em>AttributesToGet</em> without any value for <em>Select</em>.)
+If you use the <em>ProjectionExpression</em> parameter, then the value for <em>Select</em>
+can only be <code>SPECIFIC_ATTRIBUTES</code>. Any other value for <em>Select</em> will return an
+error.</p>
+</div></td></tr></table><h2 id='implementations'>Trait Implementations</h2><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><code>impl <a class='trait' href='http://doc.rust-lang.org/rustc-serialize/rustc_serialize/serialize/trait.Encodable.html' title='rustc_serialize::serialize::Encodable'>Encodable</a> for <a class='struct' href='../../rusoto/dynamodb/struct.QueryInput.html' title='rusoto::dynamodb::QueryInput'>QueryInput</a></code></h3><div class='impl-items'><h4 id='method.encode' class='method'><code>fn <a href='http://doc.rust-lang.org/rustc-serialize/rustc_serialize/serialize/trait.Encodable.html#method.encode' class='fnname'>encode</a>&lt;__S: <a class='trait' href='http://doc.rust-lang.org/rustc-serialize/rustc_serialize/serialize/trait.Encoder.html' title='rustc_serialize::serialize::Encoder'>Encoder</a>&gt;(&amp;self, __arg_0: &amp;mut __S) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, __S::Error&gt;</code></h4>
+</div><h3 class='impl'><code>impl <a class='trait' href='http://doc.rust-lang.org/rustc-serialize/rustc_serialize/serialize/trait.Decodable.html' title='rustc_serialize::serialize::Decodable'>Decodable</a> for <a class='struct' href='../../rusoto/dynamodb/struct.QueryInput.html' title='rusoto::dynamodb::QueryInput'>QueryInput</a></code></h3><div class='impl-items'><h4 id='method.decode' class='method'><code>fn <a href='http://doc.rust-lang.org/rustc-serialize/rustc_serialize/serialize/trait.Decodable.html#method.decode' class='fnname'>decode</a>&lt;__D: <a class='trait' href='http://doc.rust-lang.org/rustc-serialize/rustc_serialize/serialize/trait.Decoder.html' title='rustc_serialize::serialize::Decoder'>Decoder</a>&gt;(__arg_0: &amp;mut __D) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/dynamodb/struct.QueryInput.html' title='rusoto::dynamodb::QueryInput'>QueryInput</a>, __D::Error&gt;</code></h4>
+</div><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/default/trait.Default.html' title='core::default::Default'>Default</a> for <a class='struct' href='../../rusoto/dynamodb/struct.QueryInput.html' title='rusoto::dynamodb::QueryInput'>QueryInput</a></code></h3><div class='impl-items'><h4 id='method.default' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/default/trait.Default.html#method.default' class='fnname'>default</a>() -&gt; <a class='struct' href='../../rusoto/dynamodb/struct.QueryInput.html' title='rusoto::dynamodb::QueryInput'>QueryInput</a></code></h4>
+</div><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../../rusoto/dynamodb/struct.QueryInput.html' title='rusoto::dynamodb::QueryInput'>QueryInput</a></code></h3><div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#method.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "rusoto";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script async src="../../search-index.js"></script>
+</body>
+</html>
