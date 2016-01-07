@@ -5,7 +5,6 @@
 
 #![allow(unused_variables, unused_mut, non_snake_case)]
 use std::result;
-use std::str;
 
 use credentials::AWSCredentialsProvider;
 use error::AWSError;
@@ -15,5 +14,25 @@ use signature::SignedRequest;
 // include the code generated from the DynamoDB botocore templates
 include!(concat!(env!("OUT_DIR"), "/dynamodb.rs"));
 
-// include the code generated from the helpers
-include!(concat!(env!("OUT_DIR"), "/dynamodb_helpers.rs"));
+impl From<AWSError> for DynamoDBError {
+    fn from(err: AWSError) -> DynamoDBError {
+        let AWSError(message) = err;
+        DynamoDBError {
+            __type: "Unknown".to_string(),
+            message: message.to_string(),
+        }
+    }
+}
+
+pub type Result<T> = result::Result<T, DynamoDBError>;
+
+fn parse_error(body: &str) -> DynamoDBError {
+    if let Ok(decoded) = serde_json::from_str::<DynamoDBError>(&body) {
+        decoded
+    } else {
+        DynamoDBError {
+            __type: "DecodeError".to_string(),
+            message: body.to_string(),
+        }
+    }
+}
