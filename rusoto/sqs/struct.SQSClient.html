@@ -45,7 +45,7 @@
             <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                 [<span class='inner'>&#x2212;</span>]
             </a>
-        </span><a id='src-6602' class='srclink' href='../../src/rusoto///home/matthew/Documents/DualSpark/rust-aws/codegen/sqs.rs.html#2620-2623' title='goto source code'>[src]</a></span></h1>
+        </span><a id='src-20616' class='srclink' href='../../src/rusoto///Users/matthew/Documents/rusoto/target/debug/build/rusoto-6ab52daf74cff96d/out/sqs.rs.html#3094-3097' title='goto source code'>[src]</a></span></h1>
 <pre class='rust struct'>pub struct SQSClient&lt;'a&gt; {
     // some fields omitted
 }</pre><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl&lt;'a&gt; <a class='struct' href='../../rusoto/sqs/struct.SQSClient.html' title='rusoto::sqs::SQSClient'>SQSClient</a>&lt;'a&gt;</code></h3><div class='impl-items'><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;P: <a class='trait' href='../../rusoto/credentials/trait.AWSCredentialsProvider.html' title='rusoto::credentials::AWSCredentialsProvider'>AWSCredentialsProvider</a> + 'a&gt;(creds: P, region: &amp;'a <a class='enum' href='../../rusoto/regions/enum.Region.html' title='rusoto::regions::Region'>Region</a>) -&gt; <a class='struct' href='../../rusoto/sqs/struct.SQSClient.html' title='rusoto::sqs::SQSClient'>SQSClient</a>&lt;'a&gt;</code></h4>
@@ -161,11 +161,12 @@ more than a total visibility timeout of 12 hours. (For more information
 visibility timeout, see <a href="http://docs.aws.amazon.com/AWSSim%0ApleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility Timeout</a> in the <em>Amazon SQS
 Developer Guide</em>.)
 For example, let&#39;s say you have a message and its default message visibility
-timeout is 30 minutes. You could call <code>ChangeMessageVisiblity</code> with a value of
-two hours and the effective timeout would be two hours and 30 minutes. When
-that time comes near you could again extend the time out by calling
-ChangeMessageVisiblity, but this time the maximum allowed timeout would be 9
-hours and 30 minutes.
+timeout is 5 minutes. After 3 minutes, you call <code>ChangeMessageVisiblity</code> with
+a timeout of 10 minutes. At that time, the timeout for the message would be
+extended by 10 minutes beyond the time of the ChangeMessageVisibility call.
+This results in a total visibility timeout of 13 minutes. You can continue to
+call ChangeMessageVisibility to extend the visibility timeout to a maximum of
+12 hours. If you try to extend beyond 12 hours, the request will be rejected.
 There is a 120,000 limit for the number of inflight messages per queue.
 Messages are inflight after they have been received from the queue by a
 consuming component, but have not yet been deleted from the queue. If you
@@ -261,12 +262,12 @@ per <code>ReceiveMessage</code> call. If the number of messages in the queue is 
 small, you might not receive any messages in a particular <code>ReceiveMessage</code>
 response; in which case you should repeat the request.
 For each message returned, the response includes the following:
-  * Message body
-  * MD5 digest of the message body. For information about MD5, go to <a href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a>.
-  * Message ID you received when you sent the message to the queue.
-  * Receipt handle.
-  * Message attributes.
-  * MD5 digest of the message attributes.
+  * Message body 
+  * MD5 digest of the message body. For information about MD5, go to <a href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a>. 
+  * Message ID you received when you sent the message to the queue. 
+  * Receipt handle. 
+  * Message attributes. 
+  * MD5 digest of the message attributes. 
 The receipt handle is the identifier you must provide when deleting the
 message. For more information, see <a href="http://docs%0A.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ImportantIdenti%0Afiers.html">Queue and Message Identifiers</a> in the <em>Amazon SQS Developer Guide</em>.
 You can provide the <code>VisibilityTimeout</code> parameter in your request, which will

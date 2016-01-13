@@ -496,6 +496,10 @@
 <span id="454">454</span>
 <span id="455">455</span>
 <span id="456">456</span>
+<span id="457">457</span>
+<span id="458">458</span>
+<span id="459">459</span>
+<span id="460">460</span>
 </pre><pre class='rust '>
 <span class='doccomment'>//! Tools for signing a request to AWS</span>
 <span class='doccomment'>//!</span>
@@ -506,6 +510,7 @@
 <span class='doccomment'>//! newly created S3 buckets not in us-standard/us-east-1.</span>
 
 <span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>regex</span>;
+
 <span class='kw'>use</span> <span class='ident'>credentials</span>::<span class='ident'>AWSCredentials</span>;
 <span class='kw'>use</span> <span class='ident'>hyper</span>::<span class='ident'>client</span>::<span class='ident'>Response</span>;
 <span class='kw'>use</span> <span class='ident'>hyper</span>::<span class='ident'>status</span>::<span class='ident'>StatusCode</span>;
@@ -543,7 +548,7 @@
 	<span class='ident'>params</span>: <span class='ident'>Params</span>,
 	<span class='ident'>hostname</span>: <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>String</span><span class='op'>&gt;</span>,
 	<span class='ident'>payload</span>: <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> [<span class='ident'>u8</span>]<span class='op'>&gt;</span>,
-	<span class='ident'>content_type</span>: <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>String</span><span class='op'>&gt;</span>,	
+	<span class='ident'>content_type</span>: <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>String</span><span class='op'>&gt;</span>,
 	<span class='ident'>canonical_query_string</span>: <span class='ident'>String</span>,
 	<span class='ident'>canonical_uri</span>: <span class='ident'>String</span>,
 }
@@ -560,7 +565,7 @@
 			<span class='ident'>params</span>: <span class='ident'>Params</span>::<span class='ident'>new</span>(),
 			<span class='ident'>hostname</span>: <span class='prelude-val'>None</span>,
 			<span class='ident'>payload</span>: <span class='prelude-val'>None</span>,
-			<span class='ident'>content_type</span>: <span class='prelude-val'>None</span>,			
+			<span class='ident'>content_type</span>: <span class='prelude-val'>None</span>,
 			<span class='ident'>canonical_query_string</span>: <span class='ident'>String</span>::<span class='ident'>new</span>(),
 			<span class='ident'>canonical_uri</span>: <span class='ident'>String</span>::<span class='ident'>new</span>(),
 		 }
@@ -641,6 +646,7 @@
 	<span class='doccomment'>/// Add the calculated signature to the request headers and execute it</span>
 	<span class='doccomment'>/// Return the hyper HTTP response</span>
 	<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>sign_and_execute</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>creds</span>: <span class='kw-2'>&amp;</span><span class='ident'>AWSCredentials</span>) <span class='op'>-&gt;</span> <span class='ident'>Response</span> {
+		<span class='macro'>debug</span><span class='macro'>!</span>(<span class='string'>&quot;Creating request to send to AWS.&quot;</span>);
 		<span class='kw'>let</span> <span class='ident'>hostname</span> <span class='op'>=</span> <span class='kw'>match</span> <span class='self'>self</span>.<span class='ident'>hostname</span> {
 			<span class='prelude-val'>Some</span>(<span class='kw-2'>ref</span> <span class='ident'>h</span>) <span class='op'>=&gt;</span> <span class='ident'>h</span>.<span class='ident'>to_string</span>(),
 			<span class='prelude-val'>None</span> <span class='op'>=&gt;</span> <span class='ident'>build_hostname</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>.<span class='ident'>service</span>, <span class='kw-2'>&amp;</span><span class='self'>self</span>.<span class='ident'>region</span>)
@@ -717,12 +723,14 @@
 		<span class='comment'>// build the actual auth header</span>
 		<span class='kw'>let</span> <span class='ident'>auth_header</span> <span class='op'>=</span> <span class='macro'>format</span><span class='macro'>!</span>(<span class='string'>&quot;AWS4-HMAC-SHA256 Credential={}/{}, SignedHeaders={}, Signature={}&quot;</span>,
 	               <span class='kw-2'>&amp;</span><span class='ident'>creds</span>.<span class='ident'>get_aws_access_key_id</span>(), <span class='ident'>scope</span>, <span class='ident'>signed_headers</span>, <span class='ident'>signature</span>);
-	   <span class='self'>self</span>.<span class='ident'>remove_header</span>(<span class='string'>&quot;authorization&quot;</span>);
+	    <span class='self'>self</span>.<span class='ident'>remove_header</span>(<span class='string'>&quot;authorization&quot;</span>);
 		<span class='self'>self</span>.<span class='ident'>add_header</span>(<span class='string'>&quot;authorization&quot;</span>, <span class='kw-2'>&amp;</span><span class='ident'>auth_header</span>);
 
 		<span class='kw'>let</span> <span class='ident'>response</span> <span class='op'>=</span> <span class='ident'>send_request</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>);
+		<span class='macro'>debug</span><span class='macro'>!</span>(<span class='string'>&quot;Sent request to AWS&quot;</span>);
 
 		<span class='kw'>if</span> <span class='ident'>response</span>.<span class='ident'>status</span> <span class='op'>==</span> <span class='ident'>HTTP_TEMPORARY_REDIRECT</span> {
+			<span class='macro'>debug</span><span class='macro'>!</span>(<span class='string'>&quot;Got a redirect response, resending request.&quot;</span>);
 			<span class='comment'>// extract location from response, modify request and re-sign and resend.</span>
 			<span class='kw'>let</span> <span class='ident'>new_hostname</span> <span class='op'>=</span> <span class='ident'>extract_s3_redirect_location</span>(<span class='ident'>response</span>).<span class='ident'>unwrap</span>();
 			<span class='self'>self</span>.<span class='ident'>set_hostname</span>(<span class='prelude-val'>Some</span>(<span class='ident'>new_hostname</span>.<span class='ident'>to_string</span>()));

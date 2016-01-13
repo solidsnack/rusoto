@@ -144,6 +144,18 @@
 <span id="102">102</span>
 <span id="103">103</span>
 <span id="104">104</span>
+<span id="105">105</span>
+<span id="106">106</span>
+<span id="107">107</span>
+<span id="108">108</span>
+<span id="109">109</span>
+<span id="110">110</span>
+<span id="111">111</span>
+<span id="112">112</span>
+<span id="113">113</span>
+<span id="114">114</span>
+<span id="115">115</span>
+<span id="116">116</span>
 </pre><pre class='rust '>
 <span class='doccomment'>//! SQS bindings for Rust</span>
 <span class='doccomment'>//!</span>
@@ -151,17 +163,29 @@
 <span class='doccomment'>//!</span>
 
 <span class='attribute'>#<span class='op'>!</span>[<span class='ident'>allow</span>(<span class='ident'>unused_variables</span>, <span class='ident'>unused_mut</span>)]</span>
-<span class='kw'>use</span> <span class='ident'>credentials</span>::<span class='op'>*</span>;
-<span class='kw'>use</span> <span class='ident'>xml</span>::<span class='op'>*</span>;
-<span class='kw'>use</span> <span class='ident'>signature</span>::<span class='op'>*</span>;
-<span class='kw'>use</span> <span class='ident'>params</span>::<span class='op'>*</span>;
-<span class='kw'>use</span> <span class='ident'>error</span>::<span class='op'>*</span>;
-<span class='kw'>use</span> <span class='ident'>xmlutil</span>::<span class='op'>*</span>;
+
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>str</span>::<span class='ident'>FromStr</span>;
-<span class='kw'>use</span> <span class='ident'>regions</span>::<span class='op'>*</span>;
+
+<span class='kw'>use</span> <span class='ident'>xml</span>::<span class='ident'>EventReader</span>;
+
+<span class='kw'>use</span> <span class='ident'>credentials</span>::<span class='ident'>AWSCredentialsProvider</span>;
+<span class='kw'>use</span> <span class='ident'>error</span>::<span class='ident'>AWSError</span>;
+<span class='kw'>use</span> <span class='ident'>params</span>::{<span class='ident'>Params</span>, <span class='ident'>SQSParams</span>};
+<span class='kw'>use</span> <span class='ident'>regions</span>::<span class='ident'>Region</span>;
+<span class='kw'>use</span> <span class='ident'>signature</span>::<span class='ident'>SignedRequest</span>;
+<span class='kw'>use</span> <span class='ident'>xmlutil</span>::{
+    <span class='ident'>Next</span>,
+    <span class='ident'>Peek</span>,
+    <span class='ident'>XmlParseError</span>,
+    <span class='ident'>XmlResponseFromAws</span>,
+    <span class='ident'>characters</span>,
+    <span class='ident'>end_element</span>,
+    <span class='ident'>peek_at_name</span>,
+    <span class='ident'>start_element</span>,
+};
 
 <span class='comment'>// include the code generated from the SQS botocore templates</span>
-<span class='macro'>include</span><span class='macro'>!</span>(<span class='macro'>concat</span><span class='macro'>!</span>(<span class='macro'>env</span><span class='macro'>!</span>(<span class='string'>&quot;CARGO_MANIFEST_DIR&quot;</span>), <span class='string'>&quot;/codegen/sqs.rs&quot;</span>));
+<span class='macro'>include</span><span class='macro'>!</span>(<span class='macro'>concat</span><span class='macro'>!</span>(<span class='macro'>env</span><span class='macro'>!</span>(<span class='string'>&quot;OUT_DIR&quot;</span>), <span class='string'>&quot;/sqs.rs&quot;</span>));
 
 <span class='doccomment'>/// Easier to use SQS client: wraps SQSClient class.</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>SQSHelper</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span> {

@@ -45,7 +45,7 @@
             <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                 [<span class='inner'>&#x2212;</span>]
             </a>
-        </span><a id='src-0' class='srclink' href='../src/rusoto/lib.rs.html#1-47' title='goto source code'>[src]</a></span></h1>
+        </span><a id='src-0' class='srclink' href='../src/rusoto/lib.rs.html#1-54' title='goto source code'>[src]</a></span></h1>
 <div class='docblock'>
 <h1 id='rusoto' class='section-header'><a href='#rusoto'>Rusoto</a></h1>
 <p>Rusoto is a Rust SDK for <a href="http://aws.amazon.com/">Amazon Web Services</a>.  It follows best practices
@@ -59,9 +59,10 @@ in that order.  IAM instance profile credentials are refreshed automatically as 
 
 <h2 id='supported-services' class='section-header'><a href='#supported-services'>Supported services</a></h2>
 <ul>
+<li>DynamoDB</li>
+<li>KMS</li>
+<li>S3</li>
 <li>SQS</li>
-<li>S3 (partial implementation)</li>
-<li>DynamoDB </li>
 </ul>
 
 <h2 id='requests-and-request-signing' class='section-header'><a href='#requests-and-request-signing'>Requests and request signing</a></h2>
@@ -92,6 +93,15 @@ to sign requests.</p>
                                title='rusoto::error'>error</a></td>
                         <td class='docblock short'>
                              <p>Errors during AWS communication or parsing</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='kms/index.html'
+                               title='rusoto::kms'>kms</a></td>
+                        <td class='docblock short'>
+                             <p>KMS bindings for Rust</p>
 
                         </td>
                     </tr>

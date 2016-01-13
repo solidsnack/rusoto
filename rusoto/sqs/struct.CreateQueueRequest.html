@@ -45,7 +45,7 @@
             <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                 [<span class='inner'>&#x2212;</span>]
             </a>
-        </span><a id='src-4286' class='srclink' href='../../src/rusoto///home/matthew/Documents/DualSpark/rust-aws/codegen/sqs.rs.html#310-323' title='goto source code'>[src]</a></span></h1>
+        </span><a id='src-18300' class='srclink' href='../../src/rusoto///Users/matthew/Documents/rusoto/target/debug/build/rusoto-6ab52daf74cff96d/out/sqs.rs.html#369-382' title='goto source code'>[src]</a></span></h1>
 <pre class='rust struct'>pub struct CreateQueueRequest {
     pub attributes: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../../rusoto/sqs/type.AttributeMap.html' title='rusoto::sqs::AttributeMap'>AttributeMap</a>&gt;,
     pub queue_name: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>,
@@ -58,7 +58,7 @@ parameters the <code>CreateQueue</code> action uses:
   * <code>MaximumMessageSize</code> - The limit of how many bytes a message can contain before Amazon SQS rejects it. An integer from 1024 bytes (1 KiB) up to 262144 bytes (256 KiB). The default for this attribute is 262144 (256 KiB).
   * <code>MessageRetentionPeriod</code> - The number of seconds Amazon SQS retains a message. Integer representing seconds, from 60 (1 minute) to 1209600 (14 days). The default for this attribute is 345600 (4 days).
   * <code>Policy</code> - The queue&#39;s policy. A valid AWS policy. For more information about policy structure, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview of AWS IAM Policies</a> in the <em>Amazon IAM User Guide</em>.
-  * <code>ReceiveMessageWaitTimeSeconds</code> - The time for which a ReceiveMessage call will wait for a message to arrive. An integer from 0 to 20 (seconds). The default for this attribute is 0.
+  * <code>ReceiveMessageWaitTimeSeconds</code> - The time for which a ReceiveMessage call will wait for a message to arrive. An integer from 0 to 20 (seconds). The default for this attribute is 0. 
   * <code>VisibilityTimeout</code> - The visibility timeout for the queue. An integer from 0 to 43200 (12 hours). The default for this attribute is 30. For more information about visibility timeout, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility Timeout</a> in the <em>Amazon SQS Developer Guide</em>.</p>
 </div></td></tr><tr class='stab '>
                                   <td id='structfield.queue_name'><code>queue_name</code></td><td><div class='docblock'><p>The name for the queue to be created.</p>
