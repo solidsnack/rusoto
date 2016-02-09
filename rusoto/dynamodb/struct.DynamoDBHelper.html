@@ -9,6 +9,7 @@
 
     <title>rusoto::dynamodb::DynamoDBHelper - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
 
     
@@ -45,14 +46,14 @@
             <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                 [<span class='inner'>&#x2212;</span>]
             </a>
-        </span><a id='src-9397' class='srclink' href='../../src/rusoto///Users/matthew/Documents/rusoto/target/debug/build/rusoto-6ab52daf74cff96d/out/dynamodb_helpers.rs.html#5-7' title='goto source code'>[src]</a></span></h1>
+        </span><a id='src-9477' class='srclink' href='../../src/rusoto///Users/matthew/Documents/rusoto/target/debug/build/rusoto-5b1d959a83d195ba/out/dynamodb_helpers.rs.html#5-7' title='goto source code'>[src]</a></span></h1>
 <pre class='rust struct'>pub struct DynamoDBHelper&lt;'a&gt; {
     // some fields omitted
 }</pre><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl&lt;'a&gt; <a class='struct' href='../../rusoto/dynamodb/struct.DynamoDBHelper.html' title='rusoto::dynamodb::DynamoDBHelper'>DynamoDBHelper</a>&lt;'a&gt;</code></h3><div class='impl-items'><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;P: <a class='trait' href='../../rusoto/credentials/trait.AWSCredentialsProvider.html' title='rusoto::credentials::AWSCredentialsProvider'>AWSCredentialsProvider</a> + 'a&gt;(credentials: P, region: &amp;'a <a class='enum' href='../../rusoto/regions/enum.Region.html' title='rusoto::regions::Region'>Region</a>) -&gt; <a class='struct' href='../../rusoto/dynamodb/struct.DynamoDBHelper.html' title='rusoto::dynamodb::DynamoDBHelper'>DynamoDBHelper</a>&lt;'a&gt;</code></h4>
 <h4 id='method.list_tables' class='method'><code>fn <a href='#method.list_tables' class='fnname'>list_tables</a>(&amp;mut self) -&gt; <a class='type' href='../../rusoto/dynamodb/type.Result.html' title='rusoto::dynamodb::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/dynamodb/struct.ListTablesOutput.html' title='rusoto::dynamodb::ListTablesOutput'>ListTablesOutput</a>&gt;</code></h4>
 <h4 id='method.create_table' class='method'><code>fn <a href='#method.create_table' class='fnname'>create_table</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/dynamodb/struct.CreateTableInput.html' title='rusoto::dynamodb::CreateTableInput'>CreateTableInput</a>) -&gt; <a class='type' href='../../rusoto/dynamodb/type.Result.html' title='rusoto::dynamodb::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/dynamodb/struct.CreateTableOutput.html' title='rusoto::dynamodb::CreateTableOutput'>CreateTableOutput</a>&gt;</code></h4>
-<h4 id='method.describe_table' class='method'><code>fn <a href='#method.describe_table' class='fnname'>describe_table</a>(&amp;mut self, name: &amp;<a href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='type' href='../../rusoto/dynamodb/type.Result.html' title='rusoto::dynamodb::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/dynamodb/struct.DescribeTableOutput.html' title='rusoto::dynamodb::DescribeTableOutput'>DescribeTableOutput</a>&gt;</code></h4>
-<h4 id='method.delete_table' class='method'><code>fn <a href='#method.delete_table' class='fnname'>delete_table</a>(&amp;mut self, name: &amp;<a href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='type' href='../../rusoto/dynamodb/type.Result.html' title='rusoto::dynamodb::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/dynamodb/struct.DeleteTableOutput.html' title='rusoto::dynamodb::DeleteTableOutput'>DeleteTableOutput</a>&gt;</code></h4>
+<h4 id='method.describe_table' class='method'><code>fn <a href='#method.describe_table' class='fnname'>describe_table</a>(&amp;mut self, name: &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='type' href='../../rusoto/dynamodb/type.Result.html' title='rusoto::dynamodb::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/dynamodb/struct.DescribeTableOutput.html' title='rusoto::dynamodb::DescribeTableOutput'>DescribeTableOutput</a>&gt;</code></h4>
+<h4 id='method.delete_table' class='method'><code>fn <a href='#method.delete_table' class='fnname'>delete_table</a>(&amp;mut self, name: &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='type' href='../../rusoto/dynamodb/type.Result.html' title='rusoto::dynamodb::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/dynamodb/struct.DeleteTableOutput.html' title='rusoto::dynamodb::DeleteTableOutput'>DeleteTableOutput</a>&gt;</code></h4>
 <h4 id='method.put_item' class='method'><code>fn <a href='#method.put_item' class='fnname'>put_item</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/dynamodb/struct.PutItemInput.html' title='rusoto::dynamodb::PutItemInput'>PutItemInput</a>) -&gt; <a class='type' href='../../rusoto/dynamodb/type.Result.html' title='rusoto::dynamodb::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/dynamodb/struct.PutItemOutput.html' title='rusoto::dynamodb::PutItemOutput'>PutItemOutput</a>&gt;</code></h4>
 <h4 id='method.get_item' class='method'><code>fn <a href='#method.get_item' class='fnname'>get_item</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/dynamodb/struct.GetItemInput.html' title='rusoto::dynamodb::GetItemInput'>GetItemInput</a>) -&gt; <a class='type' href='../../rusoto/dynamodb/type.Result.html' title='rusoto::dynamodb::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/dynamodb/struct.GetItemOutput.html' title='rusoto::dynamodb::GetItemOutput'>GetItemOutput</a>&gt;</code></h4>
 </div></section>
@@ -114,6 +115,6 @@
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
     
-    <script async src="../../search-index.js"></script>
+    <script defer src="../../search-index.js"></script>
 </body>
 </html>

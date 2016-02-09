@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `ECSClient` struct in crate `rusoto`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, ECSClient">
+
+    <title>rusoto::ecs::ECSClient - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>rusoto</a>::<wbr><a href='index.html'>ecs</a></p><script>window.sidebarCurrent = {name: 'ECSClient', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>rusoto</a>::<wbr><a href='index.html'>ecs</a>::<wbr><a class='struct' href=''>ECSClient</a></span><span class='out-of-band'><span id='render-detail'>
+            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                [<span class='inner'>&#x2212;</span>]
+            </a>
+        </span><a id='src-21101' class='srclink' href='../../src/rusoto///Users/matthew/Documents/rusoto/target/debug/build/rusoto-5b1d959a83d195ba/out/ecs.rs.html#20824-20827' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct ECSClient&lt;'a&gt; {
+    // some fields omitted
+}</pre><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl&lt;'a&gt; <a class='struct' href='../../rusoto/ecs/struct.ECSClient.html' title='rusoto::ecs::ECSClient'>ECSClient</a>&lt;'a&gt;</code></h3><div class='impl-items'><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;P: <a class='trait' href='../../rusoto/credentials/trait.AWSCredentialsProvider.html' title='rusoto::credentials::AWSCredentialsProvider'>AWSCredentialsProvider</a> + 'a&gt;(creds: P, region: &amp;'a <a class='enum' href='../../rusoto/regions/enum.Region.html' title='rusoto::regions::Region'>Region</a>) -&gt; <a class='struct' href='../../rusoto/ecs/struct.ECSClient.html' title='rusoto::ecs::ECSClient'>ECSClient</a>&lt;'a&gt;</code></h4>
+<h4 id='method.create_service' class='method'><code>fn <a href='#method.create_service' class='fnname'>create_service</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/ecs/struct.CreateServiceRequest.html' title='rusoto::ecs::CreateServiceRequest'>CreateServiceRequest</a>) -&gt; <a class='type' href='../../rusoto/ecs/type.Result.html' title='rusoto::ecs::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/ecs/struct.CreateServiceResponse.html' title='rusoto::ecs::CreateServiceResponse'>CreateServiceResponse</a>&gt;</code></h4>
+<div class='docblock'><p>Runs and maintains a desired number of tasks from a specified task definition.
+If the number of tasks running in a service drops below <code>desiredCount</code>, Amazon
+ECS spawns another instantiation of the task in the specified cluster.</p>
+</div><h4 id='method.submit_container_state_change' class='method'><code>fn <a href='#method.submit_container_state_change' class='fnname'>submit_container_state_change</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/ecs/struct.SubmitContainerStateChangeRequest.html' title='rusoto::ecs::SubmitContainerStateChangeRequest'>SubmitContainerStateChangeRequest</a>) -&gt; <a class='type' href='../../rusoto/ecs/type.Result.html' title='rusoto::ecs::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/ecs/struct.SubmitContainerStateChangeResponse.html' title='rusoto::ecs::SubmitContainerStateChangeResponse'>SubmitContainerStateChangeResponse</a>&gt;</code></h4>
+<div class='docblock'><p>This action is only used by the Amazon EC2 Container Service agent, and it is
+not intended for use outside of the agent.
+Sent to acknowledge that a container changed states.</p>
+</div><h4 id='method.create_cluster' class='method'><code>fn <a href='#method.create_cluster' class='fnname'>create_cluster</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/ecs/struct.CreateClusterRequest.html' title='rusoto::ecs::CreateClusterRequest'>CreateClusterRequest</a>) -&gt; <a class='type' href='../../rusoto/ecs/type.Result.html' title='rusoto::ecs::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/ecs/struct.CreateClusterResponse.html' title='rusoto::ecs::CreateClusterResponse'>CreateClusterResponse</a>&gt;</code></h4>
+<div class='docblock'><p>Creates a new Amazon ECS cluster. By default, your account receives a
+<code>default</code> cluster when you launch your first container instance. However, you
+can create your own cluster with a unique name with the <code>CreateCluster</code>
+action.</p>
+</div><h4 id='method.submit_task_state_change' class='method'><code>fn <a href='#method.submit_task_state_change' class='fnname'>submit_task_state_change</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/ecs/struct.SubmitTaskStateChangeRequest.html' title='rusoto::ecs::SubmitTaskStateChangeRequest'>SubmitTaskStateChangeRequest</a>) -&gt; <a class='type' href='../../rusoto/ecs/type.Result.html' title='rusoto::ecs::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/ecs/struct.SubmitTaskStateChangeResponse.html' title='rusoto::ecs::SubmitTaskStateChangeResponse'>SubmitTaskStateChangeResponse</a>&gt;</code></h4>
+<div class='docblock'><p>This action is only used by the Amazon EC2 Container Service agent, and it is
+not intended for use outside of the agent.
+Sent to acknowledge that a task changed states.</p>
+</div><h4 id='method.list_task_definition_families' class='method'><code>fn <a href='#method.list_task_definition_families' class='fnname'>list_task_definition_families</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/ecs/struct.ListTaskDefinitionFamiliesRequest.html' title='rusoto::ecs::ListTaskDefinitionFamiliesRequest'>ListTaskDefinitionFamiliesRequest</a>) -&gt; <a class='type' href='../../rusoto/ecs/type.Result.html' title='rusoto::ecs::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/ecs/struct.ListTaskDefinitionFamiliesResponse.html' title='rusoto::ecs::ListTaskDefinitionFamiliesResponse'>ListTaskDefinitionFamiliesResponse</a>&gt;</code></h4>
+<div class='docblock'><p>Returns a list of task definition families that are registered to your account
+(which may include task definition families that no longer have any <code>ACTIVE</code>
+task definitions). You can filter the results with the <code>familyPrefix</code>
+parameter.</p>
+</div><h4 id='method.delete_service' class='method'><code>fn <a href='#method.delete_service' class='fnname'>delete_service</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/ecs/struct.DeleteServiceRequest.html' title='rusoto::ecs::DeleteServiceRequest'>DeleteServiceRequest</a>) -&gt; <a class='type' href='../../rusoto/ecs/type.Result.html' title='rusoto::ecs::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/ecs/struct.DeleteServiceResponse.html' title='rusoto::ecs::DeleteServiceResponse'>DeleteServiceResponse</a>&gt;</code></h4>
+<div class='docblock'><p>Deletes a specified service within a cluster.</p>
+</div><h4 id='method.list_container_instances' class='method'><code>fn <a href='#method.list_container_instances' class='fnname'>list_container_instances</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/ecs/struct.ListContainerInstancesRequest.html' title='rusoto::ecs::ListContainerInstancesRequest'>ListContainerInstancesRequest</a>) -&gt; <a class='type' href='../../rusoto/ecs/type.Result.html' title='rusoto::ecs::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/ecs/struct.ListContainerInstancesResponse.html' title='rusoto::ecs::ListContainerInstancesResponse'>ListContainerInstancesResponse</a>&gt;</code></h4>
+<div class='docblock'><p>Returns a list of container instances in a specified cluster.</p>
+</div><h4 id='method.describe_services' class='method'><code>fn <a href='#method.describe_services' class='fnname'>describe_services</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/ecs/struct.DescribeServicesRequest.html' title='rusoto::ecs::DescribeServicesRequest'>DescribeServicesRequest</a>) -&gt; <a class='type' href='../../rusoto/ecs/type.Result.html' title='rusoto::ecs::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/ecs/struct.DescribeServicesResponse.html' title='rusoto::ecs::DescribeServicesResponse'>DescribeServicesResponse</a>&gt;</code></h4>
+<div class='docblock'><p>Describes the specified services running in your cluster.</p>
+</div><h4 id='method.delete_cluster' class='method'><code>fn <a href='#method.delete_cluster' class='fnname'>delete_cluster</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/ecs/struct.DeleteClusterRequest.html' title='rusoto::ecs::DeleteClusterRequest'>DeleteClusterRequest</a>) -&gt; <a class='type' href='../../rusoto/ecs/type.Result.html' title='rusoto::ecs::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/ecs/struct.DeleteClusterResponse.html' title='rusoto::ecs::DeleteClusterResponse'>DeleteClusterResponse</a>&gt;</code></h4>
+<div class='docblock'><p>Deletes the specified cluster. You must deregister all container instances
+from this cluster before you may delete it. You can list the container
+instances in a cluster with ListContainerInstances and deregister them with
+DeregisterContainerInstance.</p>
+</div><h4 id='method.update_service' class='method'><code>fn <a href='#method.update_service' class='fnname'>update_service</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/ecs/struct.UpdateServiceRequest.html' title='rusoto::ecs::UpdateServiceRequest'>UpdateServiceRequest</a>) -&gt; <a class='type' href='../../rusoto/ecs/type.Result.html' title='rusoto::ecs::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/ecs/struct.UpdateServiceResponse.html' title='rusoto::ecs::UpdateServiceResponse'>UpdateServiceResponse</a>&gt;</code></h4>
+<div class='docblock'><p>Modify the desired count or task definition used in a service.
+You can add to or subtract from the number of instantiations of a task
+definition in a service by specifying the cluster that the service is running
+in and a new <code>desiredCount</code> parameter.
+You can use <code>UpdateService</code> to modify your task definition and deploy a new
+version of your service, one task at a time. If you modify the task definition
+with <code>UpdateService</code>, Amazon ECS spawns a task with the new version of the
+task definition and then stops an old task after the new version is running.
+Because <code>UpdateService</code> starts a new version of the task before stopping an
+old version, your cluster must have capacity to support one more instantiation
+of the task when <code>UpdateService</code> is run. If your cluster cannot support
+another instantiation of the task used in your service, you can reduce the
+desired count of your service by one before modifying the task definition.
+When UpdateService replaces a task during an update, the equivalent of <code>docker stop</code> is issued to the containers running in the task. This results in a
+<code>SIGTERM</code> and a 30-second timeout, after which <code>SIGKILL</code> is sent and the
+containers are forcibly stopped. If the container handles the <code>SIGTERM</code>
+gracefully and exits within 30 seconds from receiving it, no <code>SIGKILL</code> is
+sent.</p>
+</div><h4 id='method.list_clusters' class='method'><code>fn <a href='#method.list_clusters' class='fnname'>list_clusters</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/ecs/struct.ListClustersRequest.html' title='rusoto::ecs::ListClustersRequest'>ListClustersRequest</a>) -&gt; <a class='type' href='../../rusoto/ecs/type.Result.html' title='rusoto::ecs::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/ecs/struct.ListClustersResponse.html' title='rusoto::ecs::ListClustersResponse'>ListClustersResponse</a>&gt;</code></h4>
+<div class='docblock'><p>Returns a list of existing clusters.</p>
+</div><h4 id='method.deregister_task_definition' class='method'><code>fn <a href='#method.deregister_task_definition' class='fnname'>deregister_task_definition</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/ecs/struct.DeregisterTaskDefinitionRequest.html' title='rusoto::ecs::DeregisterTaskDefinitionRequest'>DeregisterTaskDefinitionRequest</a>) -&gt; <a class='type' href='../../rusoto/ecs/type.Result.html' title='rusoto::ecs::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/ecs/struct.DeregisterTaskDefinitionResponse.html' title='rusoto::ecs::DeregisterTaskDefinitionResponse'>DeregisterTaskDefinitionResponse</a>&gt;</code></h4>
+<div class='docblock'><p>Deregisters the specified task definition by family and revision. Upon
+deregistration, the task definition is marked as <code>INACTIVE</code>. Existing tasks
+and services that reference an <code>INACTIVE</code> task definition continue to run
+without disruption. Existing services that reference an <code>INACTIVE</code> task
+definition can still scale up or down by modifying the service&#39;s desired
+count.
+You cannot use an <code>INACTIVE</code> task definition to run new tasks or create new
+services, and you cannot update an existing service to reference an <code>INACTIVE</code>
+task definition (although there may be up to a 10 minute window following
+deregistration where these restrictions have not yet taken effect).</p>
+</div><h4 id='method.register_task_definition' class='method'><code>fn <a href='#method.register_task_definition' class='fnname'>register_task_definition</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/ecs/struct.RegisterTaskDefinitionRequest.html' title='rusoto::ecs::RegisterTaskDefinitionRequest'>RegisterTaskDefinitionRequest</a>) -&gt; <a class='type' href='../../rusoto/ecs/type.Result.html' title='rusoto::ecs::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/ecs/struct.RegisterTaskDefinitionResponse.html' title='rusoto::ecs::RegisterTaskDefinitionResponse'>RegisterTaskDefinitionResponse</a>&gt;</code></h4>
+<div class='docblock'><p>Registers a new task definition from the supplied <code>family</code> and
+<code>containerDefinitions</code>. Optionally, you can add data volumes to your
+containers with the <code>volumes</code> parameter. For more information about task
+definition parameters and defaults, see <a href="http://d%0Aocs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task Definitions</a> in
+the <em>Amazon EC2 Container Service Developer Guide</em>.</p>
+</div><h4 id='method.stop_task' class='method'><code>fn <a href='#method.stop_task' class='fnname'>stop_task</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/ecs/struct.StopTaskRequest.html' title='rusoto::ecs::StopTaskRequest'>StopTaskRequest</a>) -&gt; <a class='type' href='../../rusoto/ecs/type.Result.html' title='rusoto::ecs::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/ecs/struct.StopTaskResponse.html' title='rusoto::ecs::StopTaskResponse'>StopTaskResponse</a>&gt;</code></h4>
+<div class='docblock'><p>Stops a running task.
+When StopTask is called on a task, the equivalent of <code>docker stop</code> is issued
+to the containers running in the task. This results in a <code>SIGTERM</code> and a
+30-second timeout, after which <code>SIGKILL</code> is sent and the containers are
+forcibly stopped. If the container handles the <code>SIGTERM</code> gracefully and exits
+within 30 seconds from receiving it, no <code>SIGKILL</code> is sent.</p>
+</div><h4 id='method.list_task_definitions' class='method'><code>fn <a href='#method.list_task_definitions' class='fnname'>list_task_definitions</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/ecs/struct.ListTaskDefinitionsRequest.html' title='rusoto::ecs::ListTaskDefinitionsRequest'>ListTaskDefinitionsRequest</a>) -&gt; <a class='type' href='../../rusoto/ecs/type.Result.html' title='rusoto::ecs::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/ecs/struct.ListTaskDefinitionsResponse.html' title='rusoto::ecs::ListTaskDefinitionsResponse'>ListTaskDefinitionsResponse</a>&gt;</code></h4>
+<div class='docblock'><p>Returns a list of task definitions that are registered to your account. You
+can filter the results by family name with the <code>familyPrefix</code> parameter or by
+status with the <code>status</code> parameter.</p>
+</div><h4 id='method.describe_clusters' class='method'><code>fn <a href='#method.describe_clusters' class='fnname'>describe_clusters</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/ecs/struct.DescribeClustersRequest.html' title='rusoto::ecs::DescribeClustersRequest'>DescribeClustersRequest</a>) -&gt; <a class='type' href='../../rusoto/ecs/type.Result.html' title='rusoto::ecs::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/ecs/struct.DescribeClustersResponse.html' title='rusoto::ecs::DescribeClustersResponse'>DescribeClustersResponse</a>&gt;</code></h4>
+<div class='docblock'><p>Describes one or more of your clusters.</p>
+</div><h4 id='method.update_container_agent' class='method'><code>fn <a href='#method.update_container_agent' class='fnname'>update_container_agent</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/ecs/struct.UpdateContainerAgentRequest.html' title='rusoto::ecs::UpdateContainerAgentRequest'>UpdateContainerAgentRequest</a>) -&gt; <a class='type' href='../../rusoto/ecs/type.Result.html' title='rusoto::ecs::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/ecs/struct.UpdateContainerAgentResponse.html' title='rusoto::ecs::UpdateContainerAgentResponse'>UpdateContainerAgentResponse</a>&gt;</code></h4>
+<div class='docblock'><p>Updates the Amazon ECS container agent on a specified container instance.
+Updating the Amazon ECS container agent does not interrupt running tasks or
+services on the container instance. The process for updating the agent differs
+depending on whether your container instance was launched with the Amazon ECS-
+optimized AMI or another operating system.
+<code>UpdateContainerAgent</code> requires the Amazon ECS-optimized AMI or Amazon Linux
+with the <code>ecs-init</code> service installed and running. For help updating the
+Amazon ECS container agent on other operating systems, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-%0Aupdate.html#manually_update_agent">Manually Updating
+the Amazon ECS Container
+Agent</a> in the <em>Amazon EC2 Container Service
+Developer Guide</em>.</p>
+</div><h4 id='method.list_services' class='method'><code>fn <a href='#method.list_services' class='fnname'>list_services</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/ecs/struct.ListServicesRequest.html' title='rusoto::ecs::ListServicesRequest'>ListServicesRequest</a>) -&gt; <a class='type' href='../../rusoto/ecs/type.Result.html' title='rusoto::ecs::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/ecs/struct.ListServicesResponse.html' title='rusoto::ecs::ListServicesResponse'>ListServicesResponse</a>&gt;</code></h4>
+<div class='docblock'><p>Lists the services that are running in a specified cluster.</p>
+</div><h4 id='method.start_task' class='method'><code>fn <a href='#method.start_task' class='fnname'>start_task</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/ecs/struct.StartTaskRequest.html' title='rusoto::ecs::StartTaskRequest'>StartTaskRequest</a>) -&gt; <a class='type' href='../../rusoto/ecs/type.Result.html' title='rusoto::ecs::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/ecs/struct.StartTaskResponse.html' title='rusoto::ecs::StartTaskResponse'>StartTaskResponse</a>&gt;</code></h4>
+<div class='docblock'><p>Starts a new task from the specified task definition on the specified
+container instance or instances. To use the default Amazon ECS scheduler to
+place your task, use <code>RunTask</code> instead.
+The list of container instances to start tasks on is limited to 10.</p>
+</div><h4 id='method.register_container_instance' class='method'><code>fn <a href='#method.register_container_instance' class='fnname'>register_container_instance</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/ecs/struct.RegisterContainerInstanceRequest.html' title='rusoto::ecs::RegisterContainerInstanceRequest'>RegisterContainerInstanceRequest</a>) -&gt; <a class='type' href='../../rusoto/ecs/type.Result.html' title='rusoto::ecs::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/ecs/struct.RegisterContainerInstanceResponse.html' title='rusoto::ecs::RegisterContainerInstanceResponse'>RegisterContainerInstanceResponse</a>&gt;</code></h4>
+<div class='docblock'><p>This action is only used by the Amazon EC2 Container Service agent, and it is
+not intended for use outside of the agent.
+Registers an EC2 instance into the specified cluster. This instance becomes
+available to place containers on.</p>
+</div><h4 id='method.describe_task_definition' class='method'><code>fn <a href='#method.describe_task_definition' class='fnname'>describe_task_definition</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/ecs/struct.DescribeTaskDefinitionRequest.html' title='rusoto::ecs::DescribeTaskDefinitionRequest'>DescribeTaskDefinitionRequest</a>) -&gt; <a class='type' href='../../rusoto/ecs/type.Result.html' title='rusoto::ecs::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/ecs/struct.DescribeTaskDefinitionResponse.html' title='rusoto::ecs::DescribeTaskDefinitionResponse'>DescribeTaskDefinitionResponse</a>&gt;</code></h4>
+<div class='docblock'><p>Describes a task definition. You can specify a <code>family</code> and <code>revision</code> to find
+information about a specific task definition, or you can simply specify the
+family to find the latest <code>ACTIVE</code> revision in that family.
+You can only describe <code>INACTIVE</code> task definitions while an active task or
+service references them.</p>
+</div><h4 id='method.describe_tasks' class='method'><code>fn <a href='#method.describe_tasks' class='fnname'>describe_tasks</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/ecs/struct.DescribeTasksRequest.html' title='rusoto::ecs::DescribeTasksRequest'>DescribeTasksRequest</a>) -&gt; <a class='type' href='../../rusoto/ecs/type.Result.html' title='rusoto::ecs::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/ecs/struct.DescribeTasksResponse.html' title='rusoto::ecs::DescribeTasksResponse'>DescribeTasksResponse</a>&gt;</code></h4>
+<div class='docblock'><p>Describes a specified task or tasks.</p>
+</div><h4 id='method.deregister_container_instance' class='method'><code>fn <a href='#method.deregister_container_instance' class='fnname'>deregister_container_instance</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/ecs/struct.DeregisterContainerInstanceRequest.html' title='rusoto::ecs::DeregisterContainerInstanceRequest'>DeregisterContainerInstanceRequest</a>) -&gt; <a class='type' href='../../rusoto/ecs/type.Result.html' title='rusoto::ecs::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/ecs/struct.DeregisterContainerInstanceResponse.html' title='rusoto::ecs::DeregisterContainerInstanceResponse'>DeregisterContainerInstanceResponse</a>&gt;</code></h4>
+<div class='docblock'><p>Deregisters an Amazon ECS container instance from the specified cluster. This
+instance is no longer available to run tasks.
+If you intend to use the container instance for some other purpose after
+deregistration, you should stop all of the tasks running on the container
+instance before deregistration to avoid any orphaned tasks from consuming
+resources.
+Deregistering a container instance removes the instance from a cluster, but it
+does not terminate the EC2 instance; if you are finished using the instance,
+be sure to terminate it in the Amazon EC2 console to stop billing.
+When you terminate a container instance, it is automatically deregistered from
+your cluster.</p>
+</div><h4 id='method.list_tasks' class='method'><code>fn <a href='#method.list_tasks' class='fnname'>list_tasks</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/ecs/struct.ListTasksRequest.html' title='rusoto::ecs::ListTasksRequest'>ListTasksRequest</a>) -&gt; <a class='type' href='../../rusoto/ecs/type.Result.html' title='rusoto::ecs::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/ecs/struct.ListTasksResponse.html' title='rusoto::ecs::ListTasksResponse'>ListTasksResponse</a>&gt;</code></h4>
+<div class='docblock'><p>Returns a list of tasks for a specified cluster. You can filter the results by
+family name, by a particular container instance, or by the desired status of
+the task with the <code>family</code>, <code>containerInstance</code>, and <code>desiredStatus</code>
+parameters.</p>
+</div><h4 id='method.describe_container_instances' class='method'><code>fn <a href='#method.describe_container_instances' class='fnname'>describe_container_instances</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/ecs/struct.DescribeContainerInstancesRequest.html' title='rusoto::ecs::DescribeContainerInstancesRequest'>DescribeContainerInstancesRequest</a>) -&gt; <a class='type' href='../../rusoto/ecs/type.Result.html' title='rusoto::ecs::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/ecs/struct.DescribeContainerInstancesResponse.html' title='rusoto::ecs::DescribeContainerInstancesResponse'>DescribeContainerInstancesResponse</a>&gt;</code></h4>
+<div class='docblock'><p>Describes Amazon EC2 Container Service container instances. Returns metadata
+about registered and remaining resources on each container instance requested.</p>
+</div><h4 id='method.run_task' class='method'><code>fn <a href='#method.run_task' class='fnname'>run_task</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/ecs/struct.RunTaskRequest.html' title='rusoto::ecs::RunTaskRequest'>RunTaskRequest</a>) -&gt; <a class='type' href='../../rusoto/ecs/type.Result.html' title='rusoto::ecs::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/ecs/struct.RunTaskResponse.html' title='rusoto::ecs::RunTaskResponse'>RunTaskResponse</a>&gt;</code></h4>
+<div class='docblock'><p>Start a task using random placement and the default Amazon ECS scheduler. To
+use your own scheduler or place a task on a specific container instance, use
+<code>StartTask</code> instead.
+The <code>count</code> parameter is limited to 10 tasks per call.</p>
+</div><h4 id='method.discover_poll_endpoint' class='method'><code>fn <a href='#method.discover_poll_endpoint' class='fnname'>discover_poll_endpoint</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/ecs/struct.DiscoverPollEndpointRequest.html' title='rusoto::ecs::DiscoverPollEndpointRequest'>DiscoverPollEndpointRequest</a>) -&gt; <a class='type' href='../../rusoto/ecs/type.Result.html' title='rusoto::ecs::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/ecs/struct.DiscoverPollEndpointResponse.html' title='rusoto::ecs::DiscoverPollEndpointResponse'>DiscoverPollEndpointResponse</a>&gt;</code></h4>
+<div class='docblock'><p>This action is only used by the Amazon EC2 Container Service agent, and it is
+not intended for use outside of the agent.
+Returns an endpoint for the Amazon EC2 Container Service agent to poll for
+updates.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "rusoto";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

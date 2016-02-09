@@ -9,6 +9,7 @@
 
     <title>lib.rs.html -- source</title>
 
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
 
     
@@ -94,6 +95,8 @@
 <span id="52">52</span>
 <span id="53">53</span>
 <span id="54">54</span>
+<span id="55">55</span>
+<span id="56">56</span>
 </pre><pre class='rust '>
 <span class='attribute'>#<span class='op'>!</span>[<span class='ident'>crate_name</span> <span class='op'>=</span> <span class='string'>&quot;rusoto&quot;</span>]</span>
 <span class='attribute'>#<span class='op'>!</span>[<span class='ident'>crate_type</span> <span class='op'>=</span> <span class='string'>&quot;lib&quot;</span>]</span>
@@ -114,6 +117,7 @@
 <span class='doccomment'>//! ## Supported services</span>
 <span class='doccomment'>//!</span>
 <span class='doccomment'>//! * DynamoDB</span>
+<span class='doccomment'>//! * [ECS](https://aws.amazon.com/ecs/)</span>
 <span class='doccomment'>//! * KMS</span>
 <span class='doccomment'>//! * S3</span>
 <span class='doccomment'>//! * SQS</span>
@@ -142,6 +146,7 @@
 <span class='attribute'>#[<span class='ident'>macro_use</span>]</span> <span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>signature</span>;
 <span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>credentials</span>;
 <span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>dynamodb</span>;
+<span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>ecs</span>;
 <span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>error</span>;
 <span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>kms</span>;
 <span class='kw'>pub</span> <span class='kw'>mod</span> <span class='ident'>sqs</span>;
@@ -209,6 +214,6 @@
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
     
-    <script async src="../../search-index.js"></script>
+    <script defer src="../../search-index.js"></script>
 </body>
 </html>

@@ -9,6 +9,7 @@
 
     <title>rusoto::kms::KMSClient - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
 
     
@@ -45,7 +46,7 @@
             <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                 [<span class='inner'>&#x2212;</span>]
             </a>
-        </span><a id='src-17577' class='srclink' href='../../src/rusoto///Users/matthew/Documents/rusoto/target/debug/build/rusoto-6ab52daf74cff96d/out/kms.rs.html#14164-14167' title='goto source code'>[src]</a></span></h1>
+        </span><a id='src-29607' class='srclink' href='../../src/rusoto///Users/matthew/Documents/rusoto/target/debug/build/rusoto-5b1d959a83d195ba/out/kms.rs.html#14164-14167' title='goto source code'>[src]</a></span></h1>
 <pre class='rust struct'>pub struct KMSClient&lt;'a&gt; {
     // some fields omitted
 }</pre><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl&lt;'a&gt; <a class='struct' href='../../rusoto/kms/struct.KMSClient.html' title='rusoto::kms::KMSClient'>KMSClient</a>&lt;'a&gt;</code></h3><div class='impl-items'><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;P: <a class='trait' href='../../rusoto/credentials/trait.AWSCredentialsProvider.html' title='rusoto::credentials::AWSCredentialsProvider'>AWSCredentialsProvider</a> + 'a&gt;(creds: P, region: &amp;'a <a class='enum' href='../../rusoto/regions/enum.Region.html' title='rusoto::regions::Region'>Region</a>) -&gt; <a class='struct' href='../../rusoto/kms/struct.KMSClient.html' title='rusoto::kms::KMSClient'>KMSClient</a>&lt;'a&gt;</code></h4>
@@ -63,7 +64,7 @@ If you want to encrypt data locally in your application, you can use the
 <code>GenerateDataKey</code> function to return a plaintext data encryption key and a
 copy of the key encrypted under the customer master key (CMK) of your
 choosing.</p>
-</div><h4 id='method.update_alias' class='method'><code>fn <a href='#method.update_alias' class='fnname'>update_alias</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/kms/struct.UpdateAliasRequest.html' title='rusoto::kms::UpdateAliasRequest'>UpdateAliasRequest</a>) -&gt; <a class='type' href='../../rusoto/kms/type.Result.html' title='rusoto::kms::Result'>Result</a>&lt;<a href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>&gt;</code></h4>
+</div><h4 id='method.update_alias' class='method'><code>fn <a href='#method.update_alias' class='fnname'>update_alias</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/kms/struct.UpdateAliasRequest.html' title='rusoto::kms::UpdateAliasRequest'>UpdateAliasRequest</a>) -&gt; <a class='type' href='../../rusoto/kms/type.Result.html' title='rusoto::kms::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>&gt;</code></h4>
 <div class='docblock'><p>Updates an alias to map it to a different key.
 An alias is not a property of a key. Therefore, an alias can be mapped to and
 unmapped from an existing key without changing the properties of the key.
@@ -73,7 +74,7 @@ followed by a forward slash (alias/). An alias that begins with &quot;aws&quot; 
 the forward slash (alias/aws...) is reserved by Amazon Web Services (AWS).
 The alias and the key it is mapped to must be in the same AWS account and the
 same region.</p>
-</div><h4 id='method.disable_key' class='method'><code>fn <a href='#method.disable_key' class='fnname'>disable_key</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/kms/struct.DisableKeyRequest.html' title='rusoto::kms::DisableKeyRequest'>DisableKeyRequest</a>) -&gt; <a class='type' href='../../rusoto/kms/type.Result.html' title='rusoto::kms::Result'>Result</a>&lt;<a href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>&gt;</code></h4>
+</div><h4 id='method.disable_key' class='method'><code>fn <a href='#method.disable_key' class='fnname'>disable_key</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/kms/struct.DisableKeyRequest.html' title='rusoto::kms::DisableKeyRequest'>DisableKeyRequest</a>) -&gt; <a class='type' href='../../rusoto/kms/type.Result.html' title='rusoto::kms::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>&gt;</code></h4>
 <div class='docblock'><p>Sets the state of a master key to disabled, thereby preventing its use for
 cryptographic operations. For more information about how key state affects the
 use of a master key, go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use of a Customer Master
@@ -130,10 +131,10 @@ in the <em>AWS Key Management Service Developer Guide</em>.</p>
 the specified key.</p>
 </div><h4 id='method.list_key_policies' class='method'><code>fn <a href='#method.list_key_policies' class='fnname'>list_key_policies</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/kms/struct.ListKeyPoliciesRequest.html' title='rusoto::kms::ListKeyPoliciesRequest'>ListKeyPoliciesRequest</a>) -&gt; <a class='type' href='../../rusoto/kms/type.Result.html' title='rusoto::kms::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/kms/struct.ListKeyPoliciesResponse.html' title='rusoto::kms::ListKeyPoliciesResponse'>ListKeyPoliciesResponse</a>&gt;</code></h4>
 <div class='docblock'><p>Retrieves a list of policies attached to a key.</p>
-</div><h4 id='method.delete_alias' class='method'><code>fn <a href='#method.delete_alias' class='fnname'>delete_alias</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/kms/struct.DeleteAliasRequest.html' title='rusoto::kms::DeleteAliasRequest'>DeleteAliasRequest</a>) -&gt; <a class='type' href='../../rusoto/kms/type.Result.html' title='rusoto::kms::Result'>Result</a>&lt;<a href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>&gt;</code></h4>
+</div><h4 id='method.delete_alias' class='method'><code>fn <a href='#method.delete_alias' class='fnname'>delete_alias</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/kms/struct.DeleteAliasRequest.html' title='rusoto::kms::DeleteAliasRequest'>DeleteAliasRequest</a>) -&gt; <a class='type' href='../../rusoto/kms/type.Result.html' title='rusoto::kms::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>&gt;</code></h4>
 <div class='docblock'><p>Deletes the specified alias. To map an alias to a different key, call
 UpdateAlias.</p>
-</div><h4 id='method.retire_grant' class='method'><code>fn <a href='#method.retire_grant' class='fnname'>retire_grant</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/kms/struct.RetireGrantRequest.html' title='rusoto::kms::RetireGrantRequest'>RetireGrantRequest</a>) -&gt; <a class='type' href='../../rusoto/kms/type.Result.html' title='rusoto::kms::Result'>Result</a>&lt;<a href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>&gt;</code></h4>
+</div><h4 id='method.retire_grant' class='method'><code>fn <a href='#method.retire_grant' class='fnname'>retire_grant</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/kms/struct.RetireGrantRequest.html' title='rusoto::kms::RetireGrantRequest'>RetireGrantRequest</a>) -&gt; <a class='type' href='../../rusoto/kms/type.Result.html' title='rusoto::kms::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>&gt;</code></h4>
 <div class='docblock'><p>Retires a grant. You can retire a grant when you&#39;re done using it to clean up.
 You should revoke a grant when you intend to actively deny operations that
 depend on it. The following are permitted to call this API:
@@ -176,7 +177,7 @@ statement in your key policies to permit re-encryption from or to the key. The
 statement is included automatically when you authorize use of the key through
 the console but must be included manually when you set a policy by using the
 PutKeyPolicy function.</p>
-</div><h4 id='method.disable_key_rotation' class='method'><code>fn <a href='#method.disable_key_rotation' class='fnname'>disable_key_rotation</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/kms/struct.DisableKeyRotationRequest.html' title='rusoto::kms::DisableKeyRotationRequest'>DisableKeyRotationRequest</a>) -&gt; <a class='type' href='../../rusoto/kms/type.Result.html' title='rusoto::kms::Result'>Result</a>&lt;<a href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>&gt;</code></h4>
+</div><h4 id='method.disable_key_rotation' class='method'><code>fn <a href='#method.disable_key_rotation' class='fnname'>disable_key_rotation</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/kms/struct.DisableKeyRotationRequest.html' title='rusoto::kms::DisableKeyRotationRequest'>DisableKeyRotationRequest</a>) -&gt; <a class='type' href='../../rusoto/kms/type.Result.html' title='rusoto::kms::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>&gt;</code></h4>
 <div class='docblock'><p>Disables rotation of the specified key.</p>
 </div><h4 id='method.list_retirable_grants' class='method'><code>fn <a href='#method.list_retirable_grants' class='fnname'>list_retirable_grants</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/kms/struct.ListRetirableGrantsRequest.html' title='rusoto::kms::ListRetirableGrantsRequest'>ListRetirableGrantsRequest</a>) -&gt; <a class='type' href='../../rusoto/kms/type.Result.html' title='rusoto::kms::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/kms/struct.ListGrantsResponse.html' title='rusoto::kms::ListGrantsResponse'>ListGrantsResponse</a>&gt;</code></h4>
 <div class='docblock'><p>Returns a list of all grants for which the grant&#39;s <code>RetiringPrincipal</code> matches
@@ -198,7 +199,7 @@ unrecoverable. To restrict the use of a CMK without deleting it, use
 DisableKey.
 For more information about scheduling a CMK for deletion, go to <a href="http://docs.aws.amazon.com/kms/latest/developerguide%0A/deleting-keys.html">Deleting
 Customer Master Keys</a> in the <em>AWS Key Management Service Developer Guide</em>.</p>
-</div><h4 id='method.create_alias' class='method'><code>fn <a href='#method.create_alias' class='fnname'>create_alias</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/kms/struct.CreateAliasRequest.html' title='rusoto::kms::CreateAliasRequest'>CreateAliasRequest</a>) -&gt; <a class='type' href='../../rusoto/kms/type.Result.html' title='rusoto::kms::Result'>Result</a>&lt;<a href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>&gt;</code></h4>
+</div><h4 id='method.create_alias' class='method'><code>fn <a href='#method.create_alias' class='fnname'>create_alias</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/kms/struct.CreateAliasRequest.html' title='rusoto::kms::CreateAliasRequest'>CreateAliasRequest</a>) -&gt; <a class='type' href='../../rusoto/kms/type.Result.html' title='rusoto::kms::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>&gt;</code></h4>
 <div class='docblock'><p>Creates a display name for a customer master key. An alias can be used to
 identify a key and should be unique. The console enforces a one-to-one mapping
 between the alias and a key. An alias name can contain only alphanumeric
@@ -209,11 +210,11 @@ reserved by Amazon Web Services (AWS).
 The alias and the key it is mapped to must be in the same AWS account and the
 same region.
 To map an alias to a different key, call UpdateAlias.</p>
-</div><h4 id='method.enable_key_rotation' class='method'><code>fn <a href='#method.enable_key_rotation' class='fnname'>enable_key_rotation</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/kms/struct.EnableKeyRotationRequest.html' title='rusoto::kms::EnableKeyRotationRequest'>EnableKeyRotationRequest</a>) -&gt; <a class='type' href='../../rusoto/kms/type.Result.html' title='rusoto::kms::Result'>Result</a>&lt;<a href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>&gt;</code></h4>
+</div><h4 id='method.enable_key_rotation' class='method'><code>fn <a href='#method.enable_key_rotation' class='fnname'>enable_key_rotation</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/kms/struct.EnableKeyRotationRequest.html' title='rusoto::kms::EnableKeyRotationRequest'>EnableKeyRotationRequest</a>) -&gt; <a class='type' href='../../rusoto/kms/type.Result.html' title='rusoto::kms::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>&gt;</code></h4>
 <div class='docblock'><p>Enables rotation of the specified customer master key.</p>
 </div><h4 id='method.list_grants' class='method'><code>fn <a href='#method.list_grants' class='fnname'>list_grants</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/kms/struct.ListGrantsRequest.html' title='rusoto::kms::ListGrantsRequest'>ListGrantsRequest</a>) -&gt; <a class='type' href='../../rusoto/kms/type.Result.html' title='rusoto::kms::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/kms/struct.ListGrantsResponse.html' title='rusoto::kms::ListGrantsResponse'>ListGrantsResponse</a>&gt;</code></h4>
 <div class='docblock'><p>List the grants for a specified key.</p>
-</div><h4 id='method.enable_key' class='method'><code>fn <a href='#method.enable_key' class='fnname'>enable_key</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/kms/struct.EnableKeyRequest.html' title='rusoto::kms::EnableKeyRequest'>EnableKeyRequest</a>) -&gt; <a class='type' href='../../rusoto/kms/type.Result.html' title='rusoto::kms::Result'>Result</a>&lt;<a href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>&gt;</code></h4>
+</div><h4 id='method.enable_key' class='method'><code>fn <a href='#method.enable_key' class='fnname'>enable_key</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/kms/struct.EnableKeyRequest.html' title='rusoto::kms::EnableKeyRequest'>EnableKeyRequest</a>) -&gt; <a class='type' href='../../rusoto/kms/type.Result.html' title='rusoto::kms::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>&gt;</code></h4>
 <div class='docblock'><p>Marks a key as enabled, thereby permitting its use.</p>
 </div><h4 id='method.decrypt' class='method'><code>fn <a href='#method.decrypt' class='fnname'>decrypt</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/kms/struct.DecryptRequest.html' title='rusoto::kms::DecryptRequest'>DecryptRequest</a>) -&gt; <a class='type' href='../../rusoto/kms/type.Result.html' title='rusoto::kms::Result'>Result</a>&lt;<a class='struct' href='../../rusoto/kms/struct.DecryptResponse.html' title='rusoto::kms::DecryptResponse'>DecryptResponse</a>&gt;</code></h4>
 <div class='docblock'><p>Decrypts ciphertext. Ciphertext is plaintext that has been previously
@@ -229,12 +230,12 @@ recommend that you do not grant <code>Decrypt</code> access in an IAM user polic
 Instead grant <code>Decrypt</code> access only in key policies. If you must grant
 <code>Decrypt</code> access in an IAM user policy, you should scope the resource to
 specific keys or to specific trusted accounts.</p>
-</div><h4 id='method.update_key_description' class='method'><code>fn <a href='#method.update_key_description' class='fnname'>update_key_description</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/kms/struct.UpdateKeyDescriptionRequest.html' title='rusoto::kms::UpdateKeyDescriptionRequest'>UpdateKeyDescriptionRequest</a>) -&gt; <a class='type' href='../../rusoto/kms/type.Result.html' title='rusoto::kms::Result'>Result</a>&lt;<a href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>&gt;</code></h4>
+</div><h4 id='method.update_key_description' class='method'><code>fn <a href='#method.update_key_description' class='fnname'>update_key_description</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/kms/struct.UpdateKeyDescriptionRequest.html' title='rusoto::kms::UpdateKeyDescriptionRequest'>UpdateKeyDescriptionRequest</a>) -&gt; <a class='type' href='../../rusoto/kms/type.Result.html' title='rusoto::kms::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>&gt;</code></h4>
 <div class='docblock'><p>Updates the description of a key.</p>
-</div><h4 id='method.revoke_grant' class='method'><code>fn <a href='#method.revoke_grant' class='fnname'>revoke_grant</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/kms/struct.RevokeGrantRequest.html' title='rusoto::kms::RevokeGrantRequest'>RevokeGrantRequest</a>) -&gt; <a class='type' href='../../rusoto/kms/type.Result.html' title='rusoto::kms::Result'>Result</a>&lt;<a href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>&gt;</code></h4>
+</div><h4 id='method.revoke_grant' class='method'><code>fn <a href='#method.revoke_grant' class='fnname'>revoke_grant</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/kms/struct.RevokeGrantRequest.html' title='rusoto::kms::RevokeGrantRequest'>RevokeGrantRequest</a>) -&gt; <a class='type' href='../../rusoto/kms/type.Result.html' title='rusoto::kms::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>&gt;</code></h4>
 <div class='docblock'><p>Revokes a grant. You can revoke a grant to actively deny operations that
 depend on it.</p>
-</div><h4 id='method.put_key_policy' class='method'><code>fn <a href='#method.put_key_policy' class='fnname'>put_key_policy</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/kms/struct.PutKeyPolicyRequest.html' title='rusoto::kms::PutKeyPolicyRequest'>PutKeyPolicyRequest</a>) -&gt; <a class='type' href='../../rusoto/kms/type.Result.html' title='rusoto::kms::Result'>Result</a>&lt;<a href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>&gt;</code></h4>
+</div><h4 id='method.put_key_policy' class='method'><code>fn <a href='#method.put_key_policy' class='fnname'>put_key_policy</a>(&amp;mut self, input: &amp;<a class='struct' href='../../rusoto/kms/struct.PutKeyPolicyRequest.html' title='rusoto::kms::PutKeyPolicyRequest'>PutKeyPolicyRequest</a>) -&gt; <a class='type' href='../../rusoto/kms/type.Result.html' title='rusoto::kms::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>&gt;</code></h4>
 <div class='docblock'><p>Attaches a policy to the specified key.</p>
 </div></div></section>
     <section id='search' class="content hidden"></section>
@@ -295,6 +296,6 @@ depend on it.</p>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
     
-    <script async src="../../search-index.js"></script>
+    <script defer src="../../search-index.js"></script>
 </body>
 </html>
