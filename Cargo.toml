@@ -14,41 +14,35 @@ build = "build.rs"
 [features]
 default = ["serde_codegen"]
 nightly = ["serde_macros"]
-aws_integration = ["dynamodb"]
-dynamodb = []
-
-[build-dependencies]
-regex = "^0.1.41"
-Inflector = "0.1.6"
-botocore_parser = { path = "../botocore_parser" }
-serde_codegen = { version = "0.6.9", optional = true }
-serde_json = "0.6.0"
-syntex = "^0.28.0"
-
-[dependencies]
-serde = "*"
-serde_json = "0.6.0"
-serde_macros = { version = "*", optional = true }
-xml-rs = "^0.1.26"
-time = "^0.1.34"
-openssl = "^0.7.5"
-hyper = "^0.7.2"
-url = "^0.2.37"
-rustc-serialize = "^0.3.18"
-regex = "^0.1.41"
-chrono = "^0.2.19"
-rust-crypto = "^0.2.34"
-log = "^0.3.3"
-serde = "0.6.13"
-serde_json = "0.6.0"
-
-[dev-dependencies]
-env_logger = "^0.3.2"
-
-[features]
 aws_integration = ["dynamodb", "ecs", "kms", "s3", "sqs", "dynamodb"]
 ecs = []
 s3 = []
 sqs = []
 dynamodb = []
 kms = []
+
+[build-dependencies]
+regex = "^0.1.51"
+Inflector = "0.2.0"
+botocore_parser = { path = "../botocore_parser" }
+serde_codegen = { version = "0.6.13", optional = true }
+serde_json = "0.6.0"
+syntex = "^0.28.0"
+
+[dependencies]
+serde = "0.6.13"
+serde_json = "0.6.0"
+serde_macros = { version = "0.6.13", optional = true }
+xml-rs = "^0.1.26"
+time = "^0.1.34"
+openssl = "^0.7.5"
+hyper = "^0.7.2"
+url = "^0.2.37"
+rustc-serialize = "^0.3.18"
+regex = "^0.1.51"
+chrono = "^0.2.19"
+rust-crypto = "^0.2.34"
+log = "^0.3.3"
+
+[dev-dependencies]
+env_logger = "^0.3.2"
