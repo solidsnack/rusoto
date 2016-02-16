@@ -25,7 +25,6 @@ struct AmazonService {
 fn main() {
     let out_dir = env::var_os("OUT_DIR").expect("OUT_DIR not specified");
     let out_path = Path::new(&out_dir);
-    let src_path = Path::new("src");
 
     let botocore_dir = env::var_os("BOTOCORE_DIR");
     let botocore_path = match botocore_dir {
@@ -57,6 +56,7 @@ fn botocore_generate(input: &str, type_name: &str, destination: &Path) {
     // source.push_str("#![allow(non_snake_case)]\n");
     source.push_str("use serde_json;\n");
     source.push_str("use std::io::Read;\n");
+    source.push_str("use std::str;\n");
 
     if type_name == "DynamoDBClient" {
         source.push_str("#[derive(Deserialize, Debug, Default)]\n");
@@ -69,7 +69,9 @@ fn botocore_generate(input: &str, type_name: &str, destination: &Path) {
     // generate rust structs for the botocore shapes
     source.push_str(&render_shapes(&service));
     // and parsers:
-    source.push_str(&s3_response_struct_parsers(&service));
+    if type_name == "S3Client" {
+        source.push_str(&s3_response_struct_parsers(&service));
+    }
 
     // generate the service client struct
     source.push_str(&format!("pub struct {}<'a> {{", type_name));

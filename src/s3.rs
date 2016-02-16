@@ -28,6 +28,6 @@ pub enum ArgumentLocation {
 // include the code generated from the S3 botocore templates
 include!(concat!(env!("OUT_DIR"), "/s3.rs"));
 
-pub struct S3Error;
-
-pub type Result<T> = result::Result<T, S3Error>;
+// pub struct S3Error;
+//
+// pub type Result<T> = result::Result<T, S3Error>;

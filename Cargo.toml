@@ -24,7 +24,9 @@ kms = []
 [build-dependencies]
 regex = "^0.1.51"
 Inflector = "0.2.0"
-botocore_parser = { path = "../botocore_parser" }
+# for faster development of botocore_parser this can can be set to use a local copy:
+# botocore_parser = { path = "../botocore_parser" }
+botocore_parser = "^0.1.0"
 serde_codegen = { version = "0.6.13", optional = true }
 serde_json = "0.6.0"
 syntex = "^0.28.0"
