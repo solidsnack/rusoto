@@ -7,6 +7,7 @@ extern crate syntex;
 
 use botocore_parser::{Service, Shape};
 use std::fs::File;
+use std::fs;
 use std::io::{Read, Write};
 use inflector::Inflector;
 use std::path::Path;
@@ -110,6 +111,8 @@ fn generate(
 
     botocore_generate(input, &service.type_name, botocore_destination.as_path());
     serde_generate(botocore_destination.as_path(), serde_destination.as_path());
+    // clean up the no longer needed serde input AKA code made by botocore_parser:
+    fs::remove_file(botocore_destination.as_path()).expect("Couldn't delete temp botocore generated file");
 }
 
 fn serde_generate(source: &Path, destination: &Path) {
@@ -185,7 +188,7 @@ fn s3_function_guts(op: &botocore_parser::Operation) -> String {
     match op.output {
         None => src.push_str(&format!("\t\t\t\treturn Ok(());\n")),
         Some(_) => {
-            src.push_str(&format!("\t\t\t\tlet aws_result = try!({}::parse_response(None, None, &headers, &mut stack));\n", op.output_shape_or("")));
+            src.push_str(&format!("\t\t\t\tlet aws_result = try!({}Parser::parse_response(None, None, &headers, &mut stack));\n", op.output_shape_or("")));
             src.push_str(&format!("\t\t\t\tOk(aws_result)\n"));
         },
     }
@@ -206,8 +209,8 @@ fn s3_response_struct_parsers(service: &Service) -> String {
     let mut src = String::new();
     for (name, shape) in service.shapes.iter() {
         src.push_str(&format!("// parser for name {}, shape {:?}\n", name, shape));
-        //src.push_str(&format!("struct {};\n", name));
-        src.push_str(&format!("impl {} {{\n", name));
+        src.push_str(&format!("struct {}Parser;\n", name));
+        src.push_str(&format!("impl {}Parser {{\n", name));
         src.push_str(&format!("\tpub fn parse_response<'a, T: Peek + Next>(tag_name: Option<&str>, location: Option<&ArgumentLocation>, headers: &Headers, stack: &mut T) -> Result<{}, XmlParseError> {{\n", name));
         src.push_str(&format!("\t\t// totally a parser\n"));
         src.push_str(&format!("\t\tErr(XmlParseError::new(\"Not implemented\"))\n"));
@@ -282,7 +285,6 @@ fn render_shapes(service: &Service) -> String {
 
 
 fn struct_type(name: &str, shape: &Shape) -> String {
-
 	if shape.members.is_empty() {
 		return format!("#[derive(Debug, Serialize, Deserialize, Default)]\npub struct {};", name);
 	}
@@ -298,16 +300,10 @@ fn struct_type(name: &str, shape: &Shape) -> String {
 		} else {
 			struct_type = struct_type + &format!("\tpub {}: Option<{}>,\n", member_name, member.shape)
 		}
-
-
 	}
-
 	struct_type = struct_type + "}\n";
 	struct_type
-
-
 }
-
 
 fn primitive_type(shape_type: &str) -> String {
 	match shape_type {
