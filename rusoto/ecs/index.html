@@ -57,7 +57,6 @@
                                title='rusoto::ecs::Attribute'>Attribute</a></td>
                         <td class='docblock short'>
                              <p>The attributes applicable to a container instance when it is registered.</p>
-
                         </td>
                     </tr>
                 
@@ -68,7 +67,6 @@
                              <p>These errors are usually caused by a client action, such as using an action or
 resource on behalf of a user that doesn&#39;t have permission to use the action or
 resource, or specifying an identifier that is not valid.</p>
-
                         </td>
                     </tr>
                 
@@ -80,7 +78,6 @@ resource, or specifying an identifier that is not valid.</p>
 task requests. Each account receives a default cluster the first time you use
 the Amazon ECS service, but you may also create other clusters. Clusters may
 contain more than one instance type simultaneously.</p>
-
                         </td>
                     </tr>
                 
@@ -91,7 +88,6 @@ contain more than one instance type simultaneously.</p>
                              <p>You cannot delete a cluster that has registered container instances. You must
 first deregister the container instances before you can delete the cluster.
 For more information, see DeregisterContainerInstance.</p>
-
                         </td>
                     </tr>
                 
@@ -102,7 +98,6 @@ For more information, see DeregisterContainerInstance.</p>
                              <p>You cannot delete a cluster that contains services. You must first update the
 service to reduce its desired task count to 0 and then delete the service. For
 more information, see UpdateService and DeleteService.</p>
-
                         </td>
                     </tr>
                 
@@ -112,7 +107,6 @@ more information, see UpdateService and DeleteService.</p>
                         <td class='docblock short'>
                              <p>The specified cluster could not be found. You can view your available clusters
 with ListClusters. Amazon ECS clusters are region-specific.</p>
-
                         </td>
                     </tr>
                 
@@ -121,7 +115,6 @@ with ListClusters. Amazon ECS clusters are region-specific.</p>
                                title='rusoto::ecs::Container'>Container</a></td>
                         <td class='docblock short'>
                              <p>A Docker container that is part of a task.</p>
-
                         </td>
                     </tr>
                 
@@ -131,7 +124,6 @@ with ListClusters. Amazon ECS clusters are region-specific.</p>
                         <td class='docblock short'>
                              <p>Container definitions are used in task definitions to describe the different
 containers that are launched as part of a task.</p>
-
                         </td>
                     </tr>
                 
@@ -141,7 +133,6 @@ containers that are launched as part of a task.</p>
                         <td class='docblock short'>
                              <p>An EC2 instance that is running the Amazon ECS agent and has been registered
 with a cluster.</p>
-
                         </td>
                     </tr>
                 
@@ -150,7 +141,6 @@ with a cluster.</p>
                                title='rusoto::ecs::ContainerOverride'>ContainerOverride</a></td>
                         <td class='docblock short'>
                              <p>The overrides that should be sent to a container.</p>
-
                         </td>
                     </tr>
                 
@@ -223,7 +213,6 @@ with a cluster.</p>
                                title='rusoto::ecs::Deployment'>Deployment</a></td>
                         <td class='docblock short'>
                              <p>The details of an Amazon ECS service deployment.</p>
-
                         </td>
                     </tr>
                 
@@ -368,7 +357,6 @@ with a cluster.</p>
                                title='rusoto::ecs::ECSError'>ECSError</a></td>
                         <td class='docblock short'>
                              <p>Common error type for ECS requests</p>
-
                         </td>
                     </tr>
                 
@@ -377,7 +365,6 @@ with a cluster.</p>
                                title='rusoto::ecs::Failure'>Failure</a></td>
                         <td class='docblock short'>
                              <p>A failed resource.</p>
-
                         </td>
                     </tr>
                 
@@ -387,7 +374,6 @@ with a cluster.</p>
                         <td class='docblock short'>
                              <p>Hostnames and IP address entries that are added to the <code>/etc/hosts</code> file of a
 container via the <code>extraHosts</code> parameter of its ContainerDefinition.</p>
-
                         </td>
                     </tr>
                 
@@ -396,7 +382,6 @@ container via the <code>extraHosts</code> parameter of its ContainerDefinition.<
                                title='rusoto::ecs::HostVolumeProperties'>HostVolumeProperties</a></td>
                         <td class='docblock short'>
                              <p>Details on a container instance host volume.</p>
-
                         </td>
                     </tr>
                 
@@ -406,7 +391,6 @@ container via the <code>extraHosts</code> parameter of its ContainerDefinition.<
                         <td class='docblock short'>
                              <p>The specified parameter is invalid. Review the available parameters for the
 API request.</p>
-
                         </td>
                     </tr>
                 
@@ -415,7 +399,6 @@ API request.</p>
                                title='rusoto::ecs::KeyValuePair'>KeyValuePair</a></td>
                         <td class='docblock short'>
                              <p>A key and value pair object.</p>
-
                         </td>
                     </tr>
                 
@@ -520,7 +503,6 @@ API request.</p>
                                title='rusoto::ecs::LoadBalancer'>LoadBalancer</a></td>
                         <td class='docblock short'>
                              <p>Details on a load balancer that is used with a service.</p>
-
                         </td>
                     </tr>
                 
@@ -529,7 +511,6 @@ API request.</p>
                                title='rusoto::ecs::LogConfiguration'>LogConfiguration</a></td>
                         <td class='docblock short'>
                              <p>Log configuration options to send to a custom log driver for the container.</p>
-
                         </td>
                     </tr>
                 
@@ -542,7 +523,6 @@ container agent on the container instance and does not have enough information
 to proceed with an update. This could be because the agent running on the
 container instance is an older or custom version that does not use our version
 information.</p>
-
                         </td>
                     </tr>
                 
@@ -551,7 +531,6 @@ information.</p>
                                title='rusoto::ecs::MountPoint'>MountPoint</a></td>
                         <td class='docblock short'>
                              <p>Details on a volume mount point that is used in a container definition.</p>
-
                         </td>
                     </tr>
                 
@@ -563,7 +542,6 @@ information.</p>
 instance. After a task reaches the <code>RUNNING</code> status, manual and automatic host
 and container port assignments are visible in the <code>networkBindings</code> section of
 DescribeTasks API responses.</p>
-
                         </td>
                     </tr>
                 
@@ -574,7 +552,6 @@ DescribeTasks API responses.</p>
                              <p>There is no update available for this Amazon ECS container agent. This could
 be because the agent is already running the latest version, or it is so old
 that there is no update path to the current version.</p>
-
                         </td>
                     </tr>
                 
@@ -587,7 +564,6 @@ to send or receive traffic. Port mappings are specified as part of the
 container definition. After a task reaches the <code>RUNNING</code> status, manual and
 automatic host and container port assignments are visible in the
 <code>networkBindings</code> section of DescribeTasks API responses.</p>
-
                         </td>
                     </tr>
                 
@@ -628,7 +604,6 @@ automatic host and container port assignments are visible in the
                                title='rusoto::ecs::Resource'>Resource</a></td>
                         <td class='docblock short'>
                              <p>Describes the resources available for a container instance.</p>
-
                         </td>
                     </tr>
                 
@@ -653,7 +628,6 @@ automatic host and container port assignments are visible in the
                                title='rusoto::ecs::ServerException'>ServerException</a></td>
                         <td class='docblock short'>
                              <p>These errors are usually caused by a server issue.</p>
-
                         </td>
                     </tr>
                 
@@ -662,7 +636,6 @@ automatic host and container port assignments are visible in the
                                title='rusoto::ecs::Service'>Service</a></td>
                         <td class='docblock short'>
                              <p>Details on a service within a cluster</p>
-
                         </td>
                     </tr>
                 
@@ -671,7 +644,6 @@ automatic host and container port assignments are visible in the
                                title='rusoto::ecs::ServiceEvent'>ServiceEvent</a></td>
                         <td class='docblock short'>
                              <p>Details on an event associated with a service.</p>
-
                         </td>
                     </tr>
                 
@@ -682,7 +654,6 @@ automatic host and container port assignments are visible in the
                              <p>The specified service is not active. You cannot update a service that is not
 active. If you have previously deleted a service, you can re-create it with
 CreateService.</p>
-
                         </td>
                     </tr>
                 
@@ -693,7 +664,6 @@ CreateService.</p>
                              <p>The specified service could not be found. You can view your available services
 with ListServices. Amazon ECS services are cluster-specific and region-
 specific.</p>
-
                         </td>
                     </tr>
                 
@@ -766,7 +736,6 @@ specific.</p>
                                title='rusoto::ecs::Task'>Task</a></td>
                         <td class='docblock short'>
                              <p>Details on a task in a cluster.</p>
-
                         </td>
                     </tr>
                 
@@ -775,7 +744,6 @@ specific.</p>
                                title='rusoto::ecs::TaskDefinition'>TaskDefinition</a></td>
                         <td class='docblock short'>
                              <p>Details of a task definition.</p>
-
                         </td>
                     </tr>
                 
@@ -784,7 +752,6 @@ specific.</p>
                                title='rusoto::ecs::TaskOverride'>TaskOverride</a></td>
                         <td class='docblock short'>
                              <p>The overrides associated with a task.</p>
-
                         </td>
                     </tr>
                 
@@ -793,7 +760,6 @@ specific.</p>
                                title='rusoto::ecs::Ulimit'>Ulimit</a></td>
                         <td class='docblock short'>
                              <p>The <code>ulimit</code> settings to pass to the container.</p>
-
                         </td>
                     </tr>
                 
@@ -822,7 +788,6 @@ the specified container instance. If the container agent becomes disconnected
 while it is in a transitional stage, such as <code>PENDING</code> or <code>STAGING</code>, the
 update process can get stuck in that state. However, when the agent
 reconnects, it resumes where it stopped previously.</p>
-
                         </td>
                     </tr>
                 
@@ -848,7 +813,6 @@ reconnects, it resumes where it stopped previously.</p>
                         <td class='docblock short'>
                              <p>The Docker and Amazon ECS container agent version information about a
 container instance.</p>
-
                         </td>
                     </tr>
                 
@@ -857,7 +821,6 @@ container instance.</p>
                                title='rusoto::ecs::Volume'>Volume</a></td>
                         <td class='docblock short'>
                              <p>A data volume used in a task definition.</p>
-
                         </td>
                     </tr>
                 
@@ -866,7 +829,6 @@ container instance.</p>
                                title='rusoto::ecs::VolumeFrom'>VolumeFrom</a></td>
                         <td class='docblock short'>
                              <p>Details on a data volume from another container.</p>
-
                         </td>
                     </tr>
                 </table><h2 id='types' class='section-header'><a href="#types">Type Definitions</a></h2>
@@ -1092,7 +1054,6 @@ container instance.</p>
                                title='rusoto::ecs::Result'>Result</a></td>
                         <td class='docblock short'>
                              <p>Result type for ECS requests</p>
-
                         </td>
                     </tr>
                 
@@ -1234,7 +1195,7 @@ container instance.</p>
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>

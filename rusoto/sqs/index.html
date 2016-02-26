@@ -65,7 +65,6 @@
                                title='rusoto::sqs::BatchEntryIdsNotDistinct'>BatchEntryIdsNotDistinct</a></td>
                         <td class='docblock short'>
                              <p>Two or more batch entries have the same <code>Id</code> in the request.</p>
-
                         </td>
                     </tr>
                 
@@ -74,7 +73,6 @@
                                title='rusoto::sqs::BatchRequestTooLong'>BatchRequestTooLong</a></td>
                         <td class='docblock short'>
                              <p>The length of all the messages put together is more than the limit.</p>
-
                         </td>
                     </tr>
                 
@@ -84,7 +82,6 @@
                         <td class='docblock short'>
                              <p>This is used in the responses of batch API to give a detailed description of
 the result of an action on each entry in the request.</p>
-
                         </td>
                     </tr>
                 
@@ -109,7 +106,6 @@ this:
 <code>&amp;ChangeMessageVisibilityBatchRequestEntry.1.Id=change_visibility_msg_2</code>
 <code>&amp;ChangeMessageVisibilityBatchRequestEntry.1.ReceiptHandle=Your_Receipt_Handle</code>
 <code>&amp;ChangeMessageVisibilityBatchRequestEntry.1.VisibilityTimeout=45</code></p>
-
                         </td>
                     </tr>
                 
@@ -120,7 +116,6 @@ this:
                              <p>For each message in the batch, the response contains a
 ChangeMessageVisibilityBatchResultEntry tag if the message succeeds or a
 BatchResultErrorEntry tag if the message fails.</p>
-
                         </td>
                     </tr>
                 
@@ -129,7 +124,6 @@ BatchResultErrorEntry tag if the message fails.</p>
                                title='rusoto::sqs::ChangeMessageVisibilityBatchResultEntry'>ChangeMessageVisibilityBatchResultEntry</a></td>
                         <td class='docblock short'>
                              <p>Encloses the id of an entry in ChangeMessageVisibilityBatch.</p>
-
                         </td>
                     </tr>
                 
@@ -154,7 +148,6 @@ BatchResultErrorEntry tag if the message fails.</p>
                                title='rusoto::sqs::CreateQueueResult'>CreateQueueResult</a></td>
                         <td class='docblock short'>
                              <p>Returns the QueueUrl element of the created queue.</p>
-
                         </td>
                     </tr>
                 
@@ -171,7 +164,6 @@ BatchResultErrorEntry tag if the message fails.</p>
                                title='rusoto::sqs::DeleteMessageBatchRequestEntry'>DeleteMessageBatchRequestEntry</a></td>
                         <td class='docblock short'>
                              <p>Encloses a receipt handle and an identifier for it.</p>
-
                         </td>
                     </tr>
                 
@@ -182,7 +174,6 @@ BatchResultErrorEntry tag if the message fails.</p>
                              <p>For each message in the batch, the response contains a
 DeleteMessageBatchResultEntry tag if the message is deleted or a
 BatchResultErrorEntry tag if the message cannot be deleted.</p>
-
                         </td>
                     </tr>
                 
@@ -191,7 +182,6 @@ BatchResultErrorEntry tag if the message cannot be deleted.</p>
                                title='rusoto::sqs::DeleteMessageBatchResultEntry'>DeleteMessageBatchResultEntry</a></td>
                         <td class='docblock short'>
                              <p>Encloses the id an entry in DeleteMessageBatch.</p>
-
                         </td>
                     </tr>
                 
@@ -216,7 +206,6 @@ BatchResultErrorEntry tag if the message cannot be deleted.</p>
                                title='rusoto::sqs::EmptyBatchRequest'>EmptyBatchRequest</a></td>
                         <td class='docblock short'>
                              <p>Batch request does not contain an entry.</p>
-
                         </td>
                     </tr>
                 
@@ -233,7 +222,6 @@ BatchResultErrorEntry tag if the message cannot be deleted.</p>
                                title='rusoto::sqs::GetQueueAttributesResult'>GetQueueAttributesResult</a></td>
                         <td class='docblock short'>
                              <p>A list of returned queue attributes.</p>
-
                         </td>
                     </tr>
                 
@@ -251,7 +239,6 @@ BatchResultErrorEntry tag if the message cannot be deleted.</p>
                         <td class='docblock short'>
                              <p>For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueu%0AeService/latest/SQSDeveloperGuide/UnderstandingResponses.html">Responses</a> in the <em>Amazon
 SQS Developer Guide</em>.</p>
-
                         </td>
                     </tr>
                 
@@ -260,7 +247,6 @@ SQS Developer Guide</em>.</p>
                                title='rusoto::sqs::InvalidAttributeName'>InvalidAttributeName</a></td>
                         <td class='docblock short'>
                              <p>The attribute referred to does not exist.</p>
-
                         </td>
                     </tr>
                 
@@ -270,7 +256,6 @@ SQS Developer Guide</em>.</p>
                         <td class='docblock short'>
                              <p>The <code>Id</code> of a batch entry in a batch request does not abide by the
 specification.</p>
-
                         </td>
                     </tr>
                 
@@ -279,7 +264,6 @@ specification.</p>
                                title='rusoto::sqs::InvalidIdFormat'>InvalidIdFormat</a></td>
                         <td class='docblock short'>
                              <p>The receipt handle is not valid for the current version.</p>
-
                         </td>
                     </tr>
                 
@@ -288,7 +272,6 @@ specification.</p>
                                title='rusoto::sqs::InvalidMessageContents'>InvalidMessageContents</a></td>
                         <td class='docblock short'>
                              <p>The message contains characters outside the allowed set.</p>
-
                         </td>
                     </tr>
                 
@@ -305,7 +288,6 @@ specification.</p>
                                title='rusoto::sqs::ListDeadLetterSourceQueuesResult'>ListDeadLetterSourceQueuesResult</a></td>
                         <td class='docblock short'>
                              <p>A list of your dead letter source queues.</p>
-
                         </td>
                     </tr>
                 
@@ -322,7 +304,6 @@ specification.</p>
                                title='rusoto::sqs::ListQueuesResult'>ListQueuesResult</a></td>
                         <td class='docblock short'>
                              <p>A list of your queues.</p>
-
                         </td>
                     </tr>
                 
@@ -331,7 +312,6 @@ specification.</p>
                                title='rusoto::sqs::Message'>Message</a></td>
                         <td class='docblock short'>
                              <p>An Amazon SQS message.</p>
-
                         </td>
                     </tr>
                 
@@ -346,7 +326,6 @@ Name, type, and value must not be empty or null. In addition, the message body
 should not be empty or null. All parts of the message attribute, including
 name, type, and value, are included in the message size restriction, which is
 currently 256 KB (262,144 bytes).</p>
-
                         </td>
                     </tr>
                 
@@ -355,7 +334,6 @@ currently 256 KB (262,144 bytes).</p>
                                title='rusoto::sqs::MessageNotInflight'>MessageNotInflight</a></td>
                         <td class='docblock short'>
                              <p>The message referred to is not in flight.</p>
-
                         </td>
                     </tr>
                 
@@ -367,7 +345,6 @@ currently 256 KB (262,144 bytes).</p>
 ReceiveMessage returns this error if the maximum number of messages inflight
 has already been reached. AddPermission returns this error if the maximum
 number of permissions for the queue has already been reached.</p>
-
                         </td>
                     </tr>
                 
@@ -378,7 +355,6 @@ number of permissions for the queue has already been reached.</p>
                              <p>Indicates that the specified queue previously received a <code>PurgeQueue</code> request
 within the last 60 seconds, the time it can take to delete the messages in the
 queue.</p>
-
                         </td>
                     </tr>
                 
@@ -396,7 +372,6 @@ queue.</p>
                         <td class='docblock short'>
                              <p>You must wait 60 seconds after deleting a queue before you can create another
 with the same name.</p>
-
                         </td>
                     </tr>
                 
@@ -405,7 +380,6 @@ with the same name.</p>
                                title='rusoto::sqs::QueueDoesNotExist'>QueueDoesNotExist</a></td>
                         <td class='docblock short'>
                              <p>The queue referred to does not exist.</p>
-
                         </td>
                     </tr>
                 
@@ -416,7 +390,6 @@ with the same name.</p>
                              <p>A queue already exists with this name. Amazon SQS returns this error only if
 the request includes attributes whose values differ from those of the existing
 queue.</p>
-
                         </td>
                     </tr>
                 
@@ -425,7 +398,6 @@ queue.</p>
                                title='rusoto::sqs::ReceiptHandleIsInvalid'>ReceiptHandleIsInvalid</a></td>
                         <td class='docblock short'>
                              <p>The receipt handle provided is not valid.</p>
-
                         </td>
                     </tr>
                 
@@ -442,7 +414,6 @@ queue.</p>
                                title='rusoto::sqs::ReceiveMessageResult'>ReceiveMessageResult</a></td>
                         <td class='docblock short'>
                              <p>A list of received messages.</p>
-
                         </td>
                     </tr>
                 
@@ -467,7 +438,6 @@ queue.</p>
                                title='rusoto::sqs::SQSHelper'>SQSHelper</a></td>
                         <td class='docblock short'>
                              <p>Easier to use SQS client: wraps SQSClient class.</p>
-
                         </td>
                     </tr>
                 
@@ -484,7 +454,6 @@ queue.</p>
                                title='rusoto::sqs::SendMessageBatchRequestEntry'>SendMessageBatchRequestEntry</a></td>
                         <td class='docblock short'>
                              <p>Contains the details of a single Amazon SQS message along with a <code>Id</code>.</p>
-
                         </td>
                     </tr>
                 
@@ -495,7 +464,6 @@ queue.</p>
                              <p>For each message in the batch, the response contains a
 SendMessageBatchResultEntry tag if the message succeeds or a
 BatchResultErrorEntry tag if the message fails.</p>
-
                         </td>
                     </tr>
                 
@@ -504,7 +472,6 @@ BatchResultErrorEntry tag if the message fails.</p>
                                title='rusoto::sqs::SendMessageBatchResultEntry'>SendMessageBatchResultEntry</a></td>
                         <td class='docblock short'>
                              <p>Encloses a message ID for successfully enqueued message of a SendMessageBatch.</p>
-
                         </td>
                     </tr>
                 
@@ -521,7 +488,6 @@ BatchResultErrorEntry tag if the message fails.</p>
                                title='rusoto::sqs::SendMessageResult'>SendMessageResult</a></td>
                         <td class='docblock short'>
                              <p>The MD5OfMessageBody and MessageId elements.</p>
-
                         </td>
                     </tr>
                 
@@ -538,7 +504,6 @@ BatchResultErrorEntry tag if the message fails.</p>
                                title='rusoto::sqs::TooManyEntriesInBatchRequest'>TooManyEntriesInBatchRequest</a></td>
                         <td class='docblock short'>
                              <p>Batch request contains more number of entries than permissible.</p>
-
                         </td>
                     </tr>
                 
@@ -547,7 +512,6 @@ BatchResultErrorEntry tag if the message fails.</p>
                                title='rusoto::sqs::UnsupportedOperation'>UnsupportedOperation</a></td>
                         <td class='docblock short'>
                              <p>Error code 400. Unsupported operation.</p>
-
                         </td>
                     </tr>
                 </table><h2 id='types' class='section-header'><a href="#types">Type Definitions</a></h2>
@@ -770,7 +734,7 @@ BatchResultErrorEntry tag if the message fails.</p>
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>
