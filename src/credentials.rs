@@ -16,13 +16,11 @@ use std::io::prelude::*;
 use std::io::BufReader;
 use std::ascii::AsciiExt;
 use std::collections::HashMap;
-use hyper::Client;
-use hyper::header::Connection;
 use error::*;
+use metadata::MetadataService;
 use regex::Regex;
 use chrono::{Duration, UTC, DateTime};
 use serde_json::{Value, from_str};
-use std::time::Duration as StdDuration;
 
 /// Represents AWS credentials.  Includes access key, secret key, token (for IAM profiles) and expiration timestamp.
 #[derive(Clone, Debug)]
@@ -266,39 +264,23 @@ impl AWSCredentialsProvider for IAMRoleCredentialsProvider {
         if self.credentials.is_none() || self.credentials.as_ref().unwrap().credentials_are_expired() {
             // TODO: backoff and retry on failure.
 
-            // for "real" use: http://169.254.169.254/latest/meta-data/iam/security-credentials/
-            let mut address : String = "http://169.254.169.254/latest/meta-data/iam/security-credentials".to_string();
-            let mut client = Client::new();
-            client.set_read_timeout(Some(StdDuration::from_secs(15)));
-            let mut response;
-            match client.get(&address)
-                .header(Connection::close()).send() {
-                    Err(_) => return err("Couldn't connect to metadata service"), // add Why?
-                    Ok(received_response) => response = received_response
-                };
+            let path = "iam/security-credentials";
+            let mds = MetadataService::default();
 
-            let mut body = String::new();
-            match response.read_to_string(&mut body) {
-                Err(_) => return err("Didn't get a parsable response body from metadata service"),
-                Ok(_) => (),
+            let ident;
+            match mds.read(path) {
+                Err(_) => return err("Couldn't reach metadata service"),
+                Ok(txt) => ident = txt
             };
 
-            address.push_str("/");
-            address.push_str(&body);
-            body = String::new();
-            match client.get(&address)
-                .header(Connection::close()).send() {
-                    Err(_) => return err("Didn't get a parseable response body from instance role details"),
-                    Ok(received_response) => response = received_response
-                };
-
-            match response.read_to_string(&mut body) {
-                Err(_) => return err("Had issues with reading iam role response: {}"),
-                Ok(_) => (),
+            let credentials;
+            match mds.read([path, ident.as_str()].join("/").as_str()) {
+                Err(_) => return err("Didn't get a parseable response body from instance role details"),
+                Ok(txt) => credentials = txt
             };
 
             let json_object: Value;
-            match from_str(&body) {
+            match from_str(credentials.as_str()) {
                 Err(_) => return err("Couldn't parse metadata response body."),
                 Ok(val) => json_object = val
             };

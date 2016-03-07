@@ -49,6 +49,7 @@ pub mod dynamodb;
 pub mod ecs;
 pub mod error;
 pub mod kms;
+pub mod metadata;
 pub mod sqs;
 pub mod s3;
 pub mod xmlutil;
